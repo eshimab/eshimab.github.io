@@ -103,4 +103,5 @@ nav:
 		```bash
 		nano ~/.bashrc
 		```
-3. 
+3. Ok
+4. Ok
