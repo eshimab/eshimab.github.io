@@ -4,16 +4,52 @@
 
 # Instrument Start-up
 
-## Power On Instrument and Computers
+# Electronics 
 
-1. Turn on InFlux
-2. Start Dell PC (CytoServer)
-3. Start HP PC (Sortware and Sensirion)
+## Turn On InFlux
+
+1. Turn On Primary Power "Power Strip 1" Computer Table
+2. Turn On Instrument Power using Rocker Switch on Instrument Chassis
+      1. Turn On Sort Chamber Illumination Light
+      2. Turn On Power for the Vacuum Pump and Lasers using the Rocker Switches on the *E 107* Unit. The Switches are numbered:
+            1. **1** VAC - Vacuum Pump
+            2. **2** 488 - 488nm *Coherent* Laser
+            3. **3** 457 - 457nm *Melles Griot* Laser
+            4. **4** 671 - 671nm *Opto Engine* Laser
+3. Turn On Tektronix TDS 2014C Oscilliscope using the Power Switch on the Top Left Corner
+4. Check the Cameras using the Marshall Monitor
+      1. Left Monitor VIDEO 1 - Pinhole Camera of the Stream and the Laser Pinholes
+      2. Center Monitor VIDEO 1 - FSC Pinhole Camera (located on the FSC optical path)
+      3. Center Monitor VIDEO 2 - Drop Camera (For finding Break-off Point for Flow Sorting)
+            1. The Drop Camera is moved with the Drop Camera Z Knob located near the Sheath Valve on the top of the Instrument
+            2. If this Camera seems dark, be sure that the Drop Camera Mirror is installed outside the Laser Chamber with the Flat Side facing towards the corner between the FSC and Side/Fluorescence lenses. There is an opening in the wall of the Laser Chamber, allowing light from the Drop Camera Mirror to illuminate the stream viewed by the Drop Camera.
+      4. Right Monitor VIDEO 1 - Stream Camera (Shows Sort Chamber for Sorting and Coarse Alignment)
+            1. If this Camera is dark, make sure to activate the yellow ILLUM Button located on the Front Right side of the Instrument Chassis 
+            
+
+## Turn On Lasers using the PSU on the Instrument Chassis
+
+1. Turn On 488nm *Coherent* Laser Power Supply Unit with the following sequence:
+      1. Power Switch 
+      2. Turn Key
+      3. Use the dial to set the 488nm Laser Power Percent to 108 (as seen in the digital read-out)
+2. Turn On 457nm *Melles Griot* Laser  Power Supply Unit with the following sequence:
+      1. Power Switch
+      2. Laser Power Button
+      3. Turn Key to Enable
+3. *(Optional)* Turn On 671nm *Opto Engine* Laser Power Supply Unit
+      1. Power Switch
+      2. Use the dial to set Laser Power to **6.73?**
+
+## Turn On Computers
+1. Start Dell PC (CytoServer)
+      1. Use the login info recorded locally.
+      2. Wait for this PC to boot up and login to Desktop before proceeding
+2. Start HP PC (Sortware and Sensirion)
      1. Start SortWare
      2. Connect to Cytometer
      3. Start Sensirion Software
         1. Begin Logging
-4. 
 
 # Fluidics
 
@@ -34,30 +70,8 @@
 3. Turn on Vacuum Pump (Pump is powered by InFlux Instrument Power)
 
 
-## Turn On InFlux
-1. Turn On Primary Power "Power Strip 1" Computer Table
-2. Turn On Instrument Power using Rocker Switch on Instrument Chassis
-      1. Turn On Sort Chamber Illumination Light
-      2. Turn On Power for the Vacuum Pump and Lasers using the Rocker Switches on the *E 107* Unit. The Switches are numbered:
-            1. VAC - Vacuum Pump
-            2. 488 - 488nm *Coherent* Laser
-            3. 457 - 457nm *Melles Griot* Laser
-            4. 671 - 671nm *Opto Engine* Laser
-
-## Turn On Lasers using the PSU on the Instrument Chassis
-1. Turn On 488nm *Coherent* Laser Power Supply Unit with the following sequence:
-      1. Power Switch 
-      2. Turn Key
-      3. Use the dial to set the 488nm Laser Power Percent to 108 (as seen in the digital read-out)
-2. Turn On 457nm *Melles Griot* Laser  Power Supply Unit with the following sequence:
-      1. Power Switch
-      2. Laser Power Button
-      3. Turn Key to Enable
-3. *(Optional)* Turn On 671nm *Opto Engine* Laser Power Supply Unit
-      1. Power Switch
-      2. Use the dial to set Laser Power to **6.73?**
-
 ## Install Nozzle
+
 1. Use the Nozzle Lock-Ring to install the Nozzle
 2. Make sure there is an undamaged O-Ring neslted in the Nozzle Lock-Ring orifice
 3. Make sure the Nozzle is not obviously clogged:
@@ -115,5 +129,49 @@
 					2. Briefly press the RINSE Button to open the Sheath Valve and Waste Valve to chase bubbles out of the Y-Connector
 					3. Press the PURGE Button to open the Waste Valve and close the Sheath Valve
 					2. Press the PULSE Button on the Regulator Tower   to open and close the Sheath Valve several times in quick succession. Air Bubbles from the Nozzle should be loosened and begin to travel up through the Nozzle Assembly. Continue with PURGE until all bubbles are removed from the Nozzle Assembly.
+7. Press the RUN Button on the Regulator Tower to close the Waste Valve and open the Sheath Valve
+      1. Remove Spoon and Drain from Instrument
+      2. Use a twisted KimWipe to soak up any water stuck to the Nozzle Tip
+8. Press BACKFLUSH Button next to the Sample Cradle to open the Sample Valve. 
+      1. Sheath fluid should drip out of the Sample Tube
+      2. After 30 sec, if you do not hear the Sheath Fluid being sucked into the drain below the Sample Cradle (which leads to one of the four pink lines on the Waste Connector), check to verify that the drain is not clogged.
+      3. See the above if water begins to spill out because you ignored the previously given advice.
 
-5. Press the RUN Button on the Regulator Tower to close the Waste Valve and open the Sheath Valve
+# Coarse Alignment
+
+### Instrument Orientation
+
+1. The Right and Left sides of the instrument are based on the user facing the instrument from the front, viewing the Sort Chamber
+2. In XYZ Terms we will use for Alignment Movements
+      1. X = Machine Left-Right, with X Increasing from RIGHT to LEFT.
+      2. Y = Machine Front-Back, with Y Increasing as you approach the Front of the Instrument.
+      3. Z = Machine Up-Down, with Z increasing as you approach the top of the Instrument.
+
+### Component List:
+
+#### Stream Stages
+
+1. Stream Tilt (Black Knobs)
+      1. Stream Tilt X - Located immediately below the Sheath Line Y-Connector
+      2. Stream Tilt Y - Located at Front of Nozzle Assemblt
+2. Stream Stage (Silver Knobs)
+      1. Stream Stage X - Located at Bottom Right Side of Nozzle Assembly Stage
+      2. Stream Stage Y - Located at Rear of Nozzle Assembly Stage
+
+#### FSC Stage
+
+3. FSC Stage (Silver Knobs)
+      1. FSC Stage X - located on Right Side of FSC Stage
+      2. FSC Stage Y - located on Front Side of FSC Stage
+      3. FSC Stage Z - located on Top of FSC Stage
+
+#### Laser Stages (Silver and Color-Coded Knobs) on Top Left Side of Instrument
+1. 488nm Laser
+      1. 488 Stage Z - Located at Top of 488 Stage
+      2. 488 Stage Sweep - Located at Front Side of 488 Stage
+2. 457nm Laser
+      1. 457 Stage Z - Located at Top of 488 Stage
+      2. 457 Stage Sweep - Located at Rear Side of 457 Stage
+3. 671nm Laser
+      1. 671 Stage Z - Located at Top of 671 Stage
+      2. 671 Stage Sweep - Located at Rear Side of 671 Stage

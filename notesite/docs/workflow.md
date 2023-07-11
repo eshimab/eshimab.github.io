@@ -50,7 +50,7 @@ deactivate
 
 ```bash
 # Set Commit Message Variable
-commit_message="Updates to quickstart.md Headings"
+commit_message="Updates to quickstart.md for Lasers, Electronics, Stages, Coarse Alignment, Formatting."
 # Add / Commit / Push got Git
 cd ~/scidev # Move to root dir of the local Git branch
 git status
