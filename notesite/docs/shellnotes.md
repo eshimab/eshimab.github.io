@@ -114,6 +114,19 @@ So we need to add these files with `git add`
 cd ~/scidev
 git add .gitignore
 git add notesite
+git add mdocs/pyvenv.cfg
+```
+See `git status` output
+
+![New Git Status](../img/gitExample-gitStatusFinal.png)
+
+Now do another commit to `github.io/eshimab/scidev/main`
+```bash
+git commit -m "Updated notesite, added envsdir/mdoc/pyenvs.cfg, updated .gitignore"
+```
+See Output
+![Final Push Example](../img/gitExample-gitStatusFinal.png)
+
 ---
 
 ## Adding and updating files and directories to an established git repo
