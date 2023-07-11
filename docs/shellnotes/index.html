@@ -85,18 +85,25 @@
         <ul class="nav flex-column">
             
             
-            <li class="nav-item" data-level="2"><a href="#git" class="nav-link">Git</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
             <li class="nav-item" data-level="2"><a href="#-" class="nav-link">---</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#adding-and-updating-files-and-directories-to-an-established-git-repo" class="nav-link">Adding and updating files and directories to an established git repo</a>
+            <li class="nav-item" data-level="1"><a href="#git" class="nav-link">Git</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#working-with-active-git-repositories" class="nav-link">Working with active git repositories</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#summarizing-git-addcommitpush-to-repository" class="nav-link">Summarizing Git Add/Commit/Push to Repository</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#-_1" class="nav-link">---</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -115,10 +122,11 @@ ls -al
 <p>Need to add <code>code</code></p>
 <pre><code class="language-bash">nano ~/.bash_profile
 </code></pre>
-<h2 id="git">Git</h2>
-<h3 id="working-with-active-git-repositories">Working with active git repositories</h3>
-<h4 id="comitting-a-new-local-directory-to-the-github-repository">Comitting a new local directory to the GitHub Repository</h4>
-<h5 id="git-repo-info">Git Repo Info</h5>
+<h2 id="-">---</h2>
+<h1 id="git">Git</h1>
+<h2 id="working-with-active-git-repositories">Working with active git repositories</h2>
+<h3 id="comitting-a-new-local-directory-to-the-github-repository">Comitting a new local directory to the GitHub Repository</h3>
+<h4 id="git-repo-info">Git Repo Info</h4>
 <ul>
 <li>Github Repository: <code>https://github.com/eshimab/scidev</code></li>
 <li>Branches<ul>
@@ -131,7 +139,7 @@ ls -al
   <figcaption>GitHub Website Before Commit</figcaption>
 </figure>
 
-<h5 id="local-git-branch-main">Local Git Branch <code>main</code></h5>
+<h4 id="local-git-branch-main">Local Git Branch <code>main</code></h4>
 <figure class="figure-image">
   <img src="../img/gitExample-precommit-localScidevDirectory.png" alt="GitHub Local Directory Before Commit">
   <figcaption>GitHub Local Directory Before Commit</figcaption>
@@ -280,7 +288,7 @@ git remote --verbose
   <figcaption>Github Webpage Updated</figcaption>
 </figure>
 
-<h3 id="summarizing-git-addcommitpush-to-repository">Summarizing Git Add/Commit/Push to Repository</h3>
+<h2 id="summarizing-git-addcommitpush-to-repository">Summarizing Git Add/Commit/Push to Repository</h2>
 <ol>
 <li>Stage files with <code>git add</code>
    <code>bash
@@ -324,16 +332,16 @@ git remote --verbose
   eb213eb..4d8a21e  main -&gt; main
    dhcp-168-105-223-225:scidev eshim$
    ```</p>
-<h4 id="more-standard-git-setups">More standard git setups</h4>
-<h5 id="adding-git-hooks">Adding git hooks</h5>
+<h3 id="more-standard-git-setups">More standard git setups</h3>
+<h4 id="adding-git-hooks">Adding git hooks</h4>
 </li>
 </ol>
 <pre><code class="language-bash">cd ~/scidev
 git add .git/hooks/pre-commit
 git add .git/hooks/post-commit
 </code></pre>
-<h2 id="-">---</h2>
-<h2 id="adding-and-updating-files-and-directories-to-an-established-git-repo">Adding and updating files and directories to an established git repo</h2>
+<h2 id="-_1">---</h2>
+<h3 id="adding-and-updating-files-and-directories-to-an-established-git-repo">Adding and updating files and directories to an established git repo</h3>
 <h3 id="initializing-a-git-repo-using-a-local-directory-with-a-generic-empty-repo-already-on-github">Initializing a git repo using a local directory (with a generic, empty repo already on GitHub)</h3>
 <p>To use your local "scidev" folder to update your GitHub repository named "scidev" while creating a .gitignore file and a pre-commit Git hook to limit staging to files below 1MB, follow these steps:</p>
 <ul>
@@ -389,7 +397,7 @@ git add .git/hooks/post-commit
    - [ ] Commit the changes using `git commit -m "Initial commit"`.</code>bash
    git add notesite/<strong>
    git commit -m "Initial Commit for directory notesite/</strong>"
-   ```</p>
+   ``` </p>
 </li>
 </ul>
 <p>With these steps, your local "scidev" folder will be updated with the .gitignore file and the pre-commit Git hook. The pre-commit hook will exclude files above 1MB from being staged in your commits. Remember to customize the MAX_FILE_SIZE variable in the pre-commit script if you want a different maximum file size limit.</p></div>

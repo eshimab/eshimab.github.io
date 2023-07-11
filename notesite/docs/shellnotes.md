@@ -19,20 +19,23 @@ Need to add `code`
 nano ~/.bash_profile
 ```
 
-## Git
+---
+---
 
-### Working with active git repositories
+# Git
 
-#### Comitting a new local directory to the GitHub Repository
+## Working with active git repositories
 
-##### Git Repo Info
+### Comitting a new local directory to the GitHub Repository
+
+#### Git Repo Info
 - Github Repository: `https://github.com/eshimab/scidev`
   - Branches
     - `main`
 
 ![GitHub Website Before Commit](../img/gitExample-precommit-githubScidevDirectory.png)
 
-##### Local Git Branch `main`
+#### Local Git Branch `main`
 ![GitHub Local Directory Before Commit](../img/gitExample-precommit-localScidevDirectory.png)
 
 See that the `assets` dir is located in the local `scidev`
@@ -172,7 +175,7 @@ And the GitHub webpage for `scidev/main` has been updated via the local machine 
 
 ![Github Webpage Updated](../img/gitExample-gitWebsiteUpdated.png)
 
-### Summarizing Git Add/Commit/Push to Repository
+## Summarizing Git Add/Commit/Push to Repository
 
 1. Stage files with `git add`
    ```bash
@@ -222,8 +225,8 @@ And the GitHub webpage for `scidev/main` has been updated via the local machine 
       eb213eb..4d8a21e  main -> main
    dhcp-168-105-223-225:scidev eshim$
    ```
-#### More standard git setups
-##### Adding git hooks
+### More standard git setups
+#### Adding git hooks
 ```bash
 cd ~/scidev
 git add .git/hooks/pre-commit
@@ -234,8 +237,7 @@ git add .git/hooks/post-commit
 ---
 
 
-## Adding and updating files and directories to an established git repo
-
+### Adding and updating files and directories to an established git repo
 
 ### Initializing a git repo using a local directory (with a generic, empty repo already on GitHub)
 
@@ -306,7 +308,7 @@ To use your local "scidev" folder to update your GitHub repository named "scidev
    ```bash
    git add notesite/**
    git commit -m "Initial Commit for directory notesite/**"
-   ```
+   ``` 
 
 With these steps, your local "scidev" folder will be updated with the .gitignore file and the pre-commit Git hook. The pre-commit hook will exclude files above 1MB from being staged in your commits. Remember to customize the MAX_FILE_SIZE variable in the pre-commit script if you want a different maximum file size limit.
 
