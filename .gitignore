@@ -5,17 +5,19 @@
 # The trailing / means that we are targetting a directory and all it's contents
 /assets/packages/
 /envsdir/mdocs/lib/
+# Directories in .git/
 /.git/branches/
 /.git/info/
 /.git/logs/
 /.git/objects/
 /.git/refs/
-# Files
+# Files in .git/
 /.git/MERGE*
-/.git/.MERGE*
-/.git/.COMMIT*/
-/.git/description/
-/.git/FETCH*/
+/.git/.MERGE_MSG.wsp
+/.git/COMMIT_EDITMSG
+/.git/config
+/.git/description
+/.git/FETCH_HEAD
 /.git/HEAD
 /.git/index
 /.git/ORIG_HEAD
