@@ -94,7 +94,32 @@ nav:
     - Home: index.md
     - About: about.md
 ```
+Install the mkdocs plugin `img2fig` to allow for dynamic creation and referencing of Figures
+From within the python `venv` run `pip` to install the plugin
+```python
+pip install mkdocs-img2fig-plugin
+```
 
+And update the `mkdocs.yml` to use that plug-in:
+```yaml
+site_name: Super Fun Digressions # site_name and site_url are the only required fields
+site_url: https://example.com # https://example.com is a placeholder value
+nav: 
+    - Home: index.md
+    - About: about.md
+    - vscode: vsnotes.md
+    - Github Setup: shellnotes.md 
+
+plugins:
+  - img2fig:
+      caption_prefix: "Figure"
+      caption_title: "Figures"
+      svg_output: false
+```
+
+Now when you run `mkdocs serve` it will properly use the `img2fig` plugin:
+
+![mkdocs serve with img2fig plugin enabled](notesite/img/mkDocsExample-enablingPackage.png)
 
 ### Creating a shell script for displaying file trees
 

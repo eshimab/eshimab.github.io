@@ -1,6 +1,6 @@
 # Using VS Code for general development
 
-### Editor Hacks
+## Editor Hacks
 
 #### Show more document tabs in the workbench.editor
 ```json

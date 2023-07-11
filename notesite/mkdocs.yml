@@ -4,3 +4,10 @@ nav:
     - Home: index.md
     - About: about.md
     - vscode: vsnotes.md
+    - Github Setup: shellnotes.md 
+
+plugins:
+  - img2fig:
+      caption_prefix: "Figure"
+      caption_title: "Figures"
+      svg_output: false
