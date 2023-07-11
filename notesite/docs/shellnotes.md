@@ -171,6 +171,64 @@ And the GitHub webpage for `scidev/main` has been updated via the local machine 
 
 ![Github Webpage Updated](../img/gitExample-gitWebsiteUpdated.png)
 
+### Summarizing Git Add/Commit/Push to Repository
+
+1. Stage files with `git add`
+   ```bash
+   git add *
+   ```
+   1. Preview if desired with `git status`
+2. Commit Staged files with `git commit`
+   1. Add a commit message with `-m "message text"`
+      ```bash
+      git commit -m "updates to notesite"
+      ```
+3. Push the commit (containing the staged files) to the remote directory using `git remote <local-remote-alias> <local-branch-name>`
+   ```bash
+   git push scimain main
+   ```
+   1. You can list the local `<local-remote-alias>` avilable using `git remote --verbose`
+      ```bash
+      dhcp-168-105-223-225:scidev eshim$ git remote --verbose
+      scimain https://github.com/eshimab/scidev (fetch)
+      scimain https://github.com/eshimab/scidev (push)
+      ``` 
+   2. For this example, the `<local-remote-alias>` is `scimain` and points to `https://github.io/eshimab/scidev`
+   3. For this example, the `<local-branch-name>` is `main` and is recorded in the Github repo as `scidev/main` See that we are on branch `main` using `git status`
+      ```bash
+      dhcp-168-105-223-225:scidev eshim$ git status
+      On branch main
+      Changes not staged for commit:
+      (use "git add <file>..." to update what will be committed)
+      (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   notesite/docs/shellnotes.md
+       
+      no changes added to commit (use "git add" and/or "git commit -a")
+      dhcp-168-105-223-225:scidev eshim$ 
+      ``` 
+4. See Output from `git push scimain main`
+   ```bash
+   dhcp-168-105-223-225:scidev eshim$ git push scimain main
+   Enumerating objects: 15, done.
+   Counting objects: 100% (15/15), done.
+   Delta compression using up to 10 threads
+   Compressing objects: 100% (10/10), done.
+   Writing objects: 100% (10/10), 237.52 KiB | 33.93 MiB/s, done.
+   Total 10 (delta 4), reused 0 (delta 0)
+   remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+   To https://github.com/eshimab/scidev
+      eb213eb..4d8a21e  main -> main
+   dhcp-168-105-223-225:scidev eshim$
+   ```
+#### More standard git setups
+##### Adding git hooks
+```bash
+cd ~/scidev
+git add .git/hooks/pre-commit
+git add .git/hooks/post-commit
+```
+
 ---
 ---
 
