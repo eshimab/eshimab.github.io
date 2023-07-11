@@ -125,6 +125,7 @@ Now do another commit to `github.io/eshimab/scidev/main`
 git commit -m "Updated notesite, added envsdir/mdoc/pyenvs.cfg, updated .gitignore"
 ```
 See Output
+
 ![Final Commit Example](../img/gitExample-gitStatusFinal.png)
 
 ### Managing GitHub Repository Url Aliases with `git remote`
@@ -305,12 +306,6 @@ To use your local "scidev" folder to update your GitHub repository named "scidev
    ```bash
    git add notesite/**
    git commit -m "Initial Commit for directory notesite/**"
-   ```
-
-- [ ] Push the changes to your GitHub repository:
-   - [ ] Run `git push -u origin master` to push your local commits to the "master" branch of your remote repository.
-   ```bash
-   git push -u origin master
    ```
 
 With these steps, your local "scidev" folder will be updated with the .gitignore file and the pre-commit Git hook. The pre-commit hook will exclude files above 1MB from being staged in your commits. Remember to customize the MAX_FILE_SIZE variable in the pre-commit script if you want a different maximum file size limit.
