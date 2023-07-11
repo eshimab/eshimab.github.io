@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://example.com/quickstart/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>InFlux is Easy - Super Fun Digressions</title>
+        <title>InFlux QS - Super Fun Digressions</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -36,6 +36,9 @@
                             <li class="navitem">
                                 <a href=".." class="nav-link">Home</a>
                             </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">InFlux QS</a>
+                            </li>
                             <li class="navitem">
                                 <a href="../about/" class="nav-link">About</a>
                             </li>
@@ -48,9 +51,6 @@
                             <li class="navitem">
                                 <a href="../workflow/" class="nav-link">Workflow</a>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">InFlux is Easy</a>
-                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
@@ -60,12 +60,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../workflow/" class="nav-link">
+                                <a rel="prev" href=".." class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../about/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -123,6 +123,11 @@
 <li>Measure with Graduated Cylinder <ol>
 <li>For BioSure: Mixture is 1/8 BioSure Concentrate and 7/8 MilliQ Water</li>
 <li>For NaCl: Dissolve Xg NaCl in Y MillQ Water and <em>let sit overnight</em></li>
+<li>Fill a 60ml Syringe with Sheath Fluid for Purging the instrument and filling sort tubes.<ol>
+<li>Label Syringe.</li>
+<li>Attach a 0.2um Acrodisc Synring Filter to the synringe</li>
+</ol>
+</li>
 </ol>
 </li>
 </ol>
@@ -145,7 +150,7 @@
 </ol>
 </li>
 </ol>
-<h4 id="turn-on-lasers-using-the-psu-on-the-instrument-chassy">Turn On Lasers using the PSU on the Instrument Chassy<a class="headerlink" href="#turn-on-lasers-using-the-psu-on-the-instrument-chassy" title="Permanent link">&para;</a></h4>
+<h4 id="turn-on-lasers-using-the-psu-on-the-instrument-chassis">Turn On Lasers using the PSU on the Instrument Chassis<a class="headerlink" href="#turn-on-lasers-using-the-psu-on-the-instrument-chassis" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Turn On 488nm <em>Coherent</em> Laser Power Supply Unit with the following sequence:<ol>
 <li>Power Switch </li>
@@ -159,9 +164,33 @@
 <li>Turn Key to Enable</li>
 </ol>
 </li>
-<li>(Optional) Turn On 671nm <em>Opto Engine</em> Laser Power Supply Unit<ol>
+<li><em>(Optional)</em> Turn On 671nm <em>Opto Engine</em> Laser Power Supply Unit<ol>
 <li>Power Switch</li>
 <li>Use the dial to set Laser Power to <strong>6.73?</strong></li>
+</ol>
+</li>
+</ol>
+<h4 id="install-nozzle">Install Nozzle<a class="headerlink" href="#install-nozzle" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Use the Nozzle Lock-Ring to install the Nozzle</li>
+<li>Make sure there is an undamaged O-Ring neslted in the Nozzle Lock-Ring orifice</li>
+<li>Make sure the Nozzle is not obviously clogged:<ol>
+<li>Use a 60ml Syringe filled with MilliQ water and fitted with an Acrodisc 0.2um Syringe Filter</li>
+<li>Place the Nozzle so that the wider end is around the outflow of the Acrodisc filter, and press lightly on the Syringe.</li>
+<li>Water should be ejected from the Nozzle Tip in a straight stream.
+        1. If you cannot get a clear stream, try multiple light pressses on the Syringe plunger
+        2. If the Stream comes out at an angle, attempt this flushing by reversing the Nozzle so that the tip is fitted into the outflow of the Acrodisc Filter. <strong>BE CAREFULE</strong>
+        3. If Flushing in reverse does not work, Sonicate the Nozzle.
+              1. Place the nozzle in a plastic lid (see example) to protect it from the bare metal of the sonicator
+              2. Sonicate in MilliQ water for 15 minutes
+              3. Attempt Syringe purges again
+        4. If still clogged, soak Nozzle in 70% Ethanol for 30 minutes and repeat flushes and sonication</li>
+</ol>
+</li>
+<li>Place Nozzle inside Nozzle Lock-Ring and install on Nozzle Assembly<ol>
+<li>It may help to turn on PURGE on the Regulator Tower to open the Waste Valve and create a vacuum on the Nozzle Assembly to hold the Nozzle steady. 
+        1. <strong>DO NOT RELY ON THIS VACUUM TO HOLD THE NOZZLE ON ITS OWN</strong>
+        2. After Nozzle has been installed, turn off PURGE if used.</li>
 </ol>
 </li>
 </ol>
@@ -176,12 +205,37 @@
 <li><em>Optional</em> Filter Sheath Fluid<ol>
 <li>Disconnect 0.2um Sterivex In-line Filter at the outlet leading to the InFlux</li>
 <li>Get a clean Sheath Fluid Cannister</li>
-<li>Hook up Sheath Fluid Cannister Fluid Intake Adapter</li>
+<li>Connect Sheath Fluid Cannister Fluid Intake Adapter filter Sheath Fluid from the original cannister to the clean one using the 0.2um Sterivex
+        1. Loosen Pressure Valve on New Sheath Cannister</li>
 </ol>
 </li>
-<li>Purge and Fill Sheath Line</li>
+<li>Purge and Fill Sheath Line<ol>
 <li>Working on the Air Regulator Knobs on the Right Side of the Instrument </li>
-<li>Use the Sheath Knob on the Right side of the instrument</li>
+<li>Use the Sheath Knob on the Right side of the instrument to set the Sheath PSI to 10.0</li>
+<li>Slowly tighten the Pressure Release valve on the Sheath Fluid Cannister
+        1. You may need to wiggle the lid of the cannister to get the O-Ring to settle and seal the container
+        1. This is done to gently fill the 0.2um Sterivex In-line Filter so that it doesn't have air bubbles</li>
+<li>Once Sheath Cannister is pressurized, increase the Sheath PSI to 15.0 using the Knob on the Regulator Tower</li>
+<li><em>Optional</em> (If Filtering Sheath Fluid):<ol>
+<li>Filter the Sheath Fluid from the Original Sheath Cannister to the New Sheath Cannister</li>
+<li>Transfer the Sheath Line and Sterivex to the New Sheath Cannister.</li>
+<li>Disconnect the Fluid Intake Adapter from the Sterivex and the New Sheath Cannister</li>
+<li>Connect the Sheath Fluid Outlet to the New Sheath Cannister</li>
+<li>Connect the 0.2um Sterivex to the Sheath Line leading to the instrument</li>
+</ol>
+</li>
+<li>Press the RINSE button on the Regulator Tower to open the Sheath and Waste valves.
+        1. Stop the Rinse when Sheath Fluid reaches the Y-Connector affixed to the upper right corner of the Nozzle Assembly  </li>
+</ol>
+</li>
+<li>Purge Nozzle and Nozzle Assembly<ol>
+<li>Place the Drain below the Nozzle Assembly, the peg on the bottom of the Drain should fit into the hole leading to the Sort Chamber</li>
+<li>Place the glass Spoon on the Drain such that the Nozzle is inside the spoon</li>
+<li>Fill the Spoon with 0.2um filtered Sheath Fluid from the Syringe with the 0.2um Acrodisc Filter
+        1. The Water level should be high enough to immerse the Nozzle Tip, but below the level where it would cover the Nozzle Lock-Ring in fluid</li>
+<li>Press PURGE</li>
+</ol>
+</li>
 </ol></div>
             </div>
         </div>

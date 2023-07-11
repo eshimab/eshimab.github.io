@@ -1,15 +1,16 @@
-# Welcome to MkDocs
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-## Commands
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
 
-## Project layout
+
+
+# notesite
+
+
+
+
+
+## Directory Structure
 
     mkdocs.yml    # The configuration file.
     docs/
@@ -18,5 +19,3 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
         shellnotes.md # Or "How to use git"
         vsnotes.md # Tips for VS Code
         workflow.md # Standard Workflow
-
-## Ok

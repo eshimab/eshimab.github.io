@@ -1,12 +1,20 @@
+#
+#
+#
+#
+#
+#
+#
 site_name: Super Fun Digressions # site_name and site_url are the only required fields
 site_url: https://example.com # https://example.com is a placeholder value
 nav: 
     - Home: index.md
+    - InFlux QS: quickstart.md
     - About: about.md
     - vscode: vsnotes.md
     - Github Setup: shellnotes.md 
     - Workflow: workflow.md
-    - InFlux is Easy: quickstart.md
+    
 
 markdown_extensions:
   - toc:
@@ -16,4 +24,4 @@ markdown_extensions:
 plugins:
     - search
     - img2fig
-      
+#
