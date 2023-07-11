@@ -73,8 +73,8 @@
             4. If still clogged, soak Nozzle in 70% Ethanol for 30 minutes and repeat flushes and sonication
 4. Place Nozzle inside Nozzle Lock-Ring and install on Nozzle Assembly
       1. It may help to turn on PURGE on the Regulator Tower to open the Waste Valve and create a vacuum on the Nozzle Assembly to hold the Nozzle steady. 
-            1. **DO NOT RELY ON THIS VACUUM TO HOLD THE NOZZLE ON ITS OWN**
-            2. After Nozzle has been installed, turn off PURGE if used.
+          1. **DO NOT RELY ON THIS VACUUM TO HOLD THE NOZZLE ON ITS OWN**
+          2. After Nozzle has been installed, turn off PURGE if used.
 
 #### Hook-Up Sheath Fluid Canister to InFlux
 1. Connect InFlux Sheath Line (clear)
