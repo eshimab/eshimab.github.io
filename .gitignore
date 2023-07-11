@@ -22,7 +22,8 @@
 /.git/index
 /.git/ORIG_HEAD
 /.git/packed-refs
-# 
+# Files in .git/hooks
+/.git/hooks/*.sample
 # Ignore Filetypes
 *.pdf
 *.mat
