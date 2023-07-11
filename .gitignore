@@ -13,7 +13,7 @@
 /.git/refs/
 # Files in .git/
 /.git/MERGE*
-/.git/.MERGE_MSG.wsp
+/.git/.MERGE_MSG.swp
 /.git/COMMIT_EDITMSG
 /.git/config
 /.git/description
