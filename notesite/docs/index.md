@@ -14,6 +14,8 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     mkdocs.yml    # The configuration file.
     docs/
         index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+        about.md # The about file
+        shellnotes.md # Or "How to use git"
+        vsnotes.md # Tips for VS Code
 
 ## Ok
