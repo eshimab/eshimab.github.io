@@ -125,9 +125,55 @@ Now do another commit to `github.io/eshimab/scidev/main`
 git commit -m "Updated notesite, added envsdir/mdoc/pyenvs.cfg, updated .gitignore"
 ```
 See Output
-![Final Push Example](../img/gitExample-gitStatusFinal.png)
+![Final Commit Example](../img/gitExample-gitStatusFinal.png)
+
+### Managing GitHub Repository Url Aliases with `git remote`
+
+We can check that the repository url is correct by using the `git remote` command with the `get-url` flag for the GitHub repository that we refer to with the local alias `origin`. You can think of `origin` as a short-hand for the repository url. The `origin` alis is created using the `git remote` command with the `add` option to define a local repository URL alias we will call `scimain` from the GitHub Repository 
+```bash
+git remote add scimain https://github.com/eshimab/scidev
+```
+
+List the available Repository URL Aliases using `git remote` without any additional arguments
+   - Use the `--verbose` or `-v` flag to show additional info 
+```bash
+git remote --verbose
+```
+Output:
+![Git Remote Repository Aliases](../img/gitExample-gitRemote-createNewRepoAlias.png)
+
+Now we can remove the old alias `origin` because it points to the same GitHub Repository URL as the new created alias `scimain`
+   - Deleting the origin alias will not affect your connection to the remote repository as long as you have another valid remote alias configured.
+
+```bash
+git remote remove origin
+## Check for changes
+git remote --verbose
+```
+Output:
+![After Deleting the old `origin` repository url alias](../img/gitExample-gitRemote-deleteOldRepoAlias.png)
+
+### Pushing Files with `git push`
+
+##### `git push` the local `git commit` to the GitHub repo/branch `scidev/main` 
+
+- Use the GitHub Repository URL alias `scimain` that points to the full URL `https://github.com/eshimab/scidev` (check this with `git remote --verbose`)
+
+Push the commits done on the local branch `main` with `git push` to the GitHub Repository `scimain` (the alias for `http://github.com/eshimab/scidev`) 
+```bash
+git push scimain main
+```
+See output for checking the `git remote` alias name with the `--verbose` flag, then running the `git push` command, sending commits in the local branch `main` to the repository linked in the alias `scimain`.
+
+![Local Command Output After git push](../img/gitExample-gitPush-localScimainToRepoScidev.png)
+
+And the GitHub webpage for `scidev/main` has been updated via the local machine `push`
+
+![Github Webpage Updated](../img/gitExample-gitWebsiteUpdated.png)
 
 ---
+---
+
 
 ## Adding and updating files and directories to an established git repo
 
