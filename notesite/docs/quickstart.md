@@ -106,4 +106,14 @@
       2. Place the glass Spoon on the Drain such that the Nozzle is inside the spoon
       3. Fill the Spoon with 0.2um filtered Sheath Fluid from the Syringe with the 0.2um Acrodisc Filter
             1. The Water level should be high enough to immerse the Nozzle Tip, but below the level where it would cover the Nozzle Lock-Ring in fluid
-      4. Press PURGE
+      4. Press PURGE to open the Waste Valve leading from the Sheath Fluid Y-Connector to the Waste Canister
+					1. This will fill the Nozzle Assembly by drawing water from the Spoon
+					2. Do not let the sheath water level in the Spoon drop below the Nozzle Tip 
+					3. Be sure that the OVERRIDE Button next to the Sample Cradle is *not* pressed. This Button forces the Sample Valve Open. Normally the Sample Valve only opens if RUN is pressed.
+					3. Continue Purging until Sheath Fluid drawn into the Nozzle Tip and up through the Nozzle Assembly reaches the Y-Connector at the top of the Nozzle Assembly.
+							1. You should see the air bubble flow out of the Y-Connector and into the Waste Line at the top of the Y-Connector.
+					2. Briefly press the RINSE Button to open the Sheath Valve and Waste Valve to chase bubbles out of the Y-Connector
+					3. Press the PURGE Button to open the Waste Valve and close the Sheath Valve
+					2. Press the PULSE Button on the Regulator Tower   to open and close the Sheath Valve several times in quick succession. Air Bubbles from the Nozzle should be loosened and begin to travel up through the Nozzle Assembly. Continue with PURGE until all bubbles are removed from the Nozzle Assembly.
+
+5. Press the RUN Button on the Regulator Tower to close the Waste Valve and open the Sheath Valve
