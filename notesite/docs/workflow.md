@@ -71,7 +71,7 @@ Renaming and Syncing a File
 If we want to change the name of the file `~/scidev/notesite/docs/influx.md` to `~/scidev/notesite/docs/influx.md`
 ```bash
 # Perform Action
-# mv notesite/docs/iniflux.md notesite/docs/quickstart.md 
+# bash command here?
 # Set Commit Message
 commit_message="Updates to workflow.md"
 # Compile MkDocs Site with python venv
