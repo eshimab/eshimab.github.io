@@ -1,15 +1,3 @@
-# Using VS Code for general development
-
-### Editor Hacks
-
-#### Show more document tabs in the workbench.editor
-```json
-    // Increase  number of tabs visible on an editor window
-    "workbench.editor.tabSizing": "shrink"
-```
-
-## Converting Atom cofee script to VS Code JavaScript
-```coffee
 # ------------------ CURSOR TO NEXT CHUNK ----------------------
 atom.commands.add 'atom-text-editor',
   'cursor-to-next-chunk': ->
@@ -78,16 +66,3 @@ atom.commands.add 'atom-text-editor',
         break
       # Move to start of line
       atom.workspace.getActiveTextEditor()?.getLastCursor().moveToBeginningOfLine()
-
-```
-
-
-
-It might be easier to do this from scratch...
-
-
-
-
-
-
-

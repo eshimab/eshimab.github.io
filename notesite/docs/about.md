@@ -1,40 +1,107 @@
-# Facies dare aut pendent palmis adnuit
 
-## Pylio ego duo madefient soli non quoque
 
-Lorem markdownum parvas simul, fiducia: aris hic fraga Theseus latuitque; pectus
-iam evanida ventis. Regis Romuleae! In sequitur esse, nunc illa; vota cuncta
-nocuit esse conticuere blanditias **Venerem** ferrum coegi tellusque nondum.
-Cursus velis. Quam toto manibus stantia nobis.
 
-1. Te ipsa Pelasgas vox amnis vincere pro
-2. Illis turbata te litora illuc turbam non
-3. Meae potes sidera
-4. Iovis experientis ego dis dies
+### Starting directory structure.
 
-## Illa vertice
+```bash
+# Define the core directory
+dircore="/Users/eshim/scidev"
+direnvs="${dircore}/envsdir"
+dirmdoc="${direnvs}/mdocs"
+dirasst="${dircore}/assets"
+dirpckg="${dirasst}/packges"
+filecore="corefile.md"
+# Make Dirs
+mkdir -p "$direnvs"
+mkdir -p "$dirmdoc"
+mkdir -p "$dirasst"
+mkdir -p "$dirpckg"
+```
 
-Longave civiliter *ipsa*; glande haec vulneris mores. Luporum clivoque. Quot
-nunc liber harundine *Ascalaphus*.
+Tips:
+1. When doing the BASH variable assignment, the `=` symbol should not have spaces on either side.
+2. (CB) In this code, the directories `direnvs` and `dirmdoc` are created using the `mkdir` command with the `-p` option. The `-p` option ensures that parent directories are created if they don't already exist. The variable values are correctly concatenated using the `${variable}` syntax.
+3. Pick up the command line tool `tree` to visualize the directory structure: 
+		```bash
+			# Get the program homebrew
+			/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+			# Use homebrew to install tree
+			brew install tree
+		```
+ 		
 
-[Aera foeda](http://mora.io/) perforat in *mihi*, ad provolat nec, quod? Tempora
-auctor mare patriam inperfecta vitis; haec ulmus, Phrygum ministros vimque.
+### Create a python3 virtual environment (`venv`) to run Mkdocs
 
-## Pariter cuncta usum
+```bash
+# Create the python3 venv
+python3 -m venv "${dirmdoc}"
+# Activate the venv
+source "${dirmdoc}/bin/activate"
+# Go there
+cd ${dircore}
+```
+Tips:
+	1. Notice that the variable is wrapped in "" because the command input should be a string
+	2. CB: By using the -m (there is no long-form version) flag followed by the module name (venv), you are instructing the Python interpreter to execute the venv module's script functionality. This allows you to create a virtual environment using the python3 -m venv command, without explicitly running a separate Python script or invoking a specific Python file.
 
-Inquit feroxque respicit sumitur Cinyrae, vacuo iungi orbes parenti, velit esset
-tantis votum **gramina**. Cum per dextra vulnere, omnesque in icto
-**inscriptum** sinuatus pharetramque forte Agenorides subit quae hoc me.
-Extemplo trahit inclitus iuvenis discite gremio et cantibus viscera **rauco
-obstat dolis** qui. Faciendus silva totoque, et videntur iterabat quae
-penetratque quis longo *moles*.
+Now we are working in the python3 environment where lines should be preceded by `(mdocs) hostname:scidev username$`
+```python
+# Upgrade pip so that it doesn't complain
+python3 -m pip install --upgrade pip
 
-Auctor bella solumque; matertera praelata. Vos dixit imagine Calydonius relatus
-adiutis requies, mihi vos accessit alius operisque locum dote plebe, tamen.
-*Hinc* frui ultima, non viderat pudor, equorum stridore, docto geminatis
-Calliope. Tela ambo missi, fecissent refugitque qua comitantibus defecto his
-cursu est.
+# install the local Mkdocs package, version 1.4.3
+python3 -m pip install "/Users/eshim/scidev/assets/packages/mkdocs-1.4.3.tar.gz"
+```
 
-Dei gelidis mihi antiquas, *in pennis pecus*, suo aratri, postulat noctes
-Acrisioneas dubie: vultus. Sanguine candescere miratur paenituisse sublime
-tacuit sum locoque alter est est effuge corpus tamquam.
+Then create the MkDocs project directory in the python3 venv
+```python
+mkdocs new "/Users/eshim/scidev/notesite"
+cd /Users/eshim/scidev/notesite
+mkdocs serve
+```
+And you get output:
+```
+INFO     -  Building documentation...
+INFO     -  Cleaning site directory
+INFO     -  Documentation built in 0.06 seconds
+INFO     -  [10:50:41] Watching paths for changes: 'docs', 'mkdocs.yml'
+INFO     -  [10:50:41] Serving on http://127.0.0.1:8000/
+```
+It will serve on [Your local Macine](http://127.0.0.1:8000/)
+Now leave this Terminal instance running and let it update the site in the background. I will call this the Mkdocs Server Terminal or similarly.
+
+**Open a new terminal window**
+
+Get an example page from Mkdocs and send it to the Mkdocs website directory `notesite`
+```bash
+curl 'https://jaspervdj.be/lorem-markdownum/markdown.txt' > /Users/eshim/scidev/notesite/docs/about.md
+```
+
+In the Mkdocs Server Terminal you will see an update as it adds the new webpage:
+```
+INFO     -  [11:36:50] Detected file changes
+INFO     -  Building documentation...
+INFO     -  Documentation built in 0.07 seconds
+INFO     -  [11:36:50] Reloading browsers
+INFO     -  [11:36:50] Browser connected: http://127.0.0.1:8000/
+```
+
+Edit the `mkdocs.yml` file in `~/scidev/notesite`
+```yaml
+site_name: Super Fun Digressions # site_name and site_url are the only required fields
+site_url: https://example.com # https://example.com is a placeholder value
+nav: 
+    - Home: index.md
+    - About: about.md
+```
+
+
+### Creating a shell script for displaying file trees
+
+1. Open a terminal window.
+2. Open your shell's configuration file using a text editor. For example:
+		```bash
+		nano ~/.bashrc
+		```
+3. Ok
+4. Ok

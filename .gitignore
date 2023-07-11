@@ -1,0 +1,11 @@
+#
+#
+# Ignore directories withim scidev:
+# The leading / means that these are subdirectories within scidev where the .gitignore file is found
+# The trailing / means that we are targetting a directory and all it's contents
+/assets/packages/
+/envsdir/mdocs/lib/
+# 
+# Ignore Filetypes
+*.pdf
+*.mat
