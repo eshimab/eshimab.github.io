@@ -5,6 +5,7 @@ nav:
     - About: about.md
     - vscode: vsnotes.md
     - Github Setup: shellnotes.md 
+    - Workflow: workflow.md
 
 plugins:
   - img2fig:
