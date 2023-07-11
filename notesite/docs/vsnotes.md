@@ -1,5 +1,12 @@
 # Using VS Code for general development
 
+### Editor Hacks
+
+#### Show more document tabs in the workbench.editor
+```json
+    // Increase  number of tabs visible on an editor window
+    "workbench.editor.tabSizing": "shrink"
+```
 
 ## Converting Atom cofee script to VS Code JavaScript
 ```coffee
