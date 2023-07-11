@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://example.com/about/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>About - Super Fun Digressions</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Super Fun Digressions</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">About</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../vsnotes/" class="nav-link">vscode</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../shellnotes/" class="nav-link">Github Setup</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../vsnotes/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            
+            
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h3 id="starting-directory-structure">Starting directory structure.</h3>
+<pre><code class="language-bash"># Define the core directory
+dircore=&quot;/Users/eshim/scidev&quot;
+direnvs=&quot;${dircore}/envsdir&quot;
+dirmdoc=&quot;${direnvs}/mdocs&quot;
+dirasst=&quot;${dircore}/assets&quot;
+dirpckg=&quot;${dirasst}/packges&quot;
+filecore=&quot;corefile.md&quot;
+# Make Dirs
+mkdir -p &quot;$direnvs&quot;
+mkdir -p &quot;$dirmdoc&quot;
+mkdir -p &quot;$dirasst&quot;
+mkdir -p &quot;$dirpckg&quot;
+</code></pre>
+<p>Tips:
+1. When doing the BASH variable assignment, the <code>=</code> symbol should not have spaces on either side.
+2. (CB) In this code, the directories <code>direnvs</code> and <code>dirmdoc</code> are created using the <code>mkdir</code> command with the <code>-p</code> option. The <code>-p</code> option ensures that parent directories are created if they don't already exist. The variable values are correctly concatenated using the <code>${variable}</code> syntax.
+3. Pick up the command line tool <code>tree</code> to visualize the directory structure: 
+        <code>bash
+            # Get the program homebrew
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+            # Use homebrew to install tree
+            brew install tree</code></p>
+<h3 id="create-a-python3-virtual-environment-venv-to-run-mkdocs">Create a python3 virtual environment (<code>venv</code>) to run Mkdocs</h3>
+<pre><code class="language-bash"># Create the python3 venv
+python3 -m venv &quot;${dirmdoc}&quot;
+# Activate the venv
+source &quot;${dirmdoc}/bin/activate&quot;
+# Go there
+cd ${dircore}
+</code></pre>
+<p>Tips:
+    1. Notice that the variable is wrapped in "" because the command input should be a string
+    2. CB: By using the -m (there is no long-form version) flag followed by the module name (venv), you are instructing the Python interpreter to execute the venv module's script functionality. This allows you to create a virtual environment using the python3 -m venv command, without explicitly running a separate Python script or invoking a specific Python file.</p>
+<p>Now we are working in the python3 environment where lines should be preceded by <code>(mdocs) hostname:scidev username$</code></p>
+<pre><code class="language-python"># Upgrade pip so that it doesn't complain
+python3 -m pip install --upgrade pip
+
+# install the local Mkdocs package, version 1.4.3
+python3 -m pip install &quot;/Users/eshim/scidev/assets/packages/mkdocs-1.4.3.tar.gz&quot;
+</code></pre>
+<p>Then create the MkDocs project directory in the python3 venv</p>
+<pre><code class="language-python">mkdocs new &quot;/Users/eshim/scidev/notesite&quot;
+cd /Users/eshim/scidev/notesite
+mkdocs serve
+</code></pre>
+<p>And you get output:</p>
+<pre><code>INFO     -  Building documentation...
+INFO     -  Cleaning site directory
+INFO     -  Documentation built in 0.06 seconds
+INFO     -  [10:50:41] Watching paths for changes: 'docs', 'mkdocs.yml'
+INFO     -  [10:50:41] Serving on http://127.0.0.1:8000/
+</code></pre>
+<p>It will serve on <a href="http://127.0.0.1:8000/">Your local Macine</a>
+Now leave this Terminal instance running and let it update the site in the background. I will call this the Mkdocs Server Terminal or similarly.</p>
+<p><strong>Open a new terminal window</strong></p>
+<p>Get an example page from Mkdocs and send it to the Mkdocs website directory <code>notesite</code></p>
+<pre><code class="language-bash">curl 'https://jaspervdj.be/lorem-markdownum/markdown.txt' &gt; /Users/eshim/scidev/notesite/docs/about.md
+</code></pre>
+<p>In the Mkdocs Server Terminal you will see an update as it adds the new webpage:</p>
+<pre><code>INFO     -  [11:36:50] Detected file changes
+INFO     -  Building documentation...
+INFO     -  Documentation built in 0.07 seconds
+INFO     -  [11:36:50] Reloading browsers
+INFO     -  [11:36:50] Browser connected: http://127.0.0.1:8000/
+</code></pre>
+<p>Edit the <code>mkdocs.yml</code> file in <code>~/scidev/notesite</code></p>
+<pre><code class="language-yaml">site_name: Super Fun Digressions # site_name and site_url are the only required fields
+site_url: https://example.com # https://example.com is a placeholder value
+nav: 
+    - Home: index.md
+    - About: about.md
+</code></pre>
+<h3 id="creating-a-shell-script-for-displaying-file-trees">Creating a shell script for displaying file trees</h3>
+<ol>
+<li>Open a terminal window.</li>
+<li>Open your shell's configuration file using a text editor. For example:
+        <code>bash
+        nano ~/.bashrc</code></li>
+<li>Ok</li>
+<li>Ok</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
