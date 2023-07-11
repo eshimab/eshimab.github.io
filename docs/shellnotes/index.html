@@ -48,6 +48,9 @@
                             <li class="navitem">
                                 <a href="../workflow/" class="nav-link">Workflow</a>
                             </li>
+                            <li class="navitem">
+                                <a href="../quickstart/" class="nav-link">InFlux is Easy</a>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
@@ -111,8 +114,8 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h3 id="terminal">Terminal</h3>
-<h4 id="use-ls-a-to-see-hidden-folder-and-files-that-start-with">Use <code>ls -a</code> to see hidden folder and files that start with <code>.</code></h4>
+<h3 id="terminal">Terminal<a class="headerlink" href="#terminal" title="Permanent link">&para;</a></h3>
+<h4 id="use-ls-a-to-see-hidden-folder-and-files-that-start-with">Use <code>ls -a</code> to see hidden folder and files that start with <code>.</code><a class="headerlink" href="#use-ls-a-to-see-hidden-folder-and-files-that-start-with" title="Permanent link">&para;</a></h4>
 <pre><code class="language-bash"># Short-form
 ls -a
 # Combine with -l
@@ -122,11 +125,11 @@ ls -al
 <p>Need to add <code>code</code></p>
 <pre><code class="language-bash">nano ~/.bash_profile
 </code></pre>
-<h2 id="-">---</h2>
-<h1 id="git">Git</h1>
-<h2 id="working-with-active-git-repositories">Working with active git repositories</h2>
-<h3 id="comitting-a-new-local-directory-to-the-github-repository">Comitting a new local directory to the GitHub Repository</h3>
-<h4 id="git-repo-info">Git Repo Info</h4>
+<h2 id="-">---<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
+<h1 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h1>
+<h2 id="working-with-active-git-repositories">Working with active git repositories<a class="headerlink" href="#working-with-active-git-repositories" title="Permanent link">&para;</a></h2>
+<h3 id="comitting-a-new-local-directory-to-the-github-repository">Comitting a new local directory to the GitHub Repository<a class="headerlink" href="#comitting-a-new-local-directory-to-the-github-repository" title="Permanent link">&para;</a></h3>
+<h4 id="git-repo-info">Git Repo Info<a class="headerlink" href="#git-repo-info" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Github Repository: <code>https://github.com/eshimab/scidev</code></li>
 <li>Branches<ul>
@@ -139,7 +142,7 @@ ls -al
   <figcaption>GitHub Website Before Commit</figcaption>
 </figure>
 
-<h4 id="local-git-branch-main">Local Git Branch <code>main</code></h4>
+<h4 id="local-git-branch-main">Local Git Branch <code>main</code><a class="headerlink" href="#local-git-branch-main" title="Permanent link">&para;</a></h4>
 <figure class="figure-image">
   <img src="../img/gitExample-precommit-localScidevDirectory.png" alt="GitHub Local Directory Before Commit">
   <figcaption>GitHub Local Directory Before Commit</figcaption>
@@ -161,7 +164,7 @@ drwxr-xr-x   4 eshim  staff    128 Jul  5 17:33 envsdir
 drwxr-xr-x   6 eshim  staff    192 Jul 10 13:15 notesite
 dhcp-168-105-223-225:scidev eshim$ 
 </code></pre>
-<h5 id="git-add-local-dirs-and-files-to-prepare-for-the-commit"><code>git add</code> local dirs and files to prepare for the commit</h5>
+<h5 id="git-add-local-dirs-and-files-to-prepare-for-the-commit"><code>git add</code> local dirs and files to prepare for the commit<a class="headerlink" href="#git-add-local-dirs-and-files-to-prepare-for-the-commit" title="Permanent link">&para;</a></h5>
 <p>We want to <code>git add</code> the directory <code>scidev/assets/files/</code> to our next <code>git commit</code>. 
 Notes
    - The <code>-r</code> or <code>--recursive</code> flag is not necessary since Git automatically traverses directories recursively when adding files.
@@ -187,7 +190,7 @@ git add notesite/img
   <figcaption>Git Status After Adding notesite/img/*</figcaption>
 </figure>
 
-<h5 id="git-commit-vs-push">Git Commit vs Push</h5>
+<h5 id="git-commit-vs-push">Git Commit vs Push<a class="headerlink" href="#git-commit-vs-push" title="Permanent link">&para;</a></h5>
 <p>In Git, a <code>commit</code> and a <code>push</code> are two separate operations that serve different purposes:</p>
 <ol>
 <li>Git Commit:</li>
@@ -204,7 +207,7 @@ git add notesite/img
 <li>Remote Operation: When you run <code>git push</code>, Git sends your committed changes to the remote repository, updating the branch's commit history and files on the remote server. Other collaborators can then fetch or pull your changes into their own local repositories to incorporate your work.</li>
 </ol>
 <p>In summary, a <code>commit</code> is a local operation that saves your changes within your local repository, while a <code>push</code> is used to send your local commits to a remote repository to share and synchronize your changes with others. Commits are made locally, and pushes are performed to update the remote repository with your local commits.</p>
-<h5 id="create-a-local-git-commit-to-incorporate-the-changes-done-with-git-add-or-changes-to-files-directly-in-scidev-because-we-have-been-editting-the-branch-scidevmain">Create a local <code>git commit</code> to incorporate the changes done with <code>git add</code> or changes to files directly in <code>scidev</code> because we have been editting the branch <code>scidev/main</code></h5>
+<h5 id="create-a-local-git-commit-to-incorporate-the-changes-done-with-git-add-or-changes-to-files-directly-in-scidev-because-we-have-been-editting-the-branch-scidevmain">Create a local <code>git commit</code> to incorporate the changes done with <code>git add</code> or changes to files directly in <code>scidev</code> because we have been editting the branch <code>scidev/main</code><a class="headerlink" href="#create-a-local-git-commit-to-incorporate-the-changes-done-with-git-add-or-changes-to-files-directly-in-scidev-because-we-have-been-editting-the-branch-scidevmain" title="Permanent link">&para;</a></h5>
 <p>Commit the directory changes and add a Commit Message using the <code>-m</code> flag</p>
 <pre><code class="language-bash">git commit -m &quot;Added directories scidev/bin scidev/assets/files scidev/notesite/img&quot;
 </code></pre>
@@ -242,7 +245,7 @@ git add mdocs/pyvenv.cfg
   <figcaption>Final Commit Example</figcaption>
 </figure>
 
-<h3 id="managing-github-repository-url-aliases-with-git-remote">Managing GitHub Repository Url Aliases with <code>git remote</code></h3>
+<h3 id="managing-github-repository-url-aliases-with-git-remote">Managing GitHub Repository Url Aliases with <code>git remote</code><a class="headerlink" href="#managing-github-repository-url-aliases-with-git-remote" title="Permanent link">&para;</a></h3>
 <p>We can check that the repository url is correct by using the <code>git remote</code> command with the <code>get-url</code> flag for the GitHub repository that we refer to with the local alias <code>origin</code>. You can think of <code>origin</code> as a short-hand for the repository url. The <code>origin</code> alis is created using the <code>git remote</code> command with the <code>add</code> option to define a local repository URL alias we will call <code>scimain</code> from the GitHub Repository </p>
 <pre><code class="language-bash">git remote add scimain https://github.com/eshimab/scidev
 </code></pre>
@@ -268,8 +271,8 @@ git remote --verbose
   <figcaption>After Deleting the old `origin` repository url alias</figcaption>
 </figure>
 
-<h3 id="pushing-files-with-git-push">Pushing Files with <code>git push</code></h3>
-<h5 id="git-push-the-local-git-commit-to-the-github-repobranch-scidevmain"><code>git push</code> the local <code>git commit</code> to the GitHub repo/branch <code>scidev/main</code></h5>
+<h3 id="pushing-files-with-git-push">Pushing Files with <code>git push</code><a class="headerlink" href="#pushing-files-with-git-push" title="Permanent link">&para;</a></h3>
+<h5 id="git-push-the-local-git-commit-to-the-github-repobranch-scidevmain"><code>git push</code> the local <code>git commit</code> to the GitHub repo/branch <code>scidev/main</code><a class="headerlink" href="#git-push-the-local-git-commit-to-the-github-repobranch-scidevmain" title="Permanent link">&para;</a></h5>
 <ul>
 <li>Use the GitHub Repository URL alias <code>scimain</code> that points to the full URL <code>https://github.com/eshimab/scidev</code> (check this with <code>git remote --verbose</code>)</li>
 </ul>
@@ -288,7 +291,7 @@ git remote --verbose
   <figcaption>Github Webpage Updated</figcaption>
 </figure>
 
-<h2 id="summarizing-git-addcommitpush-to-repository">Summarizing Git Add/Commit/Push to Repository</h2>
+<h2 id="summarizing-git-addcommitpush-to-repository">Summarizing Git Add/Commit/Push to Repository<a class="headerlink" href="#summarizing-git-addcommitpush-to-repository" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Stage files with <code>git add</code>
    <code>bash
@@ -332,17 +335,17 @@ git remote --verbose
   eb213eb..4d8a21e  main -&gt; main
    dhcp-168-105-223-225:scidev eshim$
    ```</p>
-<h3 id="more-standard-git-setups">More standard git setups</h3>
-<h4 id="adding-git-hooks">Adding git hooks</h4>
+<h3 id="more-standard-git-setups">More standard git setups<a class="headerlink" href="#more-standard-git-setups" title="Permanent link">&para;</a></h3>
+<h4 id="adding-git-hooks">Adding git hooks<a class="headerlink" href="#adding-git-hooks" title="Permanent link">&para;</a></h4>
 </li>
 </ol>
 <pre><code class="language-bash">cd ~/scidev
 git add .git/hooks/pre-commit
 git add .git/hooks/post-commit
 </code></pre>
-<h2 id="-_1">---</h2>
-<h3 id="adding-and-updating-files-and-directories-to-an-established-git-repo">Adding and updating files and directories to an established git repo</h3>
-<h3 id="initializing-a-git-repo-using-a-local-directory-with-a-generic-empty-repo-already-on-github">Initializing a git repo using a local directory (with a generic, empty repo already on GitHub)</h3>
+<h2 id="-_1">---<a class="headerlink" href="#-_1" title="Permanent link">&para;</a></h2>
+<h3 id="adding-and-updating-files-and-directories-to-an-established-git-repo">Adding and updating files and directories to an established git repo<a class="headerlink" href="#adding-and-updating-files-and-directories-to-an-established-git-repo" title="Permanent link">&para;</a></h3>
+<h3 id="initializing-a-git-repo-using-a-local-directory-with-a-generic-empty-repo-already-on-github">Initializing a git repo using a local directory (with a generic, empty repo already on GitHub)<a class="headerlink" href="#initializing-a-git-repo-using-a-local-directory-with-a-generic-empty-repo-already-on-github" title="Permanent link">&para;</a></h3>
 <p>To use your local "scidev" folder to update your GitHub repository named "scidev" while creating a .gitignore file and a pre-commit Git hook to limit staging to files below 1MB, follow these steps:</p>
 <ul>
 <li>[ ]  Create the .gitignore file:</li>

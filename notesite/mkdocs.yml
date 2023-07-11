@@ -6,6 +6,12 @@ nav:
     - vscode: vsnotes.md
     - Github Setup: shellnotes.md 
     - Workflow: workflow.md
+    - InFlux is Easy: quickstart.md
+
+markdown_extensions:
+  - toc:
+      permalink: True
+      toc_depth: 6
 
 plugins:
     - search

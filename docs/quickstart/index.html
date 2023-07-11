@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://example.com/workflow/">
+        <link rel="canonical" href="https://example.com/quickstart/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Workflow - Super Fun Digressions</title>
+        <title>InFlux is Easy - Super Fun Digressions</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -45,11 +45,11 @@
                             <li class="navitem">
                                 <a href="../shellnotes/" class="nav-link">Github Setup</a>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Workflow</a>
-                            </li>
                             <li class="navitem">
-                                <a href="../quickstart/" class="nav-link">InFlux is Easy</a>
+                                <a href="../workflow/" class="nav-link">Workflow</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">InFlux is Easy</a>
                             </li>
                         </ul>
 
@@ -60,12 +60,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../shellnotes/" class="nav-link">
+                                <a rel="prev" href="../workflow/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../quickstart/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -87,22 +87,9 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#verify-branch-and-remote-repository-alias" class="nav-link">Verify Branch and remote repository alias</a>
+            <li class="nav-item" data-level="1"><a href="#impractical-flow-cytometry" class="nav-link">Impractical Flow Cytometry</a>
               <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#resuming-work-on-local-machine" class="nav-link">Resuming Work on Local Machine</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#pull-from-git" class="nav-link">Pull from git</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#build-site-with-mkdocs-and-addcommitpush-to-git" class="nav-link">Build site with mkdocs and Add/Commit/Push to Git</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#addcommitpush-files-to-git-repository" class="nav-link">Add/Commit/Push Files to Git Repository</a>
+            <li class="nav-item" data-level="2"><a href="#instrument-start-up" class="nav-link">Instrument Start-up</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -113,78 +100,89 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>This is the workflow for documentation using MkDocs and website hosting using GitHub Pages.</p>
-<h1 id="verify-branch-and-remote-repository-alias">Verify Branch and remote repository alias<a class="headerlink" href="#verify-branch-and-remote-repository-alias" title="Permanent link">&para;</a></h1>
-<p>Check your branch and remote repository aliases</p>
-<pre><code class="language-bash">cd ~/scidev
-git status
-git remote --verbose
-</code></pre>
-<p>You should see the alias <code>scimain</code>:</p>
-<pre><code class="language-bash">dhcp-168-105-223-225:scidev eshim$ git remote --verbose
-scimain https://github.com/eshimab/eshimab.github.io (fetch)
-scimain https://github.com/eshimab/eshimab.github.io (push)
-</code></pre>
-<h1 id="resuming-work-on-local-machine">Resuming Work on Local Machine<a class="headerlink" href="#resuming-work-on-local-machine" title="Permanent link">&para;</a></h1>
-<h2 id="pull-from-git">Pull from git<a class="headerlink" href="#pull-from-git" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">git pull scimain main
-</code></pre>
-<h2 id="build-site-with-mkdocs-and-addcommitpush-to-git">Build site with mkdocs and Add/Commit/Push to Git<a class="headerlink" href="#build-site-with-mkdocs-and-addcommitpush-to-git" title="Permanent link">&para;</a></h2>
-<h3 id="activate-the-python3-venv-to-run-mkdocs">Activate the python3 venv to run mkdocs<a class="headerlink" href="#activate-the-python3-venv-to-run-mkdocs" title="Permanent link">&para;</a></h3>
-<p>After updating the markdown documents in <code>scidev/notesite/docs</code></p>
-<pre><code class="language-bash"># Move to the python3 virtual env bin directory to activate the venv
-cd ~/scidev
-source envsdir/mdocs/bin/activate # activate the python3 venv using command `source`
-cd ~/scidev/notesite # move to the mkdocs root directory
-mkdocs build # build the site with MkDocs
-# Move the mkdocs site to the scidev/docs so that GitHub Pages can find it
-rsync --archive --progress --recursive --verbose --delete-after ~/scidev/notesite/site/* ~/scidev/docs
-# Delete the generated site directory
-rm -vR ~/scidev/notesite/site
-# Exit the virtual machine
-deactivate
-</code></pre>
-<h2 id="addcommitpush-files-to-git-repository">Add/Commit/Push Files to Git Repository<a class="headerlink" href="#addcommitpush-files-to-git-repository" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash"># Set Commit Message Variable
-commit_message=&quot;Updates to the mkdocs site in scidev/docs&quot;
-# Add / Commit / Push got Git
-cd ~/scidev # Move to root dir of the local Git branch
-git status
-git remote --verbose # View the Remote Repository URL Aliases
-# Add Changes ie Stage Commits on local machine
-git add docs # this is the HTML site generated by mkdocs
-git add notesite # Because we updated the md files here
-git status
-# Create a Commit on local machine branch
-git commit -m {$commit_message}
-# Push Changes from the local branch main and merge them with the repository alias scimain
-git push scimain main
-</code></pre>
-<p>Renaming and Syncing a File
-If we want to change the name of the file <code>~/scidev/notesite/docs/influx.md</code> to <code>~/scidev/notesite/docs/influx.md</code></p>
-<pre><code class="language-bash"># Perform Action
-# mv notesite/docs/iniflux.md notesite/docs/quickstart.md 
-# Set Commit Message
-commit_message=&quot;Changed Filename notesite/docs/iniflux.md to notesite/docs/quickstart.md. Updated workflow.md and mkupdate.sh&quot;
-# Compile MkDocs Site with python venv
-cd ~/scidev
-source envsdir/mdocs/bin/activate # activate the python3 venv using command `source`
-cd ~/scidev/notesite # move to the mkdocs root directory
-mkdocs build # build the site with MkDocs
-rsync --archive --progress --recursive --verbose --delete-after ~/scidev/notesite/site/* ~/scidev/docs # Syhc
-rm -vR ~/scidev/notesite/site # Delete Original Compiled Site
-deactivate # Exit venc
-# Commit to Local GitHub Branch (should be main)
-cd ~/scidev         # Move to root dir of the local Git branch
-git add notesite    # MkDocs Working Directory with .md Files: scidev/notesite
-git add docs        # HTML site generated by mkdocs: scidev/notesite/docs
-git add mkupdate.sh # Start-up shell script for short-cuts: scidev/mkupdate.sh
-git status
-git commit -m {$commit_message} # Send Commit to Local GitHub Repository (should be main)
-# Push Local GitHub Branch to Remote GitHub Repository using Remote Repository URL alias: scimain
-git push scimain main
-# Remember to initiate a Pull Request on your other devices before editting files!
-</code></pre></div>
+<h1 id="impractical-flow-cytometry">Impractical Flow Cytometry<a class="headerlink" href="#impractical-flow-cytometry" title="Permanent link">&para;</a></h1>
+<h2 id="instrument-start-up">Instrument Start-up<a class="headerlink" href="#instrument-start-up" title="Permanent link">&para;</a></h2>
+<h3 id="power-on-instrument-and-computers">Power On Instrument and Computers<a class="headerlink" href="#power-on-instrument-and-computers" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Turn on InFlux</li>
+<li>Start Dell PC (CytoServer)</li>
+<li>Start HP PC (Sortware and Sensirion)<ol>
+<li>Start SortWare</li>
+<li>Connect to Cytometer</li>
+<li>Start Sensirion Software<ol>
+<li>Begin Logging</li>
+</ol>
+</li>
+</ol>
+</li>
+<li></li>
+</ol>
+<h3 id="fluidics">Fluidics<a class="headerlink" href="#fluidics" title="Permanent link">&para;</a></h3>
+<h4 id="fill-sheath-fluid-canister-previous-day">Fill Sheath Fluid Canister - <em>Previous Day</em><a class="headerlink" href="#fill-sheath-fluid-canister-previous-day" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Measure with Graduated Cylinder <ol>
+<li>For BioSure: Mixture is 1/8 BioSure Concentrate and 7/8 MilliQ Water</li>
+<li>For NaCl: Dissolve Xg NaCl in Y MillQ Water and <em>let sit overnight</em></li>
+</ol>
+</li>
+</ol>
+<h4 id="hook-up-waste-canister">Hook-Up Waste Canister<a class="headerlink" href="#hook-up-waste-canister" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Connect InFlux Waste Lines Intake</li>
+<li>Connect Vacuum Pump</li>
+<li>Turn on Vacuum Pump (Pump is powered by InFlux Instrument Power)</li>
+</ol>
+<h4 id="turn-on-influx">Turn On InFlux<a class="headerlink" href="#turn-on-influx" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Turn On Primary Power "Power Strip 1" Computer Table</li>
+<li>Turn On Instrument Power using Rocker Switch on Instrument Chassis<ol>
+<li>Turn On Sort Chamber Illumination Light</li>
+<li>Turn On Power for the Vacuum Pump and Lasers using the Rocker Switches on the <em>E 107</em> Unit. The Switches are numbered:
+        1. VAC - Vacuum Pump
+        2. 488 - 488nm <em>Coherent</em> Laser
+        3. 457 - 457nm <em>Melles Griot</em> Laser
+        4. 671 - 671nm <em>Opto Engine</em> Laser</li>
+</ol>
+</li>
+</ol>
+<h4 id="turn-on-lasers-using-the-psu-on-the-instrument-chassy">Turn On Lasers using the PSU on the Instrument Chassy<a class="headerlink" href="#turn-on-lasers-using-the-psu-on-the-instrument-chassy" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Turn On 488nm <em>Coherent</em> Laser Power Supply Unit with the following sequence:<ol>
+<li>Power Switch </li>
+<li>Turn Key</li>
+<li>Use the dial to set the 488nm Laser Power Percent to 108 (as seen in the digital read-out)</li>
+</ol>
+</li>
+<li>Turn On 457nm <em>Melles Griot</em> Laser  Power Supply Unit with the following sequence:<ol>
+<li>Power Switch</li>
+<li>Laser Power Button</li>
+<li>Turn Key to Enable</li>
+</ol>
+</li>
+<li>(Optional) Turn On 671nm <em>Opto Engine</em> Laser Power Supply Unit<ol>
+<li>Power Switch</li>
+<li>Use the dial to set Laser Power to <strong>6.73?</strong></li>
+</ol>
+</li>
+</ol>
+<h4 id="hook-up-sheath-fluid-canister-to-influx">Hook-Up Sheath Fluid Canister to InFlux<a class="headerlink" href="#hook-up-sheath-fluid-canister-to-influx" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Connect InFlux Sheath Line (clear)<ol>
+<li>Install a new 0.2um Sterivex In-line Filter</li>
+</ol>
+</li>
+<li>Connect InFlux Air Line (blue)</li>
+<li><em>Loosen</em> Pressure Valve</li>
+<li><em>Optional</em> Filter Sheath Fluid<ol>
+<li>Disconnect 0.2um Sterivex In-line Filter at the outlet leading to the InFlux</li>
+<li>Get a clean Sheath Fluid Cannister</li>
+<li>Hook up Sheath Fluid Cannister Fluid Intake Adapter</li>
+</ol>
+</li>
+<li>Purge and Fill Sheath Line</li>
+<li>Working on the Air Regulator Knobs on the Right Side of the Instrument </li>
+<li>Use the Sheath Knob on the Right side of the instrument</li>
+</ol></div>
             </div>
         </div>
 
