@@ -1,41 +1,26 @@
-This is the workflow for documentation using MkDocs and website hosting using GitHub Pages.
-
-# Verify Branch and remote repository alias
-
-Check your branch and remote repository aliases
-
-```bash
-cd ~/scidev
-git status
-git remote --verbose
-```
-
-You should see the alias `scimain`:
-
-```bash
-dhcp-168-105-223-225:scidev eshim$ git remote --verbose
-scimain https://github.com/eshimab/eshimab.github.io (fetch)
-scimain https://github.com/eshimab/eshimab.github.io (push)
-```
-
-# Resuming Work on Local Machine
-
-## Pull from git
-
-```bash
-git pull scimain main
-```
-
-
-## Build site with mkdocs and Add/Commit/Push to Git
-
-### Activate the python3 venv to run mkdocs
-After updating the markdown documents in `scidev/notesite/docs`
-
-```bash
+#
+#
+#
+#
+#
+#
+# Serve MkDocs
+#
 # Move to the python3 virtual env bin directory to activate the venv
 cd ~/scidev
 source envsdir/mdocs/bin/activate # activate the python3 venv using command `source`
+# Now we are in the python venv. The input will look like:
+# (mdocs) dhcp-168-105-223-225:notesite eshim$
+cd ~/scidev/notesite # move to the mkdocs root directory
+mkdocs serve
+#
+# Build MkDocs
+#
+# Move to the python3 virtual env bin directory to activate the venv
+cd ~/scidev
+source envsdir/mdocs/bin/activate # activate the python3 venv using command `source`
+# Now we are in the python venv. The input will look like:
+# (mdocs) dhcp-168-105-223-225:notesite eshim$
 cd ~/scidev/notesite # move to the mkdocs root directory
 mkdocs build # build the site with MkDocs
 # Move the mkdocs site to the scidev/docs so that GitHub Pages can find it
@@ -44,13 +29,9 @@ rsync --archive --progress --recursive --verbose --delete-after ~/scidev/notesit
 rm -vR ~/scidev/notesite/site
 # Exit the virtual machine
 deactivate
-```
 
-## Add/Commit/Push Files to Git Repository
-
-```bash
 # Set Commit Message Variable
-commit_message="Updates to the mkdocs site in scidev/docs"
+commit_message="Updates to mkupdate.sh and workflow"
 # Add / Commit / Push got Git
 cd ~/scidev # Move to root dir of the local Git branch
 git status
@@ -63,6 +44,4 @@ git status
 git commit -m {$commit_message}
 # Push Changes from the local branch main and merge them with the repository alias scimain
 git push scimain main
-```
-
 

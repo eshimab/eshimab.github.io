@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://example.com/workflow/">
+        <link rel="canonical" href="https://example.com/iniflux/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Workflow - Super Fun Digressions</title>
+        <title>Start-Up - Super Fun Digressions</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -45,8 +45,8 @@
                             <li class="navitem">
                                 <a href="../shellnotes/" class="nav-link">Github Setup</a>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Workflow</a>
+                            <li class="navitem">
+                                <a href="../workflow/" class="nav-link">Workflow</a>
                             </li>
                         </ul>
 
@@ -56,16 +56,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../shellnotes/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -84,22 +74,9 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#verify-branch-and-remote-repository-alias" class="nav-link">Verify Branch and remote repository alias</a>
+            <li class="nav-item" data-level="1"><a href="#start-up" class="nav-link">Start-Up</a>
               <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#resuming-work-on-local-machine" class="nav-link">Resuming Work on Local Machine</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#pull-from-git" class="nav-link">Pull from git</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#build-site-with-mkdocs-and-addcommitpush-to-git" class="nav-link">Build site with mkdocs and Add/Commit/Push to Git</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#addcommitpush-files-to-git-repository" class="nav-link">Add/Commit/Push Files to Git Repository</a>
+            <li class="nav-item" data-level="2"><a href="#instrument" class="nav-link">Instrument</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -110,53 +87,65 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>This is the workflow for documentation using MkDocs and website hosting using GitHub Pages.</p>
-<h1 id="verify-branch-and-remote-repository-alias">Verify Branch and remote repository alias</h1>
-<p>Check your branch and remote repository aliases</p>
-<pre><code class="language-bash">cd ~/scidev
-git status
-git remote --verbose
-</code></pre>
-<p>You should see the alias <code>scimain</code>:</p>
-<pre><code class="language-bash">dhcp-168-105-223-225:scidev eshim$ git remote --verbose
-scimain https://github.com/eshimab/eshimab.github.io (fetch)
-scimain https://github.com/eshimab/eshimab.github.io (push)
-</code></pre>
-<h1 id="resuming-work-on-local-machine">Resuming Work on Local Machine</h1>
-<h2 id="pull-from-git">Pull from git</h2>
-<pre><code class="language-bash">git pull scimain main
-</code></pre>
-<h2 id="build-site-with-mkdocs-and-addcommitpush-to-git">Build site with mkdocs and Add/Commit/Push to Git</h2>
-<h3 id="activate-the-python3-venv-to-run-mkdocs">Activate the python3 venv to run mkdocs</h3>
-<p>After updating the markdown documents in <code>scidev/notesite/docs</code></p>
-<pre><code class="language-bash"># Move to the python3 virtual env bin directory to activate the venv
-cd ~/scidev
-source envsdir/mdocs/bin/activate # activate the python3 venv using command `source`
-cd ~/scidev/notesite # move to the mkdocs root directory
-mkdocs build # build the site with MkDocs
-# Move the mkdocs site to the scidev/docs so that GitHub Pages can find it
-rsync --archive --progress --recursive --verbose --delete-after ~/scidev/notesite/site/* ~/scidev/docs
-# Delete the generated site directory
-rm -vR ~/scidev/notesite/site
-# Exit the virtual machine
-deactivate
-</code></pre>
-<h2 id="addcommitpush-files-to-git-repository">Add/Commit/Push Files to Git Repository</h2>
-<pre><code class="language-bash"># Set Commit Message Variable
-commit_message=&quot;Updates to the mkdocs site in scidev/docs&quot;
-# Add / Commit / Push got Git
-cd ~/scidev # Move to root dir of the local Git branch
-git status
-git remote --verbose # View the Remote Repository URL Aliases
-# Add Changes ie Stage Commits on local machine
-git add docs # this is the HTML site generated by mkdocs
-git add notesite # Because we updated the md files here
-git status
-# Create a Commit on local machine branch
-git commit -m {$commit_message}
-# Push Changes from the local branch main and merge them with the repository alias scimain
-git push scimain main
-</code></pre></div>
+<h1 id="start-up">Start-Up</h1>
+<h2 id="instrument">Instrument</h2>
+<ol>
+<li>Turn on InFlux</li>
+<li>Start Dell PC (CytoServer)</li>
+<li>Start HP PC (Sortware and Sensirion)</li>
+<li>Start SortWare</li>
+<li>Connect to Cytometer</li>
+<li>Start Sensirion Software<ol>
+<li>Begin Logging</li>
+</ol>
+</li>
+<li></li>
+</ol>
+<h3 id="fluidics">Fluidics</h3>
+<ol>
+<li>Hook-Up Waste Canister</li>
+<li>Connect InFlux Waste Lines Intake</li>
+<li>Connect Vacuum Pump</li>
+<li>Turn on Vacuum Pump</li>
+<li>Fill Sheath Fluid Canister</li>
+<li>Measure with Graduated Cylinder <ol>
+<li>For BioSure: Mixture is 1/8 BioSure Concentrate and 7/8 MilliQ Water</li>
+<li>For NaCl: Dissolve Xg NaCl in Y MillQ Water and let sit overnight</li>
+</ol>
+</li>
+<li>Hook-Up Sheath Fluid Canister to InFlux</li>
+<li>Connect InFlux Sheath Line (clear)<ol>
+<li>Install a new 0.2um Sterivex In-line Filter</li>
+</ol>
+</li>
+<li>Connect InFlux Air Line (blue)</li>
+<li><em>Loosen</em> Pressure Valve</li>
+<li>Turn On InFlux</li>
+<li>Turn On Primary Power Strip</li>
+<li>Turn On Instrument Power <ol>
+<li>Turn On Sort Chamber Illumination Light</li>
+</ol>
+</li>
+<li>Turn On Lasers<ol>
+<li>Turn On 488nm Coherent Laser Power Supply Unit with the following sequence:<ol>
+<li>Power Switch </li>
+<li>Turn Key</li>
+<li>Use the dial to set the 488nm Laser Power Percent to 108 (as seen in the digital read-out)</li>
+</ol>
+</li>
+<li>Turn On 457nm Coherent Laser  Power Supply Unit with the following sequence:</li>
+<li>Power Switch</li>
+<li>Laser Power Button</li>
+<li>Turn Key to Enable</li>
+<li>(Optional) Turn On 673nm Laser Power Supply Unit</li>
+<li>Power Switch</li>
+<li>Use the dial to set Laser Power to 6.73</li>
+</ol>
+</li>
+<li>Purge and Fill Sheath Line</li>
+<li>Working on the Air Regulator Knobs on the Right Side of the Instrument </li>
+<li>Use the Sheath Knob on the Right side of the instrument</li>
+</ol></div>
             </div>
         </div>
 
