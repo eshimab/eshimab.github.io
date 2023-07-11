@@ -2,9 +2,9 @@
 
 # Impractical Flow Cytometry
 
-## Instrument Start-up
+# Instrument Start-up
 
-### Power On Instrument and Computers
+## Power On Instrument and Computers
 
 1. Turn on InFlux
 2. Start Dell PC (CytoServer)
@@ -15,9 +15,9 @@
         1. Begin Logging
 4. 
 
-### Fluidics
+# Fluidics
 
-#### Fill Sheath Fluid Canister - *Previous Day*
+## Fill Sheath Fluid Canister - *Previous Day*
 
 1. Measure with Graduated Cylinder 
     1. For BioSure: Mixture is 1/8 BioSure Concentrate and 7/8 MilliQ Water
@@ -28,13 +28,13 @@
     
 
 
-#### Hook-Up Waste Canister
+## Hook-Up Waste Canister
 1. Connect InFlux Waste Lines Intake
 2. Connect Vacuum Pump
 3. Turn on Vacuum Pump (Pump is powered by InFlux Instrument Power)
 
 
-#### Turn On InFlux
+## Turn On InFlux
 1. Turn On Primary Power "Power Strip 1" Computer Table
 2. Turn On Instrument Power using Rocker Switch on Instrument Chassis
       1. Turn On Sort Chamber Illumination Light
@@ -44,7 +44,7 @@
             3. 457 - 457nm *Melles Griot* Laser
             4. 671 - 671nm *Opto Engine* Laser
 
-#### Turn On Lasers using the PSU on the Instrument Chassis
+## Turn On Lasers using the PSU on the Instrument Chassis
 1. Turn On 488nm *Coherent* Laser Power Supply Unit with the following sequence:
       1. Power Switch 
       2. Turn Key
@@ -57,7 +57,7 @@
       1. Power Switch
       2. Use the dial to set Laser Power to **6.73?**
 
-#### Install Nozzle
+## Install Nozzle
 1. Use the Nozzle Lock-Ring to install the Nozzle
 2. Make sure there is an undamaged O-Ring neslted in the Nozzle Lock-Ring orifice
 3. Make sure the Nozzle is not obviously clogged:
@@ -76,7 +76,7 @@
           1. **DO NOT RELY ON THIS VACUUM TO HOLD THE NOZZLE ON ITS OWN**
           2. After Nozzle has been installed, turn off PURGE if used.
 
-#### Hook-Up Sheath Fluid Canister to InFlux
+## Hook-Up Sheath Fluid Canister to InFlux
 1. Connect InFlux Sheath Line (clear)
       1. Install a new 0.2um Sterivex In-line Filter
 2. Connect InFlux Air Line (blue)
