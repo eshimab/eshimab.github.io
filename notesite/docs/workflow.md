@@ -18,9 +18,9 @@ scimain https://github.com/eshimab/eshimab.github.io (fetch)
 scimain https://github.com/eshimab/eshimab.github.io (push)
 ```
 
-## Build site with mkdocs and Add/Commit/Push to Git
+# Build site with mkdocs and Add/Commit/Push to Git
 
-
+## Activate the python3 venv to run mkdocs
 After updating the markdown documents in `scidev/notesite/docs`
 
 ```bash
@@ -33,7 +33,13 @@ mkdocs build # build the site with MkDocs
 rsync --archive --progress --recursive --verbose --delete-after ~/scidev/notesite/site/* ~/scidev/docs
 # Delete the generated site directory
 rm -vR ~/scidev/notesite/site
+# Exit the virtual machine
+deactivate
+```
 
+## Add/Commit/Push Files to Git Repository
+
+```bash
 # Add / Commit / Push got Git
 cd ~/scidev # Move to root dir of the local Git branch
 git status

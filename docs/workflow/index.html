@@ -89,8 +89,16 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#build-site-with-mkdocs-and-addcommitpush-to-git" class="nav-link">Build site with mkdocs and Add/Commit/Push to Git</a>
+            <li class="nav-item" data-level="1"><a href="#build-site-with-mkdocs-and-addcommitpush-to-git" class="nav-link">Build site with mkdocs and Add/Commit/Push to Git</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#activate-the-python3-venv-to-run-mkdocs" class="nav-link">Activate the python3 venv to run mkdocs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#addcommitpush-files-to-git-repository" class="nav-link">Add/Commit/Push Files to Git Repository</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -110,7 +118,8 @@ git remote --verbose
 scimain https://github.com/eshimab/eshimab.github.io (fetch)
 scimain https://github.com/eshimab/eshimab.github.io (push)
 </code></pre>
-<h2 id="build-site-with-mkdocs-and-addcommitpush-to-git">Build site with mkdocs and Add/Commit/Push to Git</h2>
+<h1 id="build-site-with-mkdocs-and-addcommitpush-to-git">Build site with mkdocs and Add/Commit/Push to Git</h1>
+<h2 id="activate-the-python3-venv-to-run-mkdocs">Activate the python3 venv to run mkdocs</h2>
 <p>After updating the markdown documents in <code>scidev/notesite/docs</code></p>
 <pre><code class="language-bash"># Move to the python3 virtual env bin directory to activate the venv
 cd ~/scidev
@@ -121,8 +130,11 @@ mkdocs build # build the site with MkDocs
 rsync --archive --progress --recursive --verbose --delete-after ~/scidev/notesite/site/* ~/scidev/docs
 # Delete the generated site directory
 rm -vR ~/scidev/notesite/site
-
-# Add / Commit / Push got Git
+# Exit the virtual machine
+deactivate
+</code></pre>
+<h2 id="addcommitpush-files-to-git-repository">Add/Commit/Push Files to Git Repository</h2>
+<pre><code class="language-bash"># Add / Commit / Push got Git
 cd ~/scidev # Move to root dir of the local Git branch
 git status
 git remote --verbose # View the Remote Repository URL Aliases

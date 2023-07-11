@@ -236,7 +236,6 @@ git add .git/hooks/post-commit
 ---
 ---
 
-
 ### Adding and updating files and directories to an established git repo
 
 ### Initializing a git repo using a local directory (with a generic, empty repo already on GitHub)

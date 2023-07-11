@@ -17,5 +17,6 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
         about.md # The about file
         shellnotes.md # Or "How to use git"
         vsnotes.md # Tips for VS Code
+        workflow.md # Standard Workflow
 
 ## Ok
