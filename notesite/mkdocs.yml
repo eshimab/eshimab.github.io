@@ -8,7 +8,6 @@ nav:
     - Workflow: workflow.md
 
 plugins:
-  - img2fig:
-      caption_prefix: "Figure"
-      caption_title: "Figures"
-      svg_output: false
+    - search
+    - img2fig
+      
