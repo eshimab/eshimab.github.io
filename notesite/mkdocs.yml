@@ -24,3 +24,5 @@ plugins:
     - search
     - img2fig
 #
+extra:
+  favicon: /img/favicon.ico

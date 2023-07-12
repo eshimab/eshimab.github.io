@@ -62,7 +62,7 @@ rsync --archive --progress --recursive --verbose  ~/Library/Application\ Support
 
 ```bash
 # Set Commit Message Variable
-commit_message="Updates to quickstart.md. vsnotes.md, workflow.md. Added back-Up of vscode's settins.json file to notesite/examples/vscode/settings.json"
+commit_message="Updates to mkdocs.yaml to try to enable new Favicon"
 # Add / Commit / Push got Git
 cd ~/scidev # Move to root dir of the local Git branch
 git status
