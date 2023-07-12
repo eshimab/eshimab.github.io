@@ -65,7 +65,7 @@ rsync --archive --progress --recursive --verbose  ~/Library/Application\ Support
 
 ```bash
 # Set Commit Message Variable
-commit_message="Commit from Local Machine."
+commit_message="Commit from Local Machine. Updates to workflow.md"
 # Add / Commit / Push got Git
 cd ~/scidev # Move to root dir of the local Git branch
 git status
@@ -80,7 +80,7 @@ git add corefile.md # Add Scratch File scidev/scratch.md
 git status
 # Create a Commit on local machine branch
 git commit -m "$commit_message"
-# Push Changes from the local branch main and merge them with the repository alias scimain
+# Push Changes from the Local Branch `main` and merge them with the Remote Repository Alias `scimain`
 git push scimain main
 ```
 
