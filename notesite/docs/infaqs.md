@@ -59,6 +59,11 @@ Section TLDR:
 
 ## Regulator Tower
 
+1. Located on Right of machine
+2. Houses the regulators for controlling the Sample, Sheath, and Sample Boost PSI
+    1.On Right side of Regulator Tower, Three Knobs are available to adjust the Sample, Sheath, and Boost PSI.
+
+
 ## Laser Chamber
 
 1. Shown on the Pinhole Camera
