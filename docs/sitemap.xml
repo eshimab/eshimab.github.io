@@ -16,6 +16,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://example.com/infaqs/</loc>
+         <lastmod>2023-07-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://example.com/osnotes/</loc>
          <lastmod>2023-07-12</lastmod>
          <changefreq>daily</changefreq>
