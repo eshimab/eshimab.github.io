@@ -65,7 +65,7 @@ rsync --archive --progress --recursive --verbose  ~/Library/Application\ Support
 
 ```bash
 # Set Commit Message Variable
-commit_message="Commit from Local Branch main. Corrected Triple-Dash Lines in infaqs.md"
+commit_message="Commit from Local Branch main. Added Empty Lines Above First Line of infaqs.md"
 # Add / Commit / Push got Git
 cd ~/scidev # Move to root dir of the local Git branch
 git status
