@@ -193,7 +193,7 @@ Section TLDR:
     2. Y = Machine Front-Back, with Y Increasing as you approach the Front of the Instrument.
     3. Z = Machine Up-Down, with Z increasing as you approach the top of the Instrument.
 
-# Stream and Optical Stages:
+# Orientation: Stream and Optical Stages:
 
 Section TLDR:
 
