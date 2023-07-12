@@ -46,7 +46,7 @@ git status
 # git add newfile
 #
 # Create a Commit on local branch using the commit_message variable
-git commit -m {$commit_message}
+git commit -m "$commit_message"
 # Push Changes from the local branch main and merge them with the repository alias scimain
 git push scimain main
 

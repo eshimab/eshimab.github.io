@@ -304,6 +304,7 @@ To use your local "scidev" folder to update your GitHub repository named "scidev
 - [ ] Add and commit files:
    - [ ] Add the files you want to include in the commit using `git add`.
    - [ ] Commit the changes using `git commit -m "Initial commit"`.
+
    ```bash
    git add notesite/**
    git commit -m "Initial Commit for directory notesite/**"

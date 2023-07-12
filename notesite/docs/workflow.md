@@ -76,7 +76,82 @@ git commit -m "$commit_message"
 git push scimain main
 ```
 
-Renaming and Syncing a File
+---
+
+## Push Error?
+
+You will get a `git push` error if the Local Branch is behind the Remote GitHub Repository
+Commit Works
+```bash
+dhcp-168-105-223-225:scidev eshim$ git commit -m "$commit_message"
+[main 8ddabfd] Updates to quickstart.md
+ 5 files changed, 512 insertions(+), 74 deletions(-)
+ create mode 100644 notesite/examples/vscode/settings.json
+ create mode 100644 scratch.md
+```
+
+I try to use `git push` to push commits from my local branch `main` to the Github Repository `scimain/main`
+
+### Push Command Error
+
+I use Command `git push scimain main`
+I get an error because `scimain` is ahead of my local `main`
+```bash
+dhcp-168-105-223-225:scidev eshim$ git push scimain main
+To https://github.com/eshimab/eshimab.github.io
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/eshimab/eshimab.github.io'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+dhcp-168-105-223-225:scidev eshim$ 
+```
+
+### Pull Command Error
+
+I try to use `git pull scimain main` To Update my Local Branch `main`
+Returns Error:
+
+```bash
+E325: ATTENTION
+Found a swap file by the name "~/scidev/.git/.MERGE_MSG.swp"
+          owned by: eshim   dated: Mon Jul 10 16:42:19 2023
+         file name: ~eshim/scidev/.git/MERGE_MSG
+          modified: YES
+         user name: eshim   host name: dhcp-168-105-223-225.wireless.manoa.haw
+        process ID: 23271
+While opening file "/Users/eshim/scidev/.git/MERGE_MSG"
+             dated: Tue Jul 11 15:11:08 2023
+      NEWER than swap file!
+
+(1) Another program may be editing the same file.  If this is the case,
+    be careful not to end up with two different instances of the same
+    file when making changes.  Quit, or continue with caution.
+(2) An edit session for this file crashed.
+    If this is the case, use ":recover" or "vim -r /Users/eshim/scidev/.git/MERGE_MSG"
+    to recover the changes (see ":help recovery").
+    If you did this already, delete the swap file "/Users/eshim/scidev/.git/.MERGE_MSG.swp"
+    to avoid this message.
+
+Swap file "~/scidev/.git/.MERGE_MSG.swp" already exists!
+[O]pen Read-Only, (E)dit anyway, (R)ecover, (D)elete it, (Q)uit, (A)bort: 
+```
+
+### Solution Delete Old Vim Temporary Files `.MERGE_MSG.swo` and `.MERGE_MSG.swp`
+
+- The file scidev/.git/.MERGE_MSG.swo appears to be a swap file created by the Vim text editor. Vim uses swap files with the .swo extension to store temporary changes made during editing sessions.
+    - When you see this file in your Git repository, it usually indicates that you had a Vim session open and either closed it abruptly or encountered an issue while editing the .MERGE_MSG file. The swap file is created to allow recovery of unsaved changes in case of unexpected interruptions.
+    - Since this is a temporary file specific to Vim, it is safe to delete it. You can use the following command to remove the swap file:
+    ```bash
+    rm scidev/.git/.MERGE_MSG.swo
+    rm scidev/.git/.MERGE_MSG.swp
+    ```
+
+---
+
+## Renaming and Syncing a File
+
 If we want to change the name of the file `~/scidev/notesite/docs/influx.md` to `~/scidev/notesite/docs/influx.md`
 ```bash
 # Perform Action

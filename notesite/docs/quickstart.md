@@ -147,6 +147,7 @@
       1. Sheath fluid should drip out of the Sample Tube
       2. After 30 sec, if you do not hear the Sheath Fluid being sucked into the drain below the Sample Cradle (which leads to one of the four pink lines on the Waste Connector), check to verify that the drain is not clogged.
       3. See the above if water begins to spill out because you ignored the previously given advice.
+      1. 
 
 
 
