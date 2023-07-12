@@ -65,7 +65,7 @@ rsync --archive --progress --recursive --verbose  ~/Library/Application\ Support
 
 ```bash
 # Set Commit Message Variable
-commit_message="Updates to workflow.md"
+commit_message="Created Directory ~/scidev/notesite/docs/img/git-example/ to store gitExample*.png files used in gitnotes.md"
 # Add / Commit / Push got Git
 cd ~/scidev # Move to root dir of the local Git branch
 git status

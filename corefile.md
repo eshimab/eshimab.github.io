@@ -21,12 +21,12 @@ mkdir -p "$dirpckg"
 Tips:
 1. When doing the BASH variable assignment, the `=` symbol should not have spaces on either side.
 2. (CB) In this code, the directories `direnvs` and `dirmdoc` are created using the `mkdir` command with the `-p` option. The `-p` option ensures that parent directories are created if they don't already exist. The variable values are correctly concatenated using the `${variable}` syntax.
-3. Pick up the command line tool `tree` to visualize the directory structure: 
-		```bash
-			# Get the program homebrew
-			/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-			# Use homebrew to install tree
-			brew install tree
+3. Pick up the command line tool `tree` to visualize the directory structure: 		
+    ```bash
+		# Get the program homebrew
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+		# Use homebrew to install tree
+		brew install tree
 		```
  		
 

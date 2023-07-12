@@ -341,5 +341,6 @@
     "workbench.iconTheme": "file-icons",
     "workbench.editorAssociations": {
         "*.pdf": "pdf.preview"
-    } // END workbench.editorAssociations
+    },
+    "explorer.confirmDragAndDrop": false // END workbench.editorAssociations
 } // END FILE

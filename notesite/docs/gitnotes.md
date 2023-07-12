@@ -1,26 +1,6 @@
 
 
 
-### Terminal
-
-#### Use `ls -a` to see hidden folder and files that start with `.` 
-
-```bash
-# Short-form
-ls -a
-# Combine with -l
-ls -al
-```
-
-Yes, the long form of the -a option in the ls command is --all. Both -a and --all have the same functionality of showing all files, including hidden ones.
-
-Need to add `code`
-```bash
-nano ~/.bash_profile
-```
-
----
----
 
 # Git
 
@@ -33,10 +13,11 @@ nano ~/.bash_profile
   - Branches
     - `main`
 
-![GitHub Website Before Commit](../img/gitExample-precommit-githubScidevDirectory.png)
+![GitHub Website Before Commit](/img/git-example/gitExample-precommit-githubScidevDirectory.png)
+
 
 #### Local Git Branch `main`
-![GitHub Local Directory Before Commit](../img/gitExample-precommit-localScidevDirectory.png)
+![GitHub Local Directory Before Commit](/img/git-example/gitExample-precommit-localScidevDirectory.png)
 
 See that the `assets` dir is located in the local `scidev`
 ```bash
@@ -72,14 +53,14 @@ git status
 ```
 See Output:
 
-![Git Status After Adding assets/files and envsdir/mdocs/bin](../img/gitExample-gitAddAndStatus.png)
+![Git Status After Adding assets/files and envsdir/mdocs/bin](/img/git-example/gitExample-gitAddAndStatus.png)
 
 **Example Repeat**: add `scidev/notesite/img/*` (start in `~/scidev`)
 ```bash
 cd ~/scidev
 git add notesite/img
 ```
-![Git Status After Adding notesite/img/*](../img/gitExample-gitAddAndStatusSecond.png)
+![Git Status After Adding notesite/img/*](/img/git-example/gitExample-gitAddAndStatusSecond.png)
 
 ##### Git Commit vs Push
 
@@ -105,11 +86,11 @@ Commit the directory changes and add a Commit Message using the `-m` flag
 git commit -m "Added directories scidev/bin scidev/assets/files scidev/notesite/img"
 ```
 See Output:
-![Git Commit Command Output](../img/gitExample-gitCommitCommand.png)
+![Git Commit Command Output](/img/git-example/gitExample-gitCommitCommand.png)
 
 But we still have changes on files that were not added. This message was shown in `git status`
 
-![Untracked Files in Git Status](../img/gitExample-gitStatusHasUntracked.png)
+![Untracked Files in Git Status](/img/git-example/gitExample-gitStatusHasUntracked.png)
 
 So we need to add these files with `git add`
 ```bash
@@ -121,7 +102,7 @@ git add mdocs/pyvenv.cfg
 ```
 See `git status` output
 
-![New Git Status](../img/gitExample-gitStatusFinal.png)
+![New Git Status](/img/git-example/gitExample-gitStatusFinal.png)
 
 Now do another commit to `github.io/eshimab/scidev/main`
 ```bash
@@ -129,7 +110,7 @@ git commit -m "Updated notesite, added envsdir/mdoc/pyenvs.cfg, updated .gitigno
 ```
 See Output
 
-![Final Commit Example](../img/gitExample-gitStatusFinal.png)
+![Final Commit Example](/img/git-example/gitExample-gitStatusFinal.png)
 
 ### Managing GitHub Repository Url Aliases with `git remote`
 
@@ -144,7 +125,7 @@ List the available Repository URL Aliases using `git remote` without any additio
 git remote --verbose
 ```
 Output:
-![Git Remote Repository Aliases](../img/gitExample-gitRemote-createNewRepoAlias.png)
+![Git Remote Repository Aliases](/img/git-example/gitExample-gitRemote-createNewRepoAlias.png)
 
 Now we can remove the old alias `origin` because it points to the same GitHub Repository URL as the new created alias `scimain`
    - Deleting the origin alias will not affect your connection to the remote repository as long as you have another valid remote alias configured.
@@ -155,7 +136,7 @@ git remote remove origin
 git remote --verbose
 ```
 Output:
-![After Deleting the old `origin` repository url alias](../img/gitExample-gitRemote-deleteOldRepoAlias.png)
+![After Deleting the old `origin` repository url alias](/img/git-example/gitExample-gitRemote-deleteOldRepoAlias.png)
 
 ### Pushing Files with `git push`
 
@@ -169,11 +150,11 @@ git push scimain main
 ```
 See output for checking the `git remote` alias name with the `--verbose` flag, then running the `git push` command, sending commits in the local branch `main` to the repository linked in the alias `scimain`.
 
-![Local Command Output After git push](../img/gitExample-gitPush-localScimainToRepoScidev.png)
+![Local Command Output After git push](/img/git-example/gitExample-gitPush-localScimainToRepoScidev.png)
 
 And the GitHub webpage for `scidev/main` has been updated via the local machine `push`
 
-![Github Webpage Updated](../img/gitExample-gitWebsiteUpdated.png)
+![Github Webpage Updated](/img/git-example/gitExample-gitWebsiteUpdated.png)
 
 ## Summarizing Git Add/Commit/Push to Repository
 
