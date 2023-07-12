@@ -179,7 +179,7 @@ rsync --archive --progress --recursive --verbose  ~/Library/Application\ Support
 </code></pre>
 <h2 id="use-git-to-addcommit-to-local-branch-and-push-to-remote-branch">Use Git to Add/Commit To Local Branch and Push to Remote Branch<a class="headerlink" href="#use-git-to-addcommit-to-local-branch-and-push-to-remote-branch" title="Permanent link">&para;</a></h2>
 <pre><code class="language-bash"># Set Commit Message Variable
-commit_message=&quot;From localhost. On new Branch indocs&quot;
+commit_message=&quot;From localhost/indocs. Updates to quickstart.md and infaqs.md&quot;
 # Add / Commit / Push got Git
 cd ~/scidev # Move to root dir of the local Git branch
 git status
@@ -197,6 +197,7 @@ git commit -m &quot;$commit_message&quot;
 git push scimain main
 </code></pre>
 <h2 id="new-branch">New Branch<a class="headerlink" href="#new-branch" title="Permanent link">&para;</a></h2>
+<p>Checkout/Create a new branch <code>indocs</code> using <code>git checkout</code> with the <code>-b</code> flag. The new branch <code>indocs</code> is based on the <code>main</code> branch in the remote repository <code>scimain</code>.</p>
 <pre><code class="language-bash">git checkout -b indocs scimain/main
 </code></pre>
 <hr />

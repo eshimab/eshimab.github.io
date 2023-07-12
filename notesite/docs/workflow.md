@@ -66,7 +66,7 @@ rsync --archive --progress --recursive --verbose  ~/Library/Application\ Support
 
 ```bash
 # Set Commit Message Variable
-commit_message="From localhost. On new Branch indocs"
+commit_message="From localhost/indocs. Updates to quickstart.md and infaqs.md"
 # Add / Commit / Push got Git
 cd ~/scidev # Move to root dir of the local Git branch
 git status
@@ -85,6 +85,8 @@ git push scimain main
 ```
 
 ## New Branch
+
+Checkout/Create a new branch `indocs` using `git checkout` with the `-b` flag. The new branch `indocs` is based on the `main` branch in the remote repository `scimain`.
 
 ```bash
 git checkout -b indocs scimain/main
