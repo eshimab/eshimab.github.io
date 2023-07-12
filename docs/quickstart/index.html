@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://example.com/quickstart/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>InFlux QS - Super Fun Digressions</title>
+        <title>influx - Super Fun Digressions</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -34,22 +34,22 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href=".." class="nav-link">Home</a>
+                                <a href="../about/" class="nav-link">about</a>
+                            </li>
+                            <li class="navitem">
+                                <a href=".." class="nav-link">index</a>
                             </li>
                             <li class="navitem active">
-                                <a href="./" class="nav-link">InFlux QS</a>
+                                <a href="./" class="nav-link">influx</a>
                             </li>
                             <li class="navitem">
-                                <a href="../about/" class="nav-link">About</a>
+                                <a href="../gitnotes/" class="nav-link">gitnotes</a>
                             </li>
                             <li class="navitem">
-                                <a href="../vsnotes/" class="nav-link">vscode</a>
+                                <a href="../workflow/" class="nav-link">workflow</a>
                             </li>
                             <li class="navitem">
-                                <a href="../shellnotes/" class="nav-link">Github Setup</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../workflow/" class="nav-link">Workflow</a>
+                                <a href="../vsnotes/" class="nav-link">vsnotes</a>
                             </li>
                         </ul>
 
@@ -65,7 +65,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../about/" class="nav-link">
+                                <a rel="next" href="../gitnotes/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -103,6 +103,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#check-the-cameras-using-the-marshall-monitor" class="nav-link">Check the Cameras using the Marshall Monitor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#turn-on-lasers-using-the-psu-on-the-instrument-chassis" class="nav-link">Turn On Lasers using the PSU on the Instrument Chassis</a>
               <ul class="nav flex-column">
               </ul>
@@ -132,11 +136,36 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#purge-nozzle-and-nozzle-assembly" class="nav-link">Purge Nozzle and Nozzle Assembly</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#coarse-alignment" class="nav-link">Coarse Alignment</a>
+            <li class="nav-item" data-level="1"><a href="#instrument-orientation" class="nav-link">Instrument Orientation</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#stage-directions" class="nav-link">Stage Directions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#stream-and-optical-stages" class="nav-link">Stream and Optical Stages:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#stream-stages" class="nav-link">Stream Stages</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#fsc-stage" class="nav-link">FSC Stage</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#laser-stages-silver-and-color-coded-knobs-on-top-left-side-of-instrument" class="nav-link">Laser Stages (Silver and Color-Coded Knobs) on Top Left Side of Instrument</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -152,22 +181,39 @@
 <li>Turn On Primary Power "Power Strip 1" Computer Table</li>
 <li>Turn On Instrument Power using Rocker Switch on Instrument Chassis<ol>
 <li>Turn On Sort Chamber Illumination Light</li>
-<li>Turn On Power for the Vacuum Pump and Lasers using the Rocker Switches on the <em>E 107</em> Unit. The Switches are numbered:
-        1. <strong>1</strong> VAC - Vacuum Pump
-        2. <strong>2</strong> 488 - 488nm <em>Coherent</em> Laser
-        3. <strong>3</strong> 457 - 457nm <em>Melles Griot</em> Laser
-        4. <strong>4</strong> 671 - 671nm <em>Opto Engine</em> Laser</li>
+<li>Turn On Power for the Vacuum Pump and Lasers using the Rocker Switches on the <em>E 107</em> Unit. The Switches are numbered:<ol>
+<li><strong>1</strong> VAC - Vacuum Pump</li>
+<li><strong>2</strong> 488 - 488nm <em>Coherent</em> Laser</li>
+<li><strong>3</strong> 457 - 457nm <em>Melles Griot</em> Laser</li>
+<li><strong>4</strong> 671 - 671nm <em>Opto Engine</em> Laser</li>
+</ol>
+</li>
 </ol>
 </li>
 <li>Turn On Tektronix TDS 2014C Oscilliscope using the Power Switch on the Top Left Corner</li>
-<li>Check the Cameras using the Marshall Monitor<ol>
-<li>Left Monitor VIDEO 1 - Pinhole Camera of the Stream and the Laser Pinholes</li>
-<li>Center Monitor VIDEO 1 - FSC Pinhole Camera (located on the FSC optical path)</li>
-<li>Center Monitor VIDEO 2 - Drop Camera (For finding Break-off Point for Flow Sorting)
-        1. The Drop Camera is moved with the Drop Camera Z Knob located near the Sheath Valve on the top of the Instrument
-        2. If this Camera seems dark, be sure that the Drop Camera Mirror is installed outside the Laser Chamber with the Flat Side facing towards the corner between the FSC and Side/Fluorescence lenses. There is an opening in the wall of the Laser Chamber, allowing light from the Drop Camera Mirror to illuminate the stream viewed by the Drop Camera.</li>
-<li>Right Monitor VIDEO 1 - Stream Camera (Shows Sort Chamber for Sorting and Coarse Alignment)
-        1. If this Camera is dark, make sure to activate the yellow ILLUM Button located on the Front Right side of the Instrument Chassis </li>
+</ol>
+<h2 id="check-the-cameras-using-the-marshall-monitor">Check the Cameras using the Marshall Monitor<a class="headerlink" href="#check-the-cameras-using-the-marshall-monitor" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Toggle Between the VIDEO 1 and VIDEO 2 Sources for each Monitor using the Silver Switch at the Upper Right Corner of the Monitor</li>
+<li>Left Monitor "PIN HOLE"<ol>
+<li>VIDEO 1 - Pinhole Camera of the Stream and the Laser Pinholes</li>
+<li>VIDEO 2 - None</li>
+</ol>
+</li>
+<li>Center Monitor  "DROP"<ol>
+<li>VIDEO 1 - FSC Pinhole Camera (located on the FSC optical path)</li>
+<li>VIDEO 2 - Drop Camera (For finding Break-off Point for Flow Sorting)<ol>
+<li>The Drop Camera is moved with the Drop Camera Z Knob located near the Sheath Valve on the top of the Instrument</li>
+<li>If the Drop Camera seems dark, be sure that the Drop Camera Mirror is installed outside the Laser Chamber with the Flat Side facing towards the corner between the FSC and Side/Fluorescence lenses. There is an opening in the wall of the Laser Chamber, allowing light from the Drop Camera Mirror to illuminate the stream viewed by the Drop Camera.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Right Monitor "STREAM"<ol>
+<li>VIDEO 1 - Stream Camera (Shows Sort Chamber for Sorting and Coarse Alignment)<ol>
+<li>If this Camera is dark, make sure to activate the yellow ILLUM Button located on the Front Right side of the Instrument Chassis </li>
+</ol>
+</li>
 </ol>
 </li>
 </ol>
@@ -235,14 +281,18 @@
 <li>Make sure the Nozzle is not obviously clogged:<ol>
 <li>Use a 60ml Syringe filled with MilliQ water and fitted with an Acrodisc 0.2um Syringe Filter</li>
 <li>Place the Nozzle so that the wider end is around the outflow of the Acrodisc filter, and press lightly on the Syringe.</li>
-<li>Water should be ejected from the Nozzle Tip in a straight stream.
-        1. If you cannot get a clear stream, try multiple light pressses on the Syringe plunger
-        2. If the Stream comes out at an angle, attempt this flushing by reversing the Nozzle so that the tip is fitted into the outflow of the Acrodisc Filter. <strong>BE CAREFULE</strong>
-        3. If Flushing in reverse does not work, Sonicate the Nozzle.
-              1. Place the nozzle in a plastic lid (see example) to protect it from the bare metal of the sonicator
-              2. Sonicate in MilliQ water for 15 minutes
-              3. Attempt Syringe purges again
-        4. If still clogged, soak Nozzle in 70% Ethanol for 30 minutes and repeat flushes and sonication</li>
+<li>Water should be ejected from the Nozzle Tip in a straight stream.<ol>
+<li>If you cannot get a clear stream, try multiple light pressses on the Syringe plunger</li>
+<li>If the Stream comes out at an angle, attempt this flushing by reversing the Nozzle so that the tip is fitted into the outflow of the Acrodisc Filter. <strong>BE CAREFULE</strong></li>
+<li>If Flushing in reverse does not work, Sonicate the Nozzle.<ol>
+<li>Place the nozzle in a plastic lid (see example) to protect it from the bare metal of the sonicator</li>
+<li>Sonicate in MilliQ water for 15 minutes</li>
+<li>Attempt Syringe purges again</li>
+<li>If still clogged, soak Nozzle in 70% Ethanol for 30 minutes and repeat flushes and sonication</li>
+</ol>
+</li>
+</ol>
+</li>
 </ol>
 </li>
 <li>Place Nozzle inside Nozzle Lock-Ring and install on Nozzle Assembly<ol>
@@ -265,17 +315,20 @@
 <li><em>Optional</em> Filter Sheath Fluid<ol>
 <li>Disconnect 0.2um Sterivex In-line Filter at the outlet leading to the InFlux</li>
 <li>Get a clean Sheath Fluid Cannister</li>
-<li>Connect Sheath Fluid Cannister Fluid Intake Adapter filter Sheath Fluid from the original cannister to the clean one using the 0.2um Sterivex
-        1. Loosen Pressure Valve on New Sheath Cannister</li>
+<li>Connect Sheath Fluid Cannister Fluid Intake Adapter filter Sheath Fluid from the original cannister to the clean one using the 0.2um Sterivex<ol>
+<li>Loosen Pressure Valve on New Sheath Cannister</li>
+</ol>
+</li>
 </ol>
 </li>
 <li>Purge and Fill Sheath Line<ol>
 <li>Working on the Air Regulator Knobs on the Right Side of the Instrument </li>
 <li>Use the Sheath Knob on the Right side of the instrument to set the Sheath PSI to 10.0</li>
-<li>Slowly tighten the Pressure Release valve on the Sheath Fluid Cannister
-        1. You may need to wiggle the lid of the cannister to get the O-Ring to settle and seal the container
-        1. This is done to gently fill the 0.2um Sterivex In-line Filter so that it doesn't have air bubbles</li>
-<li>Once Sheath Cannister is pressurized, increase the Sheath PSI to 15.0 using the Knob on the Regulator Tower</li>
+<li>Slowly tighten the Pressure Release valve on the Sheath Fluid Cannister            <ol>
+<li>You may need to wiggle the lid of the cannister to get the O-Ring to settle and seal the container</li>
+<li>This is done to gently fill the 0.2um Sterivex In-line Filter so that it doesn't have air bubbles</li>
+</ol>
+</li>
 <li><em>Optional</em> (If Filtering Sheath Fluid):<ol>
 <li>Filter the Sheath Fluid from the Original Sheath Cannister to the New Sheath Cannister</li>
 <li>Transfer the Sheath Line and Sterivex to the New Sheath Cannister.</li>
@@ -284,24 +337,35 @@
 <li>Connect the 0.2um Sterivex to the Sheath Line leading to the instrument</li>
 </ol>
 </li>
-<li>Press the RINSE button on the Regulator Tower to open the Sheath and Waste valves.
-        1. Stop the Rinse when Sheath Fluid reaches the Y-Connector affixed to the upper right corner of the Nozzle Assembly  </li>
+<li>Once Sheath Cannister is pressurized, increase the Sheath PSI to 15.0 using the Knob on the Regulator Tower</li>
+<li>Press the RINSE button on the Regulator Tower to open the Sheath and Waste valves.<ol>
+<li>Stop the Rinse when Sheath Fluid reaches the Y-Connector affixed to the upper right corner of the Nozzle Assembly  </li>
 </ol>
 </li>
-<li>Purge Nozzle and Nozzle Assembly<ol>
+</ol>
+</li>
+</ol>
+<h2 id="purge-nozzle-and-nozzle-assembly">Purge Nozzle and Nozzle Assembly<a class="headerlink" href="#purge-nozzle-and-nozzle-assembly" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Ensure that Nozzle has been installed (see section <strong>Install Nozzle</strong>)</li>
 <li>Place the Drain below the Nozzle Assembly, the peg on the bottom of the Drain should fit into the hole leading to the Sort Chamber</li>
 <li>Place the glass Spoon on the Drain such that the Nozzle is inside the spoon</li>
-<li>Fill the Spoon with 0.2um filtered Sheath Fluid from the Syringe with the 0.2um Acrodisc Filter
-        1. The Water level should be high enough to immerse the Nozzle Tip, but below the level where it would cover the Nozzle Lock-Ring in fluid</li>
-<li>Press PURGE to open the Waste Valve leading from the Sheath Fluid Y-Connector to the Waste Canister
-                1. This will fill the Nozzle Assembly by drawing water from the Spoon
-                2. Do not let the sheath water level in the Spoon drop below the Nozzle Tip 
-                3. Be sure that the OVERRIDE Button next to the Sample Cradle is <em>not</em> pressed. This Button forces the Sample Valve Open. Normally the Sample Valve only opens if RUN is pressed.
-                3. Continue Purging until Sheath Fluid drawn into the Nozzle Tip and up through the Nozzle Assembly reaches the Y-Connector at the top of the Nozzle Assembly.
-                        1. You should see the air bubble flow out of the Y-Connector and into the Waste Line at the top of the Y-Connector.
-                2. Briefly press the RINSE Button to open the Sheath Valve and Waste Valve to chase bubbles out of the Y-Connector
-                3. Press the PURGE Button to open the Waste Valve and close the Sheath Valve
-                2. Press the PULSE Button on the Regulator Tower   to open and close the Sheath Valve several times in quick succession. Air Bubbles from the Nozzle should be loosened and begin to travel up through the Nozzle Assembly. Continue with PURGE until all bubbles are removed from the Nozzle Assembly.</li>
+<li>Fill the Spoon with 0.2um filtered Sheath Fluid from the Syringe with the 0.2um Acrodisc Filter<ol>
+<li>The Water level should be high enough to immerse the Nozzle Tip, but below the level where it would cover the Nozzle Lock-Ring in fluid</li>
+<li>Press PURGE to open the Waste Valve leading from the Sheath Fluid Y-Connector to the Waste Canister</li>
+</ol>
+</li>
+<li>This will fill the Nozzle Assembly by drawing water from the Spoon<ol>
+<li>Do not let the sheath water level in the Spoon drop below the Nozzle Tip </li>
+<li>Be sure that the OVERRIDE Button next to the Sample Cradle is <em>not</em> pressed. This Button forces the Sample Valve Open. Normally the Sample Valve only opens if RUN is pressed.</li>
+<li>Continue Purging until Sheath Fluid drawn into the Nozzle Tip and up through the Nozzle Assembly reaches the Y-Connector at the top of the Nozzle Assembly.</li>
+<li>You should see the air bubble flow out of the Y-Connector and into the Waste Line at the top of the Y-Connector.</li>
+<li>Briefly press the RINSE Button to open the Sheath Valve and Waste Valve to chase bubbles out of the Y-Connector</li>
+<li>Press the PURGE Button to open the Waste Valve and close the Sheath Valve</li>
+<li>Press the PULSE Button on the Regulator Tower to open and close the Sheath Valve several times in quick succession. <ol>
+<li>Air Bubbles from the Nozzle should be loosened and begin to travel up through the Nozzle Assembly. Continue with PURGE until all bubbles are removed from the Nozzle Assembly.</li>
+</ol>
+</li>
 </ol>
 </li>
 <li>Press the RUN Button on the Regulator Tower to close the Waste Valve and open the Sheath Valve<ol>
@@ -313,11 +377,12 @@
 <li>Sheath fluid should drip out of the Sample Tube</li>
 <li>After 30 sec, if you do not hear the Sheath Fluid being sucked into the drain below the Sample Cradle (which leads to one of the four pink lines on the Waste Connector), check to verify that the drain is not clogged.</li>
 <li>See the above if water begins to spill out because you ignored the previously given advice.</li>
+<li></li>
 </ol>
 </li>
 </ol>
-<h1 id="coarse-alignment">Coarse Alignment<a class="headerlink" href="#coarse-alignment" title="Permanent link">&para;</a></h1>
-<h3 id="instrument-orientation">Instrument Orientation<a class="headerlink" href="#instrument-orientation" title="Permanent link">&para;</a></h3>
+<h1 id="instrument-orientation">Instrument Orientation<a class="headerlink" href="#instrument-orientation" title="Permanent link">&para;</a></h1>
+<h2 id="stage-directions">Stage Directions<a class="headerlink" href="#stage-directions" title="Permanent link">&para;</a></h2>
 <ol>
 <li>The Right and Left sides of the instrument are based on the user facing the instrument from the front, viewing the Sort Chamber</li>
 <li>In XYZ Terms we will use for Alignment Movements<ol>
@@ -327,8 +392,8 @@
 </ol>
 </li>
 </ol>
-<h3 id="component-list">Component List:<a class="headerlink" href="#component-list" title="Permanent link">&para;</a></h3>
-<h4 id="stream-stages">Stream Stages<a class="headerlink" href="#stream-stages" title="Permanent link">&para;</a></h4>
+<h1 id="stream-and-optical-stages">Stream and Optical Stages:<a class="headerlink" href="#stream-and-optical-stages" title="Permanent link">&para;</a></h1>
+<h2 id="stream-stages">Stream Stages<a class="headerlink" href="#stream-stages" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Stream Tilt (Black Knobs)<ol>
 <li>Stream Tilt X - Located immediately below the Sheath Line Y-Connector</li>
@@ -341,7 +406,7 @@
 </ol>
 </li>
 </ol>
-<h4 id="fsc-stage">FSC Stage<a class="headerlink" href="#fsc-stage" title="Permanent link">&para;</a></h4>
+<h2 id="fsc-stage">FSC Stage<a class="headerlink" href="#fsc-stage" title="Permanent link">&para;</a></h2>
 <ol>
 <li>FSC Stage (Silver Knobs)<ol>
 <li>FSC Stage X - located on Right Side of FSC Stage</li>
@@ -350,7 +415,7 @@
 </ol>
 </li>
 </ol>
-<h4 id="laser-stages-silver-and-color-coded-knobs-on-top-left-side-of-instrument">Laser Stages (Silver and Color-Coded Knobs) on Top Left Side of Instrument<a class="headerlink" href="#laser-stages-silver-and-color-coded-knobs-on-top-left-side-of-instrument" title="Permanent link">&para;</a></h4>
+<h2 id="laser-stages-silver-and-color-coded-knobs-on-top-left-side-of-instrument">Laser Stages (Silver and Color-Coded Knobs) on Top Left Side of Instrument<a class="headerlink" href="#laser-stages-silver-and-color-coded-knobs-on-top-left-side-of-instrument" title="Permanent link">&para;</a></h2>
 <ol>
 <li>488nm Laser<ol>
 <li>488 Stage Z - Located at Top of 488 Stage</li>

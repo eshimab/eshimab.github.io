@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://example.com/workflow/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Workflow - Super Fun Digressions</title>
+        <title>workflow - Super Fun Digressions</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -34,22 +34,22 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href=".." class="nav-link">Home</a>
+                                <a href="../about/" class="nav-link">about</a>
                             </li>
                             <li class="navitem">
-                                <a href="../quickstart/" class="nav-link">InFlux QS</a>
+                                <a href=".." class="nav-link">index</a>
                             </li>
                             <li class="navitem">
-                                <a href="../about/" class="nav-link">About</a>
+                                <a href="../quickstart/" class="nav-link">influx</a>
                             </li>
                             <li class="navitem">
-                                <a href="../vsnotes/" class="nav-link">vscode</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../shellnotes/" class="nav-link">Github Setup</a>
+                                <a href="../gitnotes/" class="nav-link">gitnotes</a>
                             </li>
                             <li class="navitem active">
-                                <a href="./" class="nav-link">Workflow</a>
+                                <a href="./" class="nav-link">workflow</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../vsnotes/" class="nav-link">vsnotes</a>
                             </li>
                         </ul>
 
@@ -60,12 +60,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../shellnotes/" class="nav-link">
+                                <a rel="prev" href="../gitnotes/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../vsnotes/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -106,6 +106,14 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#push-error" class="nav-link">Push Error?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#renaming-and-syncing-a-file" class="nav-link">Renaming and Syncing a File</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -137,16 +145,27 @@ cd ~/scidev
 source envsdir/mdocs/bin/activate # activate the python3 venv using command `source`
 cd ~/scidev/notesite # move to the mkdocs root directory
 mkdocs build # build the site with MkDocs
-# Move the mkdocs site to the scidev/docs so that GitHub Pages can find it
-rsync --archive --progress --recursive --verbose --delete-after ~/scidev/notesite/site/* ~/scidev/docs
-# Delete the generated site directory
-rm -vR ~/scidev/notesite/site
 # Exit the virtual machine
 deactivate
 </code></pre>
+<h3 id="file-sync-locally-with-rsync">File Sync Locally with <code>rsync</code><a class="headerlink" href="#file-sync-locally-with-rsync" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Sync Files from <code>~/scidev/notesite/site</code> created by <code>MkDocs</code> in the <code>python3 venv</code> to  <code>~/scidev/notesite/docs</code> which is required for hosting on GitHub Pages<ol>
+<li><code>~/scidev/notesite/site</code> is the HTML Site Created by MkDocs in the python3 venv</li>
+<li>After Syncing from <code>~/scidev/notesite/site</code>, delete that directory because it is redundant.</li>
+</ol>
+</li>
+</ol>
+<pre><code class="language-bash"># Move the mkdocs site to the scidev/docs so that GitHub Pages can find it
+rsync --archive --progress --recursive --verbose --delete-after ~/scidev/notesite/site/* ~/scidev/docs
+# Delete the generated site directory created by `mkdocs build`
+rm -vR ~/scidev/notesite/site
+# Back-Up Examples of local Docs
+rsync --archive --progress --recursive --verbose  ~/Library/Application\ Support/Code/User/settings.json ~/scidev/notesite/examples/vscode/settings.json
+</code></pre>
 <h2 id="addcommitpush-files-to-git-repository">Add/Commit/Push Files to Git Repository<a class="headerlink" href="#addcommitpush-files-to-git-repository" title="Permanent link">&para;</a></h2>
 <pre><code class="language-bash"># Set Commit Message Variable
-commit_message=&quot;Updates to quickstart.md Headings&quot;
+commit_message=&quot;Updates to quickstart.md. vsnotes.md, workflow.md. Added back-Up of vscode's settins.json file to notesite/examples/vscode/settings.json&quot;
 # Add / Commit / Push got Git
 cd ~/scidev # Move to root dir of the local Git branch
 git status
@@ -155,15 +174,97 @@ git remote --verbose # View the Remote Repository URL Aliases
 # Add Changes ie Stage Commits on local machine
 git add docs # this is the HTML site generated by mkdocs
 git add notesite # Because we updated the md files here
-git add mkupdate.sh
+git add mkupdate.sh # Add scidev/mkupdate.sh
+git add scratch.md # Add Scratch File scidev/scratch.md
 git status
 # Create a Commit on local machine branch
 git commit -m &quot;$commit_message&quot;
 # Push Changes from the local branch main and merge them with the repository alias scimain
 git push scimain main
 </code></pre>
-<p>Renaming and Syncing a File
-If we want to change the name of the file <code>~/scidev/notesite/docs/influx.md</code> to <code>~/scidev/notesite/docs/influx.md</code></p>
+<hr />
+<h2 id="push-error">Push Error?<a class="headerlink" href="#push-error" title="Permanent link">&para;</a></h2>
+<p>You will get a <code>git push</code> error if the Local Branch is behind the Remote GitHub Repository
+Commit Works</p>
+<pre><code class="language-bash">dhcp-168-105-223-225:scidev eshim$ git commit -m &quot;$commit_message&quot;
+[main 8ddabfd] Updates to quickstart.md
+ 5 files changed, 512 insertions(+), 74 deletions(-)
+ create mode 100644 notesite/examples/vscode/settings.json
+ create mode 100644 scratch.md
+</code></pre>
+<p>I try to use <code>git push</code> to push commits from my local branch <code>main</code> to the Github Repository <code>scimain/main</code></p>
+<h3 id="push-command-error">Push Command Error<a class="headerlink" href="#push-command-error" title="Permanent link">&para;</a></h3>
+<p>I use Command <code>git push scimain main</code>
+I get an error because <code>scimain</code> is ahead of my local <code>main</code></p>
+<pre><code class="language-bash">dhcp-168-105-223-225:scidev eshim$ git push scimain main
+To https://github.com/eshimab/eshimab.github.io
+ ! [rejected]        main -&gt; main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/eshimab/eshimab.github.io'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+dhcp-168-105-223-225:scidev eshim$ 
+</code></pre>
+<h3 id="pull-command-error">Pull Command Error<a class="headerlink" href="#pull-command-error" title="Permanent link">&para;</a></h3>
+<p>I try to use <code>git pull scimain main</code> To Update my Local Branch <code>main</code>
+Returns Error:</p>
+<pre><code class="language-bash">E325: ATTENTION
+Found a swap file by the name &quot;~/scidev/.git/.MERGE_MSG.swp&quot;
+          owned by: eshim   dated: Mon Jul 10 16:42:19 2023
+         file name: ~eshim/scidev/.git/MERGE_MSG
+          modified: YES
+         user name: eshim   host name: dhcp-168-105-223-225.wireless.manoa.haw
+        process ID: 23271
+While opening file &quot;/Users/eshim/scidev/.git/MERGE_MSG&quot;
+             dated: Tue Jul 11 15:11:08 2023
+      NEWER than swap file!
+
+(1) Another program may be editing the same file.  If this is the case,
+    be careful not to end up with two different instances of the same
+    file when making changes.  Quit, or continue with caution.
+(2) An edit session for this file crashed.
+    If this is the case, use &quot;:recover&quot; or &quot;vim -r /Users/eshim/scidev/.git/MERGE_MSG&quot;
+    to recover the changes (see &quot;:help recovery&quot;).
+    If you did this already, delete the swap file &quot;/Users/eshim/scidev/.git/.MERGE_MSG.swp&quot;
+    to avoid this message.
+
+Swap file &quot;~/scidev/.git/.MERGE_MSG.swp&quot; already exists!
+[O]pen Read-Only, (E)dit anyway, (R)ecover, (D)elete it, (Q)uit, (A)bort: 
+</code></pre>
+<h3 id="solution-delete-old-vim-temporary-files-merge_msgswo-and-merge_msgswp">Solution Delete Old Vim Temporary Files <code>.MERGE_MSG.swo</code> and <code>.MERGE_MSG.swp</code><a class="headerlink" href="#solution-delete-old-vim-temporary-files-merge_msgswo-and-merge_msgswp" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The file scidev/.git/.MERGE_MSG.swo appears to be a swap file created by the Vim text editor. Vim uses swap files with the .swo extension to store temporary changes made during editing sessions.<ul>
+<li>When you see this file in your Git repository, it usually indicates that you had a Vim session open and either closed it abruptly or encountered an issue while editing the .MERGE_MSG file. The swap file is created to allow recovery of unsaved changes in case of unexpected interruptions.</li>
+<li>Since this is a temporary file specific to Vim, it is safe to delete it. You can use the following command to remove the swap file:
+<code>bash
+rm ~/scidev/.git/.MERGE_MSG.swo
+rm ~/scidev/.git/.MERGE_MSG.swp</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="attempt-pull-again-error">Attempt Pull Again: Error<a class="headerlink" href="#attempt-pull-again-error" title="Permanent link">&para;</a></h3>
+<p>I try the <code>git pull scimain main</code> Command and Get Error:</p>
+<pre><code class="language-bash">dhcp-168-105-223-225:scidev eshim$ git pull scimain main
+error: You have not concluded your merge (MERGE_HEAD exists).
+hint: Please, commit your changes before merging.
+fatal: Exiting because of unfinished merge.
+</code></pre>
+<p>I use the code from Section <strong>Add/Commit/Push Files to Git Repository</strong> to Commit Changes to my Local Branch.</p>
+<h3 id="attempt-push-success">Attempt Push: Success<a class="headerlink" href="#attempt-push-success" title="Permanent link">&para;</a></h3>
+<p>Push Succeeded!</p>
+<pre><code class="language-bash">git push scimain main
+</code></pre>
+<h3 id="attempt-pull">Attempt Pull:<a class="headerlink" href="#attempt-pull" title="Permanent link">&para;</a></h3>
+<p>Pull Attempt Succeeds! Local Branch <code>main</code> matches Remote Branch <code>scidev/main</code></p>
+<pre><code class="language-bash">dhcp-168-105-223-225:scidev eshim$ git pull scimain main
+From https://github.com/eshimab/eshimab.github.io
+ * branch            main       -&gt; FETCH_HEAD
+Already up to date.
+</code></pre>
+<hr />
+<h2 id="renaming-and-syncing-a-file">Renaming and Syncing a File<a class="headerlink" href="#renaming-and-syncing-a-file" title="Permanent link">&para;</a></h2>
+<p>If we want to change the name of the file <code>~/scidev/notesite/docs/influx.md</code> to <code>~/scidev/notesite/docs/influx.md</code></p>
 <pre><code class="language-bash"># Perform Action
 # bash command here?
 # Set Commit Message

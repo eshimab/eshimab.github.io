@@ -30,6 +30,7 @@ git pull scimain main
 ## Build site with mkdocs and Add/Commit/Push to Git
 
 ### Activate the python3 venv to run mkdocs
+
 After updating the markdown documents in `scidev/notesite/docs`
 
 ```bash
@@ -44,6 +45,10 @@ deactivate
 
 ### File Sync Locally with `rsync`
 
+1. Sync Files from `~/scidev/notesite/site` created by `MkDocs` in the `python3 venv` to  `~/scidev/notesite/docs` which is required for hosting on GitHub Pages
+    1. `~/scidev/notesite/site` is the HTML Site Created by MkDocs in the python3 venv
+    2. After Syncing from `~/scidev/notesite/site`, delete that directory because it is redundant.
+
 ```bash
 # Move the mkdocs site to the scidev/docs so that GitHub Pages can find it
 rsync --archive --progress --recursive --verbose --delete-after ~/scidev/notesite/site/* ~/scidev/docs
@@ -52,7 +57,6 @@ rm -vR ~/scidev/notesite/site
 # Back-Up Examples of local Docs
 rsync --archive --progress --recursive --verbose  ~/Library/Application\ Support/Code/User/settings.json ~/scidev/notesite/examples/vscode/settings.json
 ```
-
 
 ## Add/Commit/Push Files to Git Repository
 
@@ -144,9 +148,41 @@ Swap file "~/scidev/.git/.MERGE_MSG.swp" already exists!
     - When you see this file in your Git repository, it usually indicates that you had a Vim session open and either closed it abruptly or encountered an issue while editing the .MERGE_MSG file. The swap file is created to allow recovery of unsaved changes in case of unexpected interruptions.
     - Since this is a temporary file specific to Vim, it is safe to delete it. You can use the following command to remove the swap file:
     ```bash
-    rm scidev/.git/.MERGE_MSG.swo
-    rm scidev/.git/.MERGE_MSG.swp
+    rm ~/scidev/.git/.MERGE_MSG.swo
+    rm ~/scidev/.git/.MERGE_MSG.swp
     ```
+
+### Attempt Pull Again: Error
+
+I try the `git pull scimain main` Command and Get Error:
+
+```bash
+dhcp-168-105-223-225:scidev eshim$ git pull scimain main
+error: You have not concluded your merge (MERGE_HEAD exists).
+hint: Please, commit your changes before merging.
+fatal: Exiting because of unfinished merge.
+```
+
+I use the code from Section **Add/Commit/Push Files to Git Repository** to Commit Changes to my Local Branch.
+
+### Attempt Push: Success
+
+Push Succeeded!
+
+```bash
+git push scimain main
+```
+
+### Attempt Pull:
+
+Pull Attempt Succeeds! Local Branch `main` matches Remote Branch `scidev/main`
+
+```bash
+dhcp-168-105-223-225:scidev eshim$ git pull scimain main
+From https://github.com/eshimab/eshimab.github.io
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+```
 
 ---
 

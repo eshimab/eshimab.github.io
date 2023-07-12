@@ -11,7 +11,7 @@ nav:
     - about: about.md 
     - index: index.md
     - influx: quickstart.md
-    - gitnotes: shellnotes.md 
+    - gitnotes: gitnotes.md 
     - workflow: workflow.md
     - vsnotes: vsnotes.md
 #

@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://example.com/vsnotes/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>vscode - Super Fun Digressions</title>
+        <title>vsnotes - Super Fun Digressions</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -34,22 +34,22 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href=".." class="nav-link">Home</a>
+                                <a href="../about/" class="nav-link">about</a>
                             </li>
                             <li class="navitem">
-                                <a href="../quickstart/" class="nav-link">InFlux QS</a>
+                                <a href=".." class="nav-link">index</a>
                             </li>
                             <li class="navitem">
-                                <a href="../about/" class="nav-link">About</a>
+                                <a href="../quickstart/" class="nav-link">influx</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../gitnotes/" class="nav-link">gitnotes</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../workflow/" class="nav-link">workflow</a>
                             </li>
                             <li class="navitem active">
-                                <a href="./" class="nav-link">vscode</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../shellnotes/" class="nav-link">Github Setup</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../workflow/" class="nav-link">Workflow</a>
+                                <a href="./" class="nav-link">vsnotes</a>
                             </li>
                         </ul>
 
@@ -60,12 +60,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../about/" class="nav-link">
+                                <a rel="prev" href="../workflow/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../shellnotes/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -89,7 +89,20 @@
             
             <li class="nav-item" data-level="1"><a href="#using-vs-code-for-general-development" class="nav-link">Using VS Code for general development</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#editor-hacks" class="nav-link">Editor Hacks</a>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#editor-settings-in-settingsjson" class="nav-link">Editor Settings in settings.json</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#notes" class="nav-link">Notes:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#show-more-document-tabs-in-the-workbencheditor" class="nav-link">Show more document tabs in the workbench.editor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#set-indentation-defaults" class="nav-link">Set Indentation Defaults</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -105,10 +118,35 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="using-vs-code-for-general-development">Using VS Code for general development<a class="headerlink" href="#using-vs-code-for-general-development" title="Permanent link">&para;</a></h1>
-<h2 id="editor-hacks">Editor Hacks<a class="headerlink" href="#editor-hacks" title="Permanent link">&para;</a></h2>
-<h4 id="show-more-document-tabs-in-the-workbencheditor">Show more document tabs in the workbench.editor<a class="headerlink" href="#show-more-document-tabs-in-the-workbencheditor" title="Permanent link">&para;</a></h4>
+<h1 id="editor-settings-in-settingsjson">Editor Settings in <code>settings.json</code><a class="headerlink" href="#editor-settings-in-settingsjson" title="Permanent link">&para;</a></h1>
+<h2 id="notes">Notes:<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Most CodeBlock examples include a trailing <code>,</code> comma to make it easier to copy-paste these examples into the <code>settings.json</code> file.</li>
+<li>The Basic Structure of the <code>settings.json</code> file is:
+    <code>json
+    {
+      "config.setting.key.property":
+    }</code></li>
+</ol>
+<h2 id="show-more-document-tabs-in-the-workbencheditor">Show more document tabs in the workbench.editor<a class="headerlink" href="#show-more-document-tabs-in-the-workbencheditor" title="Permanent link">&para;</a></h2>
 <pre><code class="language-json">    // Increase  number of tabs visible on an editor window
-    &quot;workbench.editor.tabSizing&quot;: &quot;shrink&quot;
+    &quot;workbench.editor.tabSizing&quot;: &quot;shrink&quot;,
+</code></pre>
+<h2 id="set-indentation-defaults">Set Indentation Defaults<a class="headerlink" href="#set-indentation-defaults" title="Permanent link">&para;</a></h2>
+<pre><code class="language-json">// ------------ Indentation
+// Detect Indentation Based on Filetype
+&quot;editor.detectIndentation&quot;: false,
+// Markdown Extension &quot;Markdown All in One&quot; List Formatting
+&quot;markdown.extension.list.indentationSize&quot;: &quot;inherit&quot;, // Alternate: &quot;adaptive&quot;
+&quot;markdown.extension.list.toggle.candidate-markers&quot;: [
+  &quot;-&quot;,
+  &quot;*&quot;,
+  &quot;+&quot;,
+  &quot;1.&quot;,
+  &quot;01.&quot;, // Added
+  &quot;1)&quot;,
+  &quot;01)&quot; // Added
+],
 </code></pre>
 <h2 id="converting-atom-cofee-script-to-vs-code-javascript">Converting Atom cofee script to VS Code JavaScript<a class="headerlink" href="#converting-atom-cofee-script-to-vs-code-javascript" title="Permanent link">&para;</a></h2>
 <pre><code class="language-coffee"># ------------------ CURSOR TO NEXT CHUNK ----------------------

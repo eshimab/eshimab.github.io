@@ -19,3 +19,5 @@
         shellnotes.md # Or "How to use git"
         vsnotes.md # Tips for VS Code
         workflow.md # Standard Workflow
+        img/
+            favicon.ico # Favicon

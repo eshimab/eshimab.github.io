@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://example.com/gitnotes/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>gitnotes - Super Fun Digressions</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Super Fun Digressions</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../about/" class="nav-link">about</a>
+                            </li>
+                            <li class="navitem">
+                                <a href=".." class="nav-link">index</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../quickstart/" class="nav-link">influx</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">gitnotes</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../workflow/" class="nav-link">workflow</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../vsnotes/" class="nav-link">vsnotes</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../quickstart/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../workflow/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            
+            <li class="nav-item" data-level="2"><a href="#-" class="nav-link">---</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#git" class="nav-link">Git</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#working-with-active-git-repositories" class="nav-link">Working with active git repositories</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#summarizing-git-addcommitpush-to-repository" class="nav-link">Summarizing Git Add/Commit/Push to Repository</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#-_1" class="nav-link">---</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h3 id="terminal">Terminal<a class="headerlink" href="#terminal" title="Permanent link">&para;</a></h3>
+<h4 id="use-ls-a-to-see-hidden-folder-and-files-that-start-with">Use <code>ls -a</code> to see hidden folder and files that start with <code>.</code><a class="headerlink" href="#use-ls-a-to-see-hidden-folder-and-files-that-start-with" title="Permanent link">&para;</a></h4>
+<pre><code class="language-bash"># Short-form
+ls -a
+# Combine with -l
+ls -al
+</code></pre>
+<p>Yes, the long form of the -a option in the ls command is --all. Both -a and --all have the same functionality of showing all files, including hidden ones.</p>
+<p>Need to add <code>code</code></p>
+<pre><code class="language-bash">nano ~/.bash_profile
+</code></pre>
+<h2 id="-">---<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
+<h1 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h1>
+<h2 id="working-with-active-git-repositories">Working with active git repositories<a class="headerlink" href="#working-with-active-git-repositories" title="Permanent link">&para;</a></h2>
+<h3 id="comitting-a-new-local-directory-to-the-github-repository">Comitting a new local directory to the GitHub Repository<a class="headerlink" href="#comitting-a-new-local-directory-to-the-github-repository" title="Permanent link">&para;</a></h3>
+<h4 id="git-repo-info">Git Repo Info<a class="headerlink" href="#git-repo-info" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Github Repository: <code>https://github.com/eshimab/scidev</code></li>
+<li>Branches<ul>
+<li><code>main</code></li>
+</ul>
+</li>
+</ul>
+<figure class="figure-image">
+  <img src="../img/gitExample-precommit-githubScidevDirectory.png" alt="GitHub Website Before Commit">
+  <figcaption>GitHub Website Before Commit</figcaption>
+</figure>
+
+<h4 id="local-git-branch-main">Local Git Branch <code>main</code><a class="headerlink" href="#local-git-branch-main" title="Permanent link">&para;</a></h4>
+<figure class="figure-image">
+  <img src="../img/gitExample-precommit-localScidevDirectory.png" alt="GitHub Local Directory Before Commit">
+  <figcaption>GitHub Local Directory Before Commit</figcaption>
+</figure>
+
+<p>See that the <code>assets</code> dir is located in the local <code>scidev</code></p>
+<pre><code class="language-bash">dhcp-168-105-223-225:scidev eshim$ ls -la
+total 56
+drwxr-xr-x  11 eshim  staff    352 Jul 10 13:11 .
+drwxr-xr-x@ 94 eshim  staff   3008 Jul 10 13:11 ..
+-rw-r--r--@  1 eshim  staff  10244 Jul 10 13:49 .DS_Store
+drwxr-xr-x  17 eshim  staff    544 Jul 10 13:51 .git
+-rw-r--r--   1 eshim  staff    315 Jul  6 23:57 .gitignore
+-rw-r--r--   1 eshim  staff   1062 Jul 10 12:14 LICENSE
+-rw-r--r--   1 eshim  staff     54 Jul 10 12:14 README.md
+drwxr-xr-x   5 eshim  staff    160 Jul  6 16:31 assets
+-rw-r--r--   1 eshim  staff   3713 Jul 10 13:11 corefile.md
+drwxr-xr-x   4 eshim  staff    128 Jul  5 17:33 envsdir
+drwxr-xr-x   6 eshim  staff    192 Jul 10 13:15 notesite
+dhcp-168-105-223-225:scidev eshim$ 
+</code></pre>
+<h5 id="git-add-local-dirs-and-files-to-prepare-for-the-commit"><code>git add</code> local dirs and files to prepare for the commit<a class="headerlink" href="#git-add-local-dirs-and-files-to-prepare-for-the-commit" title="Permanent link">&para;</a></h5>
+<p>We want to <code>git add</code> the directory <code>scidev/assets/files/</code> to our next <code>git commit</code>. 
+Notes
+   - The <code>-r</code> or <code>--recursive</code> flag is not necessary since Git automatically traverses directories recursively when adding files.
+Starting in <code>~/scidev</code> directory</p>
+<pre><code class="language-bash">git add assets/files
+git add envsdir/mdocs/bin
+</code></pre>
+<p>Check <code>git status</code></p>
+<pre><code class="language-bash">git status
+</code></pre>
+<p>See Output:</p>
+<figure class="figure-image">
+  <img src="../img/gitExample-gitAddAndStatus.png" alt="Git Status After Adding assets/files and envsdir/mdocs/bin">
+  <figcaption>Git Status After Adding assets/files and envsdir/mdocs/bin</figcaption>
+</figure>
+
+<p><strong>Example Repeat</strong>: add <code>scidev/notesite/img/*</code> (start in <code>~/scidev</code>)</p>
+<pre><code class="language-bash">cd ~/scidev
+git add notesite/img
+</code></pre>
+<figure class="figure-image">
+  <img src="../img/gitExample-gitAddAndStatusSecond.png" alt="Git Status After Adding notesite/img/*">
+  <figcaption>Git Status After Adding notesite/img/*</figcaption>
+</figure>
+
+<h5 id="git-commit-vs-push">Git Commit vs Push<a class="headerlink" href="#git-commit-vs-push" title="Permanent link">&para;</a></h5>
+<p>In Git, a <code>commit</code> and a <code>push</code> are two separate operations that serve different purposes:</p>
+<ol>
+<li>Git Commit:</li>
+<li>Purpose: Creating a new commit to save your changes locally within your Git repository.</li>
+<li>Usage: The <code>git commit</code> command is used to record your changes and create a new commit in your local repository. It captures the current state of your files, including any modifications, additions, or deletions. Each commit has a unique identifier and contains information such as the author, timestamp, and commit message describing the changes.</li>
+<li>
+<p>Local Operation: When you run <code>git commit</code>, the commit is created only within your local Git repository on your machine. It does not affect the remote repository or other collaborators' copies of the repository.</p>
+</li>
+<li>
+<p>Git Push:</p>
+</li>
+<li>Purpose: Sending your local commits to a remote repository, typically hosted on a platform like GitHub, GitLab, or Bitbucket.</li>
+<li>Usage: The <code>git push</code> command is used to upload your local commits to a remote repository. It transfers your committed changes from your local repository to the corresponding branch in the remote repository. This allows you to share your changes with others, collaborate on the project, and synchronize your work with the remote repository.</li>
+<li>Remote Operation: When you run <code>git push</code>, Git sends your committed changes to the remote repository, updating the branch's commit history and files on the remote server. Other collaborators can then fetch or pull your changes into their own local repositories to incorporate your work.</li>
+</ol>
+<p>In summary, a <code>commit</code> is a local operation that saves your changes within your local repository, while a <code>push</code> is used to send your local commits to a remote repository to share and synchronize your changes with others. Commits are made locally, and pushes are performed to update the remote repository with your local commits.</p>
+<h5 id="create-a-local-git-commit-to-incorporate-the-changes-done-with-git-add-or-changes-to-files-directly-in-scidev-because-we-have-been-editting-the-branch-scidevmain">Create a local <code>git commit</code> to incorporate the changes done with <code>git add</code> or changes to files directly in <code>scidev</code> because we have been editting the branch <code>scidev/main</code><a class="headerlink" href="#create-a-local-git-commit-to-incorporate-the-changes-done-with-git-add-or-changes-to-files-directly-in-scidev-because-we-have-been-editting-the-branch-scidevmain" title="Permanent link">&para;</a></h5>
+<p>Commit the directory changes and add a Commit Message using the <code>-m</code> flag</p>
+<pre><code class="language-bash">git commit -m &quot;Added directories scidev/bin scidev/assets/files scidev/notesite/img&quot;
+</code></pre>
+<p>See Output:</p>
+<figure class="figure-image">
+  <img src="../img/gitExample-gitCommitCommand.png" alt="Git Commit Command Output">
+  <figcaption>Git Commit Command Output</figcaption>
+</figure>
+
+<p>But we still have changes on files that were not added. This message was shown in <code>git status</code></p>
+<figure class="figure-image">
+  <img src="../img/gitExample-gitStatusHasUntracked.png" alt="Untracked Files in Git Status">
+  <figcaption>Untracked Files in Git Status</figcaption>
+</figure>
+
+<p>So we need to add these files with <code>git add</code></p>
+<pre><code class="language-bash"># Go to main branch directory
+cd ~/scidev
+git add .gitignore
+git add notesite
+git add mdocs/pyvenv.cfg
+</code></pre>
+<p>See <code>git status</code> output</p>
+<figure class="figure-image">
+  <img src="../img/gitExample-gitStatusFinal.png" alt="New Git Status">
+  <figcaption>New Git Status</figcaption>
+</figure>
+
+<p>Now do another commit to <code>github.io/eshimab/scidev/main</code></p>
+<pre><code class="language-bash">git commit -m &quot;Updated notesite, added envsdir/mdoc/pyenvs.cfg, updated .gitignore&quot;
+</code></pre>
+<p>See Output</p>
+<figure class="figure-image">
+  <img src="../img/gitExample-gitStatusFinal.png" alt="Final Commit Example">
+  <figcaption>Final Commit Example</figcaption>
+</figure>
+
+<h3 id="managing-github-repository-url-aliases-with-git-remote">Managing GitHub Repository Url Aliases with <code>git remote</code><a class="headerlink" href="#managing-github-repository-url-aliases-with-git-remote" title="Permanent link">&para;</a></h3>
+<p>We can check that the repository url is correct by using the <code>git remote</code> command with the <code>get-url</code> flag for the GitHub repository that we refer to with the local alias <code>origin</code>. You can think of <code>origin</code> as a short-hand for the repository url. The <code>origin</code> alis is created using the <code>git remote</code> command with the <code>add</code> option to define a local repository URL alias we will call <code>scimain</code> from the GitHub Repository </p>
+<pre><code class="language-bash">git remote add scimain https://github.com/eshimab/scidev
+</code></pre>
+<p>List the available Repository URL Aliases using <code>git remote</code> without any additional arguments
+   - Use the <code>--verbose</code> or <code>-v</code> flag to show additional info </p>
+<pre><code class="language-bash">git remote --verbose
+</code></pre>
+<p>Output:</p>
+<figure class="figure-image">
+  <img src="../img/gitExample-gitRemote-createNewRepoAlias.png" alt="Git Remote Repository Aliases">
+  <figcaption>Git Remote Repository Aliases</figcaption>
+</figure>
+
+<p>Now we can remove the old alias <code>origin</code> because it points to the same GitHub Repository URL as the new created alias <code>scimain</code>
+   - Deleting the origin alias will not affect your connection to the remote repository as long as you have another valid remote alias configured.</p>
+<pre><code class="language-bash">git remote remove origin
+## Check for changes
+git remote --verbose
+</code></pre>
+<p>Output:</p>
+<figure class="figure-image">
+  <img src="../img/gitExample-gitRemote-deleteOldRepoAlias.png" alt="After Deleting the old `origin` repository url alias">
+  <figcaption>After Deleting the old `origin` repository url alias</figcaption>
+</figure>
+
+<h3 id="pushing-files-with-git-push">Pushing Files with <code>git push</code><a class="headerlink" href="#pushing-files-with-git-push" title="Permanent link">&para;</a></h3>
+<h5 id="git-push-the-local-git-commit-to-the-github-repobranch-scidevmain"><code>git push</code> the local <code>git commit</code> to the GitHub repo/branch <code>scidev/main</code><a class="headerlink" href="#git-push-the-local-git-commit-to-the-github-repobranch-scidevmain" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Use the GitHub Repository URL alias <code>scimain</code> that points to the full URL <code>https://github.com/eshimab/scidev</code> (check this with <code>git remote --verbose</code>)</li>
+</ul>
+<p>Push the commits done on the local branch <code>main</code> with <code>git push</code> to the GitHub Repository <code>scimain</code> (the alias for <code>http://github.com/eshimab/scidev</code>) </p>
+<pre><code class="language-bash">git push scimain main
+</code></pre>
+<p>See output for checking the <code>git remote</code> alias name with the <code>--verbose</code> flag, then running the <code>git push</code> command, sending commits in the local branch <code>main</code> to the repository linked in the alias <code>scimain</code>.</p>
+<figure class="figure-image">
+  <img src="../img/gitExample-gitPush-localScimainToRepoScidev.png" alt="Local Command Output After git push">
+  <figcaption>Local Command Output After git push</figcaption>
+</figure>
+
+<p>And the GitHub webpage for <code>scidev/main</code> has been updated via the local machine <code>push</code></p>
+<figure class="figure-image">
+  <img src="../img/gitExample-gitWebsiteUpdated.png" alt="Github Webpage Updated">
+  <figcaption>Github Webpage Updated</figcaption>
+</figure>
+
+<h2 id="summarizing-git-addcommitpush-to-repository">Summarizing Git Add/Commit/Push to Repository<a class="headerlink" href="#summarizing-git-addcommitpush-to-repository" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Stage files with <code>git add</code>
+   <code>bash
+   git add *</code></li>
+<li>Preview if desired with <code>git status</code></li>
+<li>Commit Staged files with <code>git commit</code></li>
+<li>Add a commit message with <code>-m "message text"</code>
+      <code>bash
+      git commit -m "updates to notesite"</code></li>
+<li>Push the commit (containing the staged files) to the remote directory using <code>git remote &lt;local-remote-alias&gt; &lt;local-branch-name&gt;</code>
+   <code>bash
+   git push scimain main</code></li>
+<li>You can list the local <code>&lt;local-remote-alias&gt;</code> avilable using <code>git remote --verbose</code>
+      <code>bash
+      dhcp-168-105-223-225:scidev eshim$ git remote --verbose
+      scimain https://github.com/eshimab/scidev (fetch)
+      scimain https://github.com/eshimab/scidev (push)</code> </li>
+<li>For this example, the <code>&lt;local-remote-alias&gt;</code> is <code>scimain</code> and points to <code>https://github.io/eshimab/scidev</code></li>
+<li>
+<p>For this example, the <code>&lt;local-branch-name&gt;</code> is <code>main</code> and is recorded in the Github repo as <code>scidev/main</code> See that we are on branch <code>main</code> using <code>git status</code>
+      ```bash
+      dhcp-168-105-223-225:scidev eshim$ git status
+      On branch main
+      Changes not staged for commit:
+      (use "git add <file>..." to update what will be committed)
+      (use "git checkout -- <file>..." to discard changes in working directory)</p>
+<pre><code>modified:   notesite/docs/shellnotes.md
+</code></pre>
+<p>no changes added to commit (use "git add" and/or "git commit -a")
+  dhcp-168-105-223-225:scidev eshim$ 
+  <code>4. See Output from `git push scimain main`</code>bash
+   dhcp-168-105-223-225:scidev eshim$ git push scimain main
+   Enumerating objects: 15, done.
+   Counting objects: 100% (15/15), done.
+   Delta compression using up to 10 threads
+   Compressing objects: 100% (10/10), done.
+   Writing objects: 100% (10/10), 237.52 KiB | 33.93 MiB/s, done.
+   Total 10 (delta 4), reused 0 (delta 0)
+   remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+   To https://github.com/eshimab/scidev
+  eb213eb..4d8a21e  main -&gt; main
+   dhcp-168-105-223-225:scidev eshim$
+   ```</p>
+<h3 id="more-standard-git-setups">More standard git setups<a class="headerlink" href="#more-standard-git-setups" title="Permanent link">&para;</a></h3>
+<h4 id="adding-git-hooks">Adding git hooks<a class="headerlink" href="#adding-git-hooks" title="Permanent link">&para;</a></h4>
+</li>
+</ol>
+<pre><code class="language-bash">cd ~/scidev
+git add .git/hooks/pre-commit
+git add .git/hooks/post-commit
+</code></pre>
+<h2 id="-_1">---<a class="headerlink" href="#-_1" title="Permanent link">&para;</a></h2>
+<h3 id="adding-and-updating-files-and-directories-to-an-established-git-repo">Adding and updating files and directories to an established git repo<a class="headerlink" href="#adding-and-updating-files-and-directories-to-an-established-git-repo" title="Permanent link">&para;</a></h3>
+<h3 id="initializing-a-git-repo-using-a-local-directory-with-a-generic-empty-repo-already-on-github">Initializing a git repo using a local directory (with a generic, empty repo already on GitHub)<a class="headerlink" href="#initializing-a-git-repo-using-a-local-directory-with-a-generic-empty-repo-already-on-github" title="Permanent link">&para;</a></h3>
+<p>To use your local "scidev" folder to update your GitHub repository named "scidev" while creating a .gitignore file and a pre-commit Git hook to limit staging to files below 1MB, follow these steps:</p>
+<ul>
+<li>[ ]  Create the .gitignore file:</li>
+<li>[ ] Open a text editor and create a file named ".gitignore" in the root directory of your "scidev" folder.</li>
+<li>[ ] Add the necessary patterns to ignore files in the .gitignore file. For example, you can add <code>*.pdf</code> to ignore all PDF files.
+    <code>bash
+    # Ignore directories withim scidev:
+    # The leading / means that these are subdirectories within scidev where the .gitignore file is found
+    # The trailing / means that we are targetting a directory and all it's contents
+    /assets/packages/
+    /envsdir/mdocs/bin/
+    /envsdir/mdocs/lib/
+    # 
+    # Ignore Filetypes
+    *.pdf
+    *.mat</code></li>
+<li>[ ] Create the pre-commit Git hook:</li>
+<li>[ ] Open a text editor and create a file named "pre-commit" (without an extension) in the ".git/hooks" directory of your "scidev" repository.
+    <code>bash
+    touch /Users/eshim/scidev/.git/hooks/pre-commit</code></li>
+<li>
+<p>[ ] Copy and paste the following script into the "pre-commit" file:
+     ```bash
+     #!/bin/bash</p>
+<p>MAX_FILE_SIZE=1048576  # 1MB in bytes</p>
+<p># Get the list of staged files
+ files=$(git diff --cached --name-only)</p>
+<p># Loop through the staged files
+ for file in $files; do
+   # Get the file size in bytes
+   file_size=$(wc -c &lt; "$file")</p>
+<p># Compare file size with the maximum size
+   if [ "$file_size" -gt "$MAX_FILE_SIZE" ]; then
+     # Remove the file from the staging area
+     git reset HEAD "$file"
+     echo "File $file exceeds the maximum file size limit. It has been excluded from the commit."
+   fi
+ done
+ #
+ exit 0
+ <code>- [ ] Save the file and make it executable by running the following command in the terminal:</code>bash
+  chmod +x /Users/eshim/scidev/.git/hooks/pre-commit
+  <code>- [ ] Initialize Git and connect to your GitHub repository:
+   - [ ] Open a terminal or command prompt and navigate to your "scidev" folder.</code>bash
+   cd /Users/eshim/scidev
+   <code>- [ ] Run the following commands:</code>bash
+ git init
+ git remote add origin https://github.com/eshimab/scidev
+ <code>``
+   - [ ] Replace</code><repository-url><code>with the URL of your GitHub repository.
+- [ ] Add and commit files:
+   - [ ] Add the files you want to include in the commit using</code>git add<code>.
+   - [ ] Commit the changes using</code>git commit -m "Initial commit"`.</p>
+</li>
+</ul>
+<p><code>bash
+   git add notesite/**
+   git commit -m "Initial Commit for directory notesite/**"</code> </p>
+<p>With these steps, your local "scidev" folder will be updated with the .gitignore file and the pre-commit Git hook. The pre-commit hook will exclude files above 1MB from being staged in your commits. Remember to customize the MAX_FILE_SIZE variable in the pre-commit script if you want a different maximum file size limit.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
