@@ -15,7 +15,9 @@ Misadventures, documented.
     docs/
         index.md  # The documentation homepage.
         about.md # The about file
-        shellnotes.md # Or "How to use git"
+        gitnotes.md # Or "How to use GitHub"
+        quickstart.md # InFlux Quick-Start
+        infaqs.md # InFlux Instrument Details
         vsnotes.md # Tips for VS Code
         workflow.md # Standard Workflow
         img/
