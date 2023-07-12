@@ -57,7 +57,7 @@ You may need to remove the old version of Homebrew, which was originally stored 
 
 ```
 
-### Install Homebrew
+## Install Homebrew
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

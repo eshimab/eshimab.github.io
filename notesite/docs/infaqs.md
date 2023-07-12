@@ -69,7 +69,7 @@ Section TLDR:
 1. Where the Lasers pass through the Sample Stream.
 2. Laser Chamber Components
     1. Left: Laser Ingress
-        1. Lasers enter the chamber after being directed using the Laser Stages (top of instrument, to left of Laser Chamber)
+        1. Lasers enter the chamber from the Laser Intake Paths, after being directed using the Laser Stages (top of instrument, to left of Laser Chamber)
     2. Rear: Side-Scatter (SSC) and Fluorescence detector lens
         1. This lens is fixed and cannot be moved with a Stage.
     3. Right: Forward Scatter (FSC) Detector Lens
@@ -77,31 +77,48 @@ Section TLDR:
     4. Rear/Right Corner (between SSC and FSC lens): Cut-out for Drop Camera Mirror
     5. Front/Left Outside Laser Chamber: Drop Camera Mirror
         1.The Mirror has a peg on the bottom that fits into a slot outside the left edge of the Laser Chamber Door
-        2. The Mirror should have the flat side angled towards the Drop Camera Cut-out
-    5. Front: Laser Chamber Door
+        1. The Mirror should have the flat side angled towards the Drop Camera Cut-out
+    6. Front: Laser Chamber Door
         1. There is a magnet switch that automatically closes the electric shutters on the Laser Shutters (at instrument far left)
         2. After opening the door (therefore closing the Electric Shutters), close the Laser Chamber Door, and place a finger over the Finger Switch (upper right corner of track where the Laser Chamber Door slides) to open the Electrix Shutters. 
         3. Note: The Electric Shutters can be forced open by closing and opening the Physical Laser Shutter Stops using the handles on Instrument Left Side.
         4. Further Note: The Electric Shutters for the 488nm and 457nm lasers have been **removed** because the Electroc Shutters were sticking and not re-opening when the Finger Switch was activated. The 488 and 457 lasers can only be shuttered using rhe Physical Laser Shutters.
-    6. Ok
-2. Shown on the Pinhole Camera
+    7. Bottom of Chamber below Nozzle Assembly: Port where the Stream enters the Sort Chamber below.
+        1. During alignment, the combination of the Stream Stage and Stream Tilt may lead to the Stream not being centered in the port. That is okay.
+    8. (*Optionla*) Top: Laser Chamber Cover
+        1. For sensitive sorting, or if using UV Lasers
+3. Shown on the Pinhole Camera
     1. The 5 Pinholes go to the fluorescence detector paths for each laser.
     2. The Pinhole Camera Image is vertically inverted on the Monitor. The top pinhole on the Monitor (for the 488nm Laser) is actually the bottom pinhole on the instrument.
     3. From Top to Bottom as shown on the *Monitor* image:
-        1.Top: 488nm
+        1. Top: 488nm
         2. Empty
         3. Middle: 457nm
         4. Empty
         5. Bottom: 671nm
-2. Where the Lasers pass through the Sample Stream.
-3. At the bottom of Laser Chamber is the port where the Stream enters the Sort Chamber below.
-    1. During alignment, the combination of the Stream Stage and Stream Tilt may lead to the Stream not being centered in the port. That is okay.
-2. The Sort Chamber 
+4. 
 
 ## Sort Chamber
 
-1. Shown on the Stream Camera
-2. 
+1. Where Cell Sorting occurs
+2. Sort Chamber Components
+    1. Waste Pipe
+        1. Where unsorted drops and sample stream are directed. 
+        2. Waste Pipe is plumbed via tubing at the Bottom/Rear (outsiode) the back of the Sort Chamber. The Tubing goes to the 4-barb Waste Tank Fitting.
+    2. Sample Tray
+        1. Supports the 
+    3. Sort Chamber Door
+        1. Can be held open using the handle on Left Edge of Sort Chamber Door
+    4. Electric Plates
+        1. Used to Deflect Drops when Sorting
+        2. Acivated using the PLATES Button on the Sort Chamber Control Panel, located on Instrument Chassis
+    5. Sort Chamber Camera "STREAM"
+        1. For Positioning Stream over Waste Pipe and for optimizing Sorting
+    6. Sort Chamber ILLUM Laser
+        1. Laser shines from Left to Right in the Sort Chamber and illuminates the Stream and the Sorting Side-Streams when the Drop Drive is active and the Electric Plates are On.
+        2. Turned on using the ILLUM Button on the Sort Chamber Control Pannel on Instrument Chassis
+        3. Sort Chamber ILLUM Laser is Enabled if the Magnetic Switch (Outside Chamber, Top Right Corner of Sort Chamber Door) is triggered.
+            1. We have removed the Magnetic Switch from the Sort Chamber Door and use a loose Magnet to keep the Magnetic Switch activated, when when the Sort Chamber Door is Open.
 
 ## Laser Intake Paths
 

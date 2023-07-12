@@ -127,7 +127,7 @@ Section TLDR:
 ## Hook-Up Sheath Fluid Canister to InFlux
 
 1. Connect InFlux Sheath Line (clear)
-    1. Install a new 0.2um Sterivex In-line Filter
+    1. Install a new 0.2um Sterivex In-line Filter  
 2. Connect InFlux Air Line (blue)
 3. *Loosen* Pressure Valve
 4. *Optional* Filter Sheath Fluid
@@ -176,6 +176,8 @@ Section TLDR:
     2. After 30 sec, if you do not hear the Sheath Fluid being sucked into the drain below the Sample Cradle (which leads to one of the four pink lines on the Waste Connector), check to verify that the drain is not clogged.
     3. See the above if water begins to spill out because you ignored the previously given advice.
 8. Check Warning Lights below SAMPLE Button next to Sample Cradle.
+
+---
 
 # Coarse Alignment
 
