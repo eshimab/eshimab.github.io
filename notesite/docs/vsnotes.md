@@ -27,6 +27,7 @@
 ```
 
 ## Set Indentation Defaults
+
 ```json
 // ------------ Indentation
 // Detect Indentation Based on Filetype

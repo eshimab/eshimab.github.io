@@ -186,15 +186,35 @@ Section TLDR:
 1. Open Laser Chamber Door
 2. Ensure that the Sort Chamber Light is on by pressing ILLUM Button on Instrument Chassis Front.
 2. Center Stream over Waste Tube (Stream Camera, Left Monitor, Video 1) using Stream Tilt X and Stream Tilt Z Knobs.
-2. Focus Stream using Pinhole Camera.
-3. Move Nozzle Tip to “Just Off Screen” on Pinhole Camera
-
-
-## Nozzle Height via Drop Camera
+3. Set Nozzle Height via Pinhole and Drop Cameras
+    1. VIDEO to Channel 1 on the Left Monitor "PINHOLE"
+4. Move Nozzle Tip up to “Just Off Screen” of Pinhole Camera Monitor
+5. Set VIDEO to Channel 2 on the Center Monitor "DROP" to view the Drop Camera
+6. Move the Drop Camera Up using the Drop Camera Knob at Top of Instrument (to the Left of the Sheath and Waste Valves)
+    1. The Nozzle should be visible when the Drop Camera Readout (Below the Sheath Valve Control Buttons PULSE/PURGE/RINSE/RUN) is less than 40.
+    2. Move the Nozzle Tip using the Stream Stage Z Knob so that the Nozzle Tip is at the `<` symbol drawn on the Second Monitor. The Drop Camera Readout should be 38-41. 
+7. Bring the Sort Stream into focus on the Pinhole Camera.
+    1. The Stream should look fairly straight and have well defined sides once it is brought into focus
+    2. If there are visible twists in the Stream, remove the Nozzle and attempt to Flush it as described earlier.
 
 ## *If Sorting* Sort Drop Deflection via Sort Stream Camera 
 
+1. You will need to start the BD Sortware Software on the HP PC to access the Drop Drive Settings
+
+## Placing Sample Tubes in the Sample Cradle
+
+1. Ensure Sample Line is purged of air by pressing the BACKFLUSH Button (Next to Sample Cradle) and letting Sheath Fluid drip out the line
+3. Place tube on Sample Cradle
+    1. Install the tube by raising it upward around the Sample Line until the tube rim meets the Rubber Sample Cradle Nozzle. Do not manually press the Sample Tube onto the Rubber Nozzle
+    2. Holding the Tube up against the Rubber Nozzle, use the Handle to swing the Sample Cradle Base clockwise to lock the Sample Tube in Place.
+    3. By using the Sample Cradle Base, the tube will be gently and evenly pushed snug agains the Rubber Nozzle.
+        1. Note: When Removing Sample Tubes that have become pressurized, very slowly turn the Sample Cradle Base Handle CCW to gently release the pressure. That will prevent Sample Fluid from being ejected out of the Sample Tube.
+
 ## Laser Alignment with Beer and Pinhole Camera
+
+1. Open the Physical Laser Shutters by pulling the Hanldes (Left side of Instrument) out so that the red tape on the handle is visible outside the instrument panel.
+2. Close the Laser Chamber Door and activate the Finger Switch to open Electronic Shutters (if using the 671 or new lasers)
+3. 
 
 ## Iterate Coarse Alignment
 
@@ -204,9 +224,18 @@ Section TLDR:
 
 ## Set Sortware Workspace
 
+1. In Sortware, go to File > Open Workspace
+    1. 
+
 ## Run QC Bead Sample
 
+1. Create a dilution of 1.0um Ultra Rainbow Fluorescent Beads (*Spherotech*) by dropping 2-3 drops of Bead Concentrate into 2ml 0.2um Filtered MilliQ Water (from a syringe).
+
 ## Align 488 Laser
+
+1. The 488nm Laser is the Primary laser for this Instrument. It is the only laser that passes through the filters on the FSC Detector Path and thus can be used for FSC measurements.
+2. We will align the 488nm Laser to the Fluorescence Channels first because the SSC/Fluoresence Detector Lens is fixed, whereas the FSC Detector Lens can be moved with it's own stage.
+3. 
 
 ## Align 457 Laser
 

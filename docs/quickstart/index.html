@@ -152,11 +152,11 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#nozzle-height-via-drop-camera" class="nav-link">Nozzle Height via Drop Camera</a>
+            <li class="nav-item" data-level="2"><a href="#if-sorting-sort-drop-deflection-via-sort-stream-camera" class="nav-link">If Sorting Sort Drop Deflection via Sort Stream Camera</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#if-sorting-sort-drop-deflection-via-sort-stream-camera" class="nav-link">If Sorting Sort Drop Deflection via Sort Stream Camera</a>
+            <li class="nav-item" data-level="2"><a href="#placing-sample-tubes-in-the-sample-cradle" class="nav-link">Placing Sample Tubes in the Sample Cradle</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -504,18 +504,66 @@
 <li>Open Laser Chamber Door</li>
 <li>Ensure that the Sort Chamber Light is on by pressing ILLUM Button on Instrument Chassis Front.</li>
 <li>Center Stream over Waste Tube (Stream Camera, Left Monitor, Video 1) using Stream Tilt X and Stream Tilt Z Knobs.</li>
-<li>Focus Stream using Pinhole Camera.</li>
-<li>Move Nozzle Tip to “Just Off Screen” on Pinhole Camera</li>
+<li>Set Nozzle Height via Pinhole and Drop Cameras<ol>
+<li>VIDEO to Channel 1 on the Left Monitor "PINHOLE"</li>
 </ol>
-<h2 id="nozzle-height-via-drop-camera">Nozzle Height via Drop Camera<a class="headerlink" href="#nozzle-height-via-drop-camera" title="Permanent link">&para;</a></h2>
+</li>
+<li>Move Nozzle Tip up to “Just Off Screen” of Pinhole Camera Monitor</li>
+<li>Set VIDEO to Channel 2 on the Center Monitor "DROP" to view the Drop Camera</li>
+<li>Move the Drop Camera Up using the Drop Camera Knob at Top of Instrument (to the Left of the Sheath and Waste Valves)<ol>
+<li>The Nozzle should be visible when the Drop Camera Readout (Below the Sheath Valve Control Buttons PULSE/PURGE/RINSE/RUN) is less than 40.</li>
+<li>Move the Nozzle Tip using the Stream Stage Z Knob so that the Nozzle Tip is at the <code>&lt;</code> symbol drawn on the Second Monitor. The Drop Camera Readout should be 38-41. </li>
+</ol>
+</li>
+<li>Bring the Sort Stream into focus on the Pinhole Camera.<ol>
+<li>The Stream should look fairly straight and have well defined sides once it is brought into focus</li>
+<li>If there are visible twists in the Stream, remove the Nozzle and attempt to Flush it as described earlier.</li>
+</ol>
+</li>
+</ol>
 <h2 id="if-sorting-sort-drop-deflection-via-sort-stream-camera"><em>If Sorting</em> Sort Drop Deflection via Sort Stream Camera<a class="headerlink" href="#if-sorting-sort-drop-deflection-via-sort-stream-camera" title="Permanent link">&para;</a></h2>
+<ol>
+<li>You will need to start the BD Sortware Software on the HP PC to access the Drop Drive Settings</li>
+</ol>
+<h2 id="placing-sample-tubes-in-the-sample-cradle">Placing Sample Tubes in the Sample Cradle<a class="headerlink" href="#placing-sample-tubes-in-the-sample-cradle" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Ensure Sample Line is purged of air by pressing the BACKFLUSH Button (Next to Sample Cradle) and letting Sheath Fluid drip out the line</li>
+<li>Place tube on Sample Cradle<ol>
+<li>Install the tube by raising it upward around the Sample Line until the tube rim meets the Rubber Sample Cradle Nozzle. Do not manually press the Sample Tube onto the Rubber Nozzle</li>
+<li>Holding the Tube up against the Rubber Nozzle, use the Handle to swing the Sample Cradle Base clockwise to lock the Sample Tube in Place.</li>
+<li>By using the Sample Cradle Base, the tube will be gently and evenly pushed snug agains the Rubber Nozzle.<ol>
+<li>Note: When Removing Sample Tubes that have become pressurized, very slowly turn the Sample Cradle Base Handle CCW to gently release the pressure. That will prevent Sample Fluid from being ejected out of the Sample Tube.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
 <h2 id="laser-alignment-with-beer-and-pinhole-camera">Laser Alignment with Beer and Pinhole Camera<a class="headerlink" href="#laser-alignment-with-beer-and-pinhole-camera" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Open the Physical Laser Shutters by pulling the Hanldes (Left side of Instrument) out so that the red tape on the handle is visible outside the instrument panel.</li>
+<li>Close the Laser Chamber Door and activate the Finger Switch to open Electronic Shutters (if using the 671 or new lasers)</li>
+<li></li>
+</ol>
 <h2 id="iterate-coarse-alignment">Iterate Coarse Alignment<a class="headerlink" href="#iterate-coarse-alignment" title="Permanent link">&para;</a></h2>
 <hr />
 <h1 id="full-alignment">Full Alignment<a class="headerlink" href="#full-alignment" title="Permanent link">&para;</a></h1>
 <h2 id="set-sortware-workspace">Set Sortware Workspace<a class="headerlink" href="#set-sortware-workspace" title="Permanent link">&para;</a></h2>
+<ol>
+<li>In Sortware, go to File &gt; Open Workspace<ol>
+<li></li>
+</ol>
+</li>
+</ol>
 <h2 id="run-qc-bead-sample">Run QC Bead Sample<a class="headerlink" href="#run-qc-bead-sample" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Create a dilution of 1.0um Ultra Rainbow Fluorescent Beads (<em>Spherotech</em>) by dropping 2-3 drops of Bead Concentrate into 2ml 0.2um Filtered MilliQ Water (from a syringe).</li>
+</ol>
 <h2 id="align-488-laser">Align 488 Laser<a class="headerlink" href="#align-488-laser" title="Permanent link">&para;</a></h2>
+<ol>
+<li>The 488nm Laser is the Primary laser for this Instrument. It is the only laser that passes through the filters on the FSC Detector Path and thus can be used for FSC measurements.</li>
+<li>We will align the 488nm Laser to the Fluorescence Channels first because the SSC/Fluoresence Detector Lens is fixed, whereas the FSC Detector Lens can be moved with it's own stage.</li>
+<li></li>
+</ol>
 <h2 id="align-457-laser">Align 457 Laser<a class="headerlink" href="#align-457-laser" title="Permanent link">&para;</a></h2>
 <h2 id="optional-align-671-laser"><em>Optional</em> Align 671 Laser<a class="headerlink" href="#optional-align-671-laser" title="Permanent link">&para;</a></h2>
 <h2 id="iterate-full-alignment">Iterate Full Alignment<a class="headerlink" href="#iterate-full-alignment" title="Permanent link">&para;</a></h2>

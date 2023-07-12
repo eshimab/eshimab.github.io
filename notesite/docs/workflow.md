@@ -66,7 +66,7 @@ rsync --archive --progress --recursive --verbose  ~/Library/Application\ Support
 
 ```bash
 # Set Commit Message Variable
-commit_message="From localhost. Updates to infaqs.md. Last Commit before splitting document work with Brandon."
+commit_message="From localhost. On new Branch indocs"
 # Add / Commit / Push got Git
 cd ~/scidev # Move to root dir of the local Git branch
 git status
