@@ -66,8 +66,37 @@ Section TLDR:
 
 ## Laser Chamber
 
-1. Shown on the Pinhole Camera
+1. Where the Lasers pass through the Sample Stream.
+2. Laser Chamber Components
+    1. Left: Laser Ingress
+        1. Lasers enter the chamber after being directed using the Laser Stages (top of instrument, to left of Laser Chamber)
+    2. Rear: Side-Scatter (SSC) and Fluorescence detector lens
+        1. This lens is fixed and cannot be moved with a Stage.
+    3. Right: Forward Scatter (FSC) Detector Lens
+        1. This Lens can be moved using the FSC Lens Stage (located on Instrument Top, at right of Laser Chamber)
+    4. Rear/Right Corner (between SSC and FSC lens): Cut-out for Drop Camera Mirror
+    5. Front/Left Outside Laser Chamber: Drop Camera Mirror
+        1.The Mirror has a peg on the bottom that fits into a slot outside the left edge of the Laser Chamber Door
+        2. The Mirror should have the flat side angled towards the Drop Camera Cut-out
+    5. Front: Laser Chamber Door
+        1. There is a magnet switch that automatically closes the electric shutters on the Laser Shutters (at instrument far left)
+        2. After opening the door (therefore closing the Electric Shutters), close the Laser Chamber Door, and place a finger over the Finger Switch (upper right corner of track where the Laser Chamber Door slides) to open the Electrix Shutters. 
+        3. Note: The Electric Shutters can be forced open by closing and opening the Physical Laser Shutter Stops using the handles on Instrument Left Side.
+        4. Further Note: The Electric Shutters for the 488nm and 457nm lasers have been **removed** because the Electroc Shutters were sticking and not re-opening when the Finger Switch was activated. The 488 and 457 lasers can only be shuttered using rhe Physical Laser Shutters.
+    6. Ok
+2. Shown on the Pinhole Camera
+    1. The 5 Pinholes go to the fluorescence detector paths for each laser.
+    2. The Pinhole Camera Image is vertically inverted on the Monitor. The top pinhole on the Monitor (for the 488nm Laser) is actually the bottom pinhole on the instrument.
+    3. From Top to Bottom as shown on the *Monitor* image:
+        1.Top: 488nm
+        2. Empty
+        3. Middle: 457nm
+        4. Empty
+        5. Bottom: 671nm
 2. Where the Lasers pass through the Sample Stream.
+3. At the bottom of Laser Chamber is the port where the Stream enters the Sort Chamber below.
+    1. During alignment, the combination of the Stream Stage and Stream Tilt may lead to the Stream not being centered in the port. That is okay.
+2. The Sort Chamber 
 
 ## Sort Chamber
 
