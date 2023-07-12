@@ -1,6 +1,6 @@
 # InFlux Instrument Guide
 
-—-
+---
 
 # Instrument Orientation
 
@@ -15,7 +15,7 @@ Section TLDR:
     2. Y = Machine Front-Back, with Y Increasing as you approach the Front of the Instrument.
     3. Z = Machine Up-Down, with Z increasing as you approach the top of the Instrument.
 
-—-
+---
 
 # System Components
 
@@ -30,8 +30,9 @@ Section TLDR:
 ## Sheath and Vacuum Additions
 
 1. Sheath Tank
-2. Vacuum Tank
-3. Vacuum Pump
+2. Sheath Tank Scale
+3. Vacuum Tank
+4. Vacuum Pump
 
 ## Instrument Chassis
 
@@ -45,7 +46,7 @@ Section TLDR:
 5. The InFlux’s Brain
 
 
-—-
+---
 
 # Main Instrument Components
 
@@ -86,7 +87,7 @@ Section TLDR:
     5. Bottom: 671
     6. *Note*: The Pinhole Camera image is vertically flipped: what looks like the top Pinhole (for the 488) is actually the bottom, and thus, the fluorescence detector path for the 488 Laser is on the bottom level of the fluorescence detector paths.
 
-—-
+---
 
 # Buttons
 
@@ -108,11 +109,11 @@ Section TLDR:
 1. ILLUM
 2. PLATES
 
-—-
+---
 
 # Fluidics
 
-—-
+---
 
 # Sheath Fluidics
 
@@ -124,7 +125,7 @@ Section TLDR:
 
 ## External Sheath Air Temp Multimeter
 
-—-
+---
 
 # Nozzle Assembly 
 
@@ -134,7 +135,7 @@ Section TLDR:
 
 ## Nozzle Lock-Ring
 
-—-
+---
 
 # Sample Intake
 
@@ -151,7 +152,7 @@ Section TLDR:
 1. Bubble in Sample Line
 2. Other Error Light
 
-—-
+---
 
 # Cameras and Marshal Monitor
 
@@ -169,6 +170,8 @@ Section TLDR:
 5. Right Monitor "STREAM"
     1. VIDEO 1 - Stream Camera (Shows Sort Chamber for Sorting and Coarse Alignment)
         1. If this Camera is dark, make sure to activate the yellow ILLUM Button located on the Front Right side of the Instrument Chassis
+
+---
 
 # Stream and Optical Stages:
 
