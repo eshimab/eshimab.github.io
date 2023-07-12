@@ -35,7 +35,6 @@ Section TLDR:
 ## Check the Cameras using the Marshall Monitor
 
 1. Monitor is located on Computer Table.
-2. Toggle Between the VIDEO 1 and VIDEO 2 Sources for each Monitor using the Silver Switch at the Upper Right Corner of the Monitor
 3. Left Monitor "PIN HOLE"
     1. VIDEO 1 - Pinhole Camera of the Stream and the Laser Pinholes
     2. VIDEO 2 - None
@@ -175,16 +174,67 @@ Section TLDR:
     1. Sheath fluid should drip out of the Sample Tube
     2. After 30 sec, if you do not hear the Sheath Fluid being sucked into the drain below the Sample Cradle (which leads to one of the four pink lines on the Waste Connector), check to verify that the drain is not clogged.
     3. See the above if water begins to spill out because you ignored the previously given advice.
-8. Check Warning Lights below SAMPLE Button next to Sample Cradle
-
+8. Check Warning Lights below SAMPLE Button next to Sample Cradle.
 
 # Coarse Alignment
 
-## Pinhole Camera
+## Stream Tilt and Stage with Pinhole and Stream Cameras
+
+1. Open Laser Chamber Door
+2. Ensure that the Sort Chamber Light is on by pressing ILLUM Button on Instrument Chassis Front.
+2. Center Stream over Waste Tube (Stream Camera, Left Monitor, Video 1) using Stream Tilt X and Stream Tilt Z Knobs.
+2. Focus Stream using Pinhole Camera.
+3. Move Nozzle Tip to “Just Off Screen” on Pinhole Camera
+
 
 ## Nozzle Height via Drop Camera
 
-## Sort Drop Deflection via Sort Stream Camera 
+## *If Sorting* Sort Drop Deflection via Sort Stream Camera 
+
+## Laser Alignment with Beer and Pinhole Camera
+
+## Iterate Coarse Alignment
 
 # Full Alignment
+
+## Set Sortware Workspace
+
+## Run QC Bead Sample
+
+## Align 488 Laser
+
+## Align 457 Laser
+
+## *Optional* Align 671 Laser
+
+## Iterate Full Alignment
+
+# Sorting Setup
+
+## Set Workspace
+
+## Run 3.1um Bead Sample
+
+# Find Sort Stability Point
+
+## Theory
+
+## Checklist
+
+## Piezo Voltage V
+
+## Wavelength kHz
+
+## Drop Deflection 
+
+1. Sortware
+2. Sort Stream Camera
+
+# Set Drop Delay
+
+## Calculate Drop Delay
+
+## Coarse Calibration Slide(s)
+
+## Calibration Slides 
 
