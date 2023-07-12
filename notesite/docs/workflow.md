@@ -1,5 +1,6 @@
 This is the workflow for documentation using MkDocs and website hosting using GitHub Pages.
 
+
 # Verify Branch and remote repository alias
 
 Check your branch and remote repository aliases
@@ -65,7 +66,7 @@ rsync --archive --progress --recursive --verbose  ~/Library/Application\ Support
 
 ```bash
 # Set Commit Message Variable
-commit_message="Push from localhost/main. Many Updates. heic2png.sh created, example pngs added to notesite/docs/img."
+commit_message="From localhost. Updates to infaqs.md. Last Commit before splitting document work with Brandon."
 # Add / Commit / Push got Git
 cd ~/scidev # Move to root dir of the local Git branch
 git status
@@ -81,6 +82,12 @@ git status
 git commit -m "$commit_message"
 # Push Changes from the Local Branch `main` and merge them with the Remote Repository Alias `scimain`
 git push scimain main
+```
+
+## New Branch
+
+```bash
+git checkout -b indocs scimain/main
 ```
 
 ---
