@@ -1,11 +1,47 @@
+
+
+
+
+
+
+
 # Using VS Code for general development
 
-## Editor Hacks
+# Editor Settings in `settings.json`
 
-#### Show more document tabs in the workbench.editor
+## Notes:
+
+1. Most CodeBlock examples include a trailing `,` comma to make it easier to copy-paste these examples into the `settings.json` file.
+2. The Basic Structure of the `settings.json` file is:
+    ```json
+    {
+      "config.setting.key.property":
+    }
+    ```
+
+## Show more document tabs in the workbench.editor
+
 ```json
     // Increase  number of tabs visible on an editor window
-    "workbench.editor.tabSizing": "shrink"
+    "workbench.editor.tabSizing": "shrink",
+```
+
+## Set Indentation Defaults
+```json
+// ------------ Indentation
+// Detect Indentation Based on Filetype
+"editor.detectIndentation": false,
+// Markdown Extension "Markdown All in One" List Formatting
+"markdown.extension.list.indentationSize": "inherit", // Alternate: "adaptive"
+"markdown.extension.list.toggle.candidate-markers": [
+  "-",
+  "*",
+  "+",
+  "1.",
+  "01.", // Added
+  "1)",
+  "01)" // Added
+],
 ```
 
 ## Converting Atom cofee script to VS Code JavaScript

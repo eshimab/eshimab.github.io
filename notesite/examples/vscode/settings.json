@@ -1,0 +1,345 @@
+{
+    // "matlab.linterConfig": "",
+    "matlab.mlintpath": "/Applications/MATLAB_R2022b.app/bin/maci64/",
+    "matlab.matlabpath": "/Applications/MATLAB_R2022b.app",
+    // ------------------ EDITOR WINDOW
+    // Increase  number of tabs visible on an editor window
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.settings.openDefaultKeybindings": true,
+    //
+    // ------------------ Hidden Files and Directories
+    // Showing hidden folders and files in the file tree
+    //   The files.showHiddenFiles setting is set to true, 
+    //   which will show hidden files and folders in the file tree.
+    "files.showHiddenFiles": true,
+    // Then you need to specify files and dir strings that are normally
+    //      hidden, and set their booleamns to true or false
+    "files.exclude": {
+        //     "**/.vscode": true,
+        //     "**/node_modules": true
+        "**/.git": false,
+        "**/.": true,
+        "**/..": true,
+        "**/.DS_Store": true
+    },
+    "files.watcherExclude": {
+    //     "**/.git/objects/**": true,
+    //     "**/.git/subtree-cache/**": true,
+    //     "**/node_modules/**": true
+    },
+    //
+    // Disable light bulb
+    "editor.lightbulb.enabled": false,
+    //
+    // VS Code Terminal - Multi-Line Paste = Run Each Line in Terminal
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    // ------------ Indentation
+    // Detect Indentation Based on Filetype
+    "editor.detectIndentation": false,
+    // Markdown Extension "Markdown All in One" List Formatting
+    "markdown.extension.list.indentationSize": "inherit", // Alternate: "adaptive"
+    "markdown.extension.list.toggle.candidate-markers": [
+      "-",
+      "*",
+      "+",
+      "1.",
+      "1)"
+    ],
+    "_comment_CustomColorsGlobal": "JSON doesn't allow for comments. Begin customized Colors.",
+    // Define Color Variables
+    // --------------- BEGIN: Font Coloring editor.TokenColorCustomizations ---------------------------
+    "editor.tokenColorCustomizations": {
+        //
+        // --------------- Comments ---------------------------
+        "comments": "#749bee",
+        // 
+        // --------------- BEGIN: Font Coloring textMateRules ---------------------------
+        "textMateRules": [ 
+            // --------------- MATLAB ---------------------------
+            // Variables
+            {
+                "scope": "variable.other.readwrite.matlab",
+                "settings": {
+                    // "foreground": "#ff0000"
+                }
+            },
+            // End Of line Semi Colons
+            {
+                "scope": "punctuation.terminator.semicolon.matlab",
+                "settings": {
+                    "foreground": "#fce912"
+                }
+            },
+            // keyword.control.while.matlab
+            {
+                "scope": "keyword.control.while.matlab",
+                "settings": {
+                    "foreground": "#8cf8a8"
+                }
+            },
+            // keyword.control.end.while.matlab
+            {
+                "scope": "keyword.control.end.while.matlab",
+                "settings": {
+                    "foreground": "#8cf8a8"
+                }
+            },
+            // --------------- END MATLAB ---------------------------
+            //
+            // --------------- BEGIN SHELL ---------------------------
+            //
+            // keyword.operator.assignment.shell
+            {
+                "scope": "keyword.operator.assignment.shell",
+                "settings": {
+                    "foreground": "#ecce0f"
+                }
+            },
+            // punctuation.definition.variable.shell
+            {
+                "scope": "punctuation.definition.variable.shell",
+                "settings": {
+                    "foreground": "#5df57c"
+                }
+            },
+            // Bash Variable Curly Brakcet Begin
+            {
+                "scope": "punctuation.section.bracket.curly.variable.begin.shell punctuation.definition.variable.shell",
+                "settings": {
+                    "foreground": "#5df57c"
+                }
+            },
+            // Bash Variable Curly Brakcet End
+            {
+                "scope": "punctuation.section.bracket.curly.variable.end.shell punctuation.definition.variable.shell",
+                "settings": {
+                    "foreground": "#5df57c"
+                }
+            },
+            // Dollar symbol before variable
+            {
+                "scope": "punctuation.definition.variable.shell variable.other.normal.shell",
+                "settings": {
+                    "foreground": "#ffec19"
+                }
+            },
+            // --------------------- Operators
+            // Operator >
+            {
+                "scope": "keyword.operator.redirect.shell",
+                "settings": {
+                    "foreground": "#5df57c"
+                }
+            },
+            // shebang Operator: #!
+            {
+                "scope": "punctuation.definition.comment.shebang.shell",
+                "settings": {
+                    "foreground": "#f9d20c"
+                }
+            },
+            // Shebang Language Declaration Location
+            {
+                "scope": "meta.shebang.shell",
+                "settings": {
+                    "foreground": "#df57f0"
+                }
+            },
+            // ---------------------- Shell Commands
+            // Of the form: 
+            // $ command argument flag variable-input
+            // Example:
+            // $ git commit -m "Commit Message"
+            // git = command; commit = argument; -m = flag; "Commit Message" = variable-input
+            // Shell Commands
+            {
+                "scope": "entity.name.command.shell",
+                "settings": {
+                    "foreground": "#fbce29"
+                }
+            },
+            // Shell Command Argument (Unquoted)
+            {
+                "scope": "string.unquoted.argument.shell",
+                "settings": {
+                    "foreground": "#faa7ec"
+                }
+            },
+            // Optional Flags for Commands
+            {
+                "scope": "constant.other.option",
+                "settings": {
+                    "foreground": "#faf325"
+                }
+            },
+            // Double Quoted Strings
+            {
+                "scope": "string.quoted.double.shell",
+                "settings": {
+                    "foreground": "#5ff057"
+                }
+            },
+            // --------------- END SHELL ---------------------------
+            //
+            // --------------- MARKDOWN ---------------------------
+            // Font
+            // keyword.control.end.while.matlab
+            {
+                "scope": "markup.italic.markdown",
+                "settings": {
+                    "foreground": "#f89bef"
+                }
+            },
+            // punctuation.definition.italic.markdown
+            {
+                "scope": "punctuation.definition.italic.markdown",
+                "settings": {
+                    "foreground": "#f4f86c"
+                }
+            },
+            // markup.bold.markdown
+            {
+                "scope": "markup.bold.markdown",
+                "settings": {
+                    "foreground": "#f8d39b"
+                }
+            },
+            // Code Coloring
+            // markup.fenced_code.block.markdown
+            {
+                "scope": "markup.fenced_code.block.markdown punctuation.definition.markdown",
+                "settings": {
+                    "foreground": "#ecce0f"
+                }
+            },
+            // markup.fenced_code.block.markdown
+            {
+                "scope": "markup.fenced_code.block.markdown fenced_code.block.language.markdown",
+                "settings": {
+                    "foreground": "#5df57c"
+                }
+            },
+            // punctuation.definition.bold.markdown
+            {
+                "scope": "punctuation.definition.bold.markdown",
+                "settings": {
+                    "foreground": "#f4f86c"
+                }
+            },
+            // --- MARKDOWN HEADINGS
+            // heading.1.markdown
+            {
+                "scope": "heading.1.markdown",
+                "settings": {
+                    "foreground": "#f9920c"
+                }
+            },
+            // heading.2.markdown
+            {
+                "scope": "heading.2.markdown",
+                "settings": {
+                    "foreground": "#f1a625"
+                }
+            },
+            // heading.3.markdown
+            {
+                "scope": "heading.3.markdown",
+                "settings": {
+                    "foreground": "#f4be1b"
+                }
+            },
+            // heading.4.markdown
+            {
+                "scope": "heading.4.markdown",
+                "settings": {
+                    "foreground": "#f9d20c"
+                }
+            },
+            // heading.5.markdown
+            {
+                "scope": "heading.5.markdown",
+                "settings": {
+                    "foreground": "#f1d95f"
+                }
+            },
+            // punctuation.definition.heading.markdown
+            // {
+            //     "scope": "punctuation.definition.heading.markdown",
+            //     "settings": {
+            //         "foreground": "#f9d20c"
+            //     }
+            // }
+            // --------------- END MARKDOWN ---------------------------
+            //
+            // --------------- BEGIN YAML ---------------------------
+            // Entity Name
+            {
+                "scope": "entity.name.tag.yaml",
+                "settings": {
+                    "foreground": "#faa7ec"
+                }
+            },
+            // Punctuation Colon
+            {
+                "scope": "punctuation.separator.key-value.mapping.yaml",
+                "settings": {
+                    "foreground": "#f1d95f"
+                }
+            },
+            // Punctuation List Item
+            {
+                "scope": "punctuation.definition.block.sequence.item.yaml",
+                "settings": {
+                    "foreground": "#f1d95f"
+                }
+            },
+            // --------------- END YAML ---------------------------
+            //
+            // --------------- BEGIN JSON ---------------------------
+            // Colon for "property.key":"value" Assignemtns
+            {
+                "scope": "punctuation.separator.dictionary.key-value.json",
+                "settings": {
+                    "foreground": "#ffe81c"
+                }
+            },
+            // Dictionary Value > String Double Quotes
+            {
+                "scope": "meta.structure.dictionary.value.json.comments string.quoted.double.json.comments",
+                "settings": {
+                    "foreground": "#f79525"
+                }
+            },
+            // String Double Quotes
+            {
+                "scope": "string.quoted.double.json.comments",
+                "settings": {
+                    "foreground": "#5ff057"
+                }
+            },
+            // --------------- END JSON ---------------------------
+            //
+            // --------------- BEGIN LATEX ---------------------------
+            // Font
+            // markup.italic.textit.latex
+            {
+                "scope": "markup.italic.textit.latex",
+                "settings": {
+                    "foreground": "#f89bef"
+                }
+            }
+            // --------------- END LATEX ---------------------------
+            //
+        ] 
+        // --------------- END textMateRules ---------------------------
+    }, 
+    // --------------- END editor.tokenColorCustomizations ---------------------------
+    "atomKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "alt",
+    "editor.formatOnPaste": true,
+    "editor.tabSize": 2,
+    "workbench.iconTheme": "file-icons",
+    "workbench.editorAssociations": {
+        "*.pdf": "pdf.preview"
+    } // END workbench.editorAssociations
+} // END FILE
