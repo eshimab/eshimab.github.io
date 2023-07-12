@@ -6,11 +6,10 @@
 
 # notesite
 
+Misadventures, documented.
 
 
-
-
-## Directory Structure
+## MkDocs Directory Structure
 
     mkdocs.yml    # The configuration file.
     docs/
@@ -21,3 +20,9 @@
         workflow.md # Standard Workflow
         img/
             favicon.ico # Favicon
+            git-example/
+              gitExample*.png # Pictures for gitnotes.md
+
+## GitHub Info
+
+- Repository: 
