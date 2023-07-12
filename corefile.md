@@ -1,7 +1,7 @@
 
 
 
-### Starting directory structure.
+## Create directory structure.
 
 ```bash
 # Define the core directory
@@ -22,15 +22,73 @@ Tips:
 1. When doing the BASH variable assignment, the `=` symbol should not have spaces on either side.
 2. (CB) In this code, the directories `direnvs` and `dirmdoc` are created using the `mkdir` command with the `-p` option. The `-p` option ensures that parent directories are created if they don't already exist. The variable values are correctly concatenated using the `${variable}` syntax.
 3. Pick up the command line tool `tree` to visualize the directory structure: 		
-    ```bash
-		# Get the program homebrew
-		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-		# Use homebrew to install tree
-		brew install tree
-		```
- 		
 
-### Create a python3 virtual environment (`venv`) to run Mkdocs
+---
+
+# Use Homebrew to intstall the CLI Tool `tree`
+
+## Verify Homebrew Installation
+```bash
+# Check for Homebrew
+which brew
+# Output:
+#   /usr/local/bin/brew
+# 
+# Check Homebrew Version ia > 4.0
+brew --version
+# Output
+    # lifenotes eshim$ Homebrew 4.0.27
+    # Homebrew/homebrew-core (git revision e1774d6544; last commit 2023-07-06)
+```
+
+If `which brew` returns nothing, or `brew --version` is below 4.0, then Update Homebrew
+
+# Installing/Updating CLI Utils with Homebrew
+
+## Install the Homebrew tool via the website
+
+```bash
+# Get Homebrew Install from GitHub
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### Homebrew Installation Output
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Output:
+#   ==> Checking for `sudo` access (which may request your password)...
+#   `Password:
+#   ==> This script will install:
+#   /opt/homebrew/bin/brew
+#   /opt/homebrew/share/doc/homebrew
+#   /opt/homebrew/share/man/man1/brew.1
+#   /opt/homebrew/share/zsh/site-functions/_brew
+#   /opt/homebrew/etc/bash_completion.d/brew
+#   /opt/homebrew
+#
+#   Press RETURN/ENTER to continu
+```
+
+### Homebrew Installation Errors
+
+If tou have errors of the form: `Warning: /opt/homebrew/bin is not in your PATH.`
+1. Add `/opt/homebrew/bin` to your $PATH.
+```bash
+PATH="$PATH:/opt/homebrew/bin"
+```
+
+## Install `tree` with Homebrew
+```bash
+# Use homebrew to install tree
+brew install tree
+```
+
+--- 		
+
+# Create a python3 virtual environment (`venv`) to run Mkdocs
+
+## Create the `python3` `venv` and start it with `source`
 
 ```bash
 # Create the python3 venv
@@ -40,9 +98,13 @@ source "${dirmdoc}/bin/activate"
 # Go there
 cd ${dircore}
 ```
-Tips:
-	1. Notice that the variable is wrapped in "" because the command input should be a string
-	2. CB: By using the -m (there is no long-form version) flag followed by the module name (venv), you are instructing the Python interpreter to execute the venv module's script functionality. This allows you to create a virtual environment using the python3 -m venv command, without explicitly running a separate Python script or invoking a specific Python file.
+
+### Tips: python3 venv
+
+1. Notice that the variable is wrapped in "" because the command input should be a string
+2. CB: By using the -m (there is no long-form version) flag followed by the module name (venv), you are instructing the Python interpreter to execute the venv module's script functionality. This allows you to create a virtual environment using the python3 -m venv command, without explicitly running a separate Python script or invoking a specific Python file.
+
+## Configure python3 `venv` with `pip`
 
 Now we are working in the python3 environment where lines should be preceded by `(mdocs) hostname:scidev username$`
 ```python

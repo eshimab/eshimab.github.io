@@ -6,6 +6,12 @@
 
 ## Working with active git repositories
 
+## Clone Remote Git Repository to Localhost Branch
+
+```bash
+
+```
+
 ### Comitting a new local directory to the GitHub Repository
 
 #### Git Repo Info

@@ -33,3 +33,32 @@ I get that error and it points to the first Line First col Character `{` maybe t
 }
 ```
 Is this valid? with the COMMENT HERE?
+
+
+
+```
+my-nextra-project/
+  ├── package.json
+  ├── pages/
+  │   ├── index.md
+  │   ├── about.md
+  │   └── contact.md
+  └── theme.config.js
+  ```
+
+# lifenotes Shell Scripting
+
+I have the following Warning when attempting to run:
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+I get the Warning: 
+```bash
+==> Downloading and installing Homebrew...
+HEAD is now at 9e8a77778 Merge pull request #15667 from gerlero/patch-1
+Warning: /opt/homebrew/bin is not in your PATH.
+  Instructions on how to configure your shell for Homebrew
+  can be found in the 'Next steps' section below.
+==> Installation successful!
+```
+The Next Steps suggested checking the PATH of my editorq
