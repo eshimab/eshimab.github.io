@@ -98,11 +98,20 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#build-site-with-mkdocs-and-addcommitpush-to-git" class="nav-link">Build site with mkdocs and Add/Commit/Push to Git</a>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#updating-files" class="nav-link">Updating Files</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#build-site-with-mkdocs" class="nav-link">Build site with MkDocs</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#addcommitpush-files-to-git-repository" class="nav-link">Add/Commit/Push Files to Git Repository</a>
+            <li class="nav-item" data-level="2"><a href="#local-file-sync-with-rsync" class="nav-link">Local File Sync with rsync</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#addcommit-to-local-branch-and-push-to-remote-branch" class="nav-link">Add/Commit To Local Branch and Push to Remote Branch</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -137,7 +146,9 @@ scimain https://github.com/eshimab/eshimab.github.io (push)
 <h2 id="pull-from-git">Pull from git<a class="headerlink" href="#pull-from-git" title="Permanent link">&para;</a></h2>
 <pre><code class="language-bash">git pull scimain main
 </code></pre>
-<h2 id="build-site-with-mkdocs-and-addcommitpush-to-git">Build site with mkdocs and Add/Commit/Push to Git<a class="headerlink" href="#build-site-with-mkdocs-and-addcommitpush-to-git" title="Permanent link">&para;</a></h2>
+<hr />
+<h1 id="updating-files">Updating Files<a class="headerlink" href="#updating-files" title="Permanent link">&para;</a></h1>
+<h2 id="build-site-with-mkdocs">Build site with MkDocs<a class="headerlink" href="#build-site-with-mkdocs" title="Permanent link">&para;</a></h2>
 <h3 id="activate-the-python3-venv-to-run-mkdocs">Activate the python3 venv to run mkdocs<a class="headerlink" href="#activate-the-python3-venv-to-run-mkdocs" title="Permanent link">&para;</a></h3>
 <p>After updating the markdown documents in <code>scidev/notesite/docs</code></p>
 <pre><code class="language-bash"># Move to the python3 virtual env bin directory to activate the venv
@@ -148,7 +159,7 @@ mkdocs build # build the site with MkDocs
 # Exit the virtual machine
 deactivate
 </code></pre>
-<h3 id="file-sync-locally-with-rsync">File Sync Locally with <code>rsync</code><a class="headerlink" href="#file-sync-locally-with-rsync" title="Permanent link">&para;</a></h3>
+<h2 id="local-file-sync-with-rsync">Local File Sync with <code>rsync</code><a class="headerlink" href="#local-file-sync-with-rsync" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Sync Files from <code>~/scidev/notesite/site</code> created by <code>MkDocs</code> in the <code>python3 venv</code> to  <code>~/scidev/notesite/docs</code> which is required for hosting on GitHub Pages<ol>
 <li><code>~/scidev/notesite/site</code> is the HTML Site Created by MkDocs in the python3 venv</li>
@@ -163,7 +174,7 @@ rm -vR ~/scidev/notesite/site
 # Back-Up Examples of local Docs
 rsync --archive --progress --recursive --verbose  ~/Library/Application\ Support/Code/User/settings.json ~/scidev/notesite/examples/vscode/settings.json
 </code></pre>
-<h2 id="addcommitpush-files-to-git-repository">Add/Commit/Push Files to Git Repository<a class="headerlink" href="#addcommitpush-files-to-git-repository" title="Permanent link">&para;</a></h2>
+<h2 id="addcommit-to-local-branch-and-push-to-remote-branch">Add/Commit To Local Branch and Push to Remote Branch<a class="headerlink" href="#addcommit-to-local-branch-and-push-to-remote-branch" title="Permanent link">&para;</a></h2>
 <pre><code class="language-bash"># Set Commit Message Variable
 commit_message=&quot;Updates to mkdocs.yaml to try to enable new Favicon&quot;
 # Add / Commit / Push got Git

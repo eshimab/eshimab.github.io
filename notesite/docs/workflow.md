@@ -26,8 +26,11 @@ scimain https://github.com/eshimab/eshimab.github.io (push)
 git pull scimain main
 ```
 
+---
 
-## Build site with mkdocs and Add/Commit/Push to Git
+# Updating Files
+
+## Build site with MkDocs
 
 ### Activate the python3 venv to run mkdocs
 
@@ -43,7 +46,7 @@ mkdocs build # build the site with MkDocs
 deactivate
 ```
 
-### File Sync Locally with `rsync`
+## Local File Sync with `rsync`
 
 1. Sync Files from `~/scidev/notesite/site` created by `MkDocs` in the `python3 venv` to  `~/scidev/notesite/docs` which is required for hosting on GitHub Pages
     1. `~/scidev/notesite/site` is the HTML Site Created by MkDocs in the python3 venv
@@ -58,11 +61,11 @@ rm -vR ~/scidev/notesite/site
 rsync --archive --progress --recursive --verbose  ~/Library/Application\ Support/Code/User/settings.json ~/scidev/notesite/examples/vscode/settings.json
 ```
 
-## Add/Commit/Push Files to Git Repository
+## Add/Commit To Local Branch and Push to Remote Branch
 
 ```bash
 # Set Commit Message Variable
-commit_message="Updates to mkdocs.yaml to try to enable new Favicon"
+commit_message="Updates to workflow.md"
 # Add / Commit / Push got Git
 cd ~/scidev # Move to root dir of the local Git branch
 git status
