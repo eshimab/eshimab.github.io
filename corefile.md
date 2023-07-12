@@ -41,44 +41,39 @@ brew --version
     # Homebrew/homebrew-core (git revision e1774d6544; last commit 2023-07-06)
 ```
 
-If `which brew` returns nothing, or `brew --version` is below 4.0, then Update Homebrew
+If `which brew` does **not** retun /opt/local/bin/breq, or `brew --version` is below 4.0, then Update Homebrew
 
 # Installing/Updating CLI Utils with Homebrew
 
 ## Install the Homebrew tool via the website
 
+### For Apple Macs with ARM Processors
+
+You may need to remove the old version of Homebrew, which was originally stored in /usr/local/
+
 ```bash
-# Get Homebrew Install from GitHub
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Uninstall Previous Homebrew using uninstall.sh from website
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+
 ```
 
-### Homebrew Installation Output
+### Install Homebrew
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# Output:
-#   ==> Checking for `sudo` access (which may request your password)...
-#   `Password:
-#   ==> This script will install:
-#   /opt/homebrew/bin/brew
-#   /opt/homebrew/share/doc/homebrew
-#   /opt/homebrew/share/man/man1/brew.1
-#   /opt/homebrew/share/zsh/site-functions/_brew
-#   /opt/homebrew/etc/bash_completion.d/brew
-#   /opt/homebrew
-#
-#   Press RETURN/ENTER to continu
 ```
 
 ### Homebrew Installation Errors
 
 If tou have errors of the form: `Warning: /opt/homebrew/bin is not in your PATH.`
 1. Add `/opt/homebrew/bin` to your $PATH.
+
 ```bash
-PATH="$PATH:/opt/homebrew/bin"
+PATH="/opt/homebrew/bin:$PATH"
 ```
 
 ## Install `tree` with Homebrew
+
 ```bash
 # Use homebrew to install tree
 brew install tree

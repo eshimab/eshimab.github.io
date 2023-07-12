@@ -118,7 +118,8 @@
 <h1 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h1>
 <h2 id="working-with-active-git-repositories">Working with active git repositories<a class="headerlink" href="#working-with-active-git-repositories" title="Permanent link">&para;</a></h2>
 <h2 id="clone-remote-git-repository-to-localhost-branch">Clone Remote Git Repository to Localhost Branch<a class="headerlink" href="#clone-remote-git-repository-to-localhost-branch" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">
+<pre><code class="language-bash">cd ~/lifenotes
+
 </code></pre>
 <h3 id="comitting-a-new-local-directory-to-the-github-repository">Comitting a new local directory to the GitHub Repository<a class="headerlink" href="#comitting-a-new-local-directory-to-the-github-repository" title="Permanent link">&para;</a></h3>
 <h4 id="git-repo-info">Git Repo Info<a class="headerlink" href="#git-repo-info" title="Permanent link">&para;</a></h4>
@@ -130,13 +131,13 @@
 </li>
 </ul>
 <figure class="figure-image">
-  <img src="/img/git-example/gitExample-precommit-githubScidevDirectory.png" alt="GitHub Website Before Commit">
+  <img src="img/example-git/gitExample-precommit-githubScidevDirectory.png" alt="GitHub Website Before Commit">
   <figcaption>GitHub Website Before Commit</figcaption>
 </figure>
 
 <h4 id="local-git-branch-main">Local Git Branch <code>main</code><a class="headerlink" href="#local-git-branch-main" title="Permanent link">&para;</a></h4>
 <figure class="figure-image">
-  <img src="/img/git-example/gitExample-precommit-localScidevDirectory.png" alt="GitHub Local Directory Before Commit">
+  <img src="img/example-git/gitExample-precommit-localScidevDirectory.png" alt="GitHub Local Directory Before Commit">
   <figcaption>GitHub Local Directory Before Commit</figcaption>
 </figure>
 
@@ -169,7 +170,7 @@ git add envsdir/mdocs/bin
 </code></pre>
 <p>See Output:</p>
 <figure class="figure-image">
-  <img src="/img/git-example/gitExample-gitAddAndStatus.png" alt="Git Status After Adding assets/files and envsdir/mdocs/bin">
+  <img src="img/example-git/gitExample-gitAddAndStatus.png" alt="Git Status After Adding assets/files and envsdir/mdocs/bin">
   <figcaption>Git Status After Adding assets/files and envsdir/mdocs/bin</figcaption>
 </figure>
 
@@ -178,7 +179,7 @@ git add envsdir/mdocs/bin
 git add notesite/img
 </code></pre>
 <figure class="figure-image">
-  <img src="/img/git-example/gitExample-gitAddAndStatusSecond.png" alt="Git Status After Adding notesite/img/*">
+  <img src="img/example-git/gitExample-gitAddAndStatusSecond.png" alt="Git Status After Adding notesite/img/*">
   <figcaption>Git Status After Adding notesite/img/*</figcaption>
 </figure>
 
@@ -205,13 +206,13 @@ git add notesite/img
 </code></pre>
 <p>See Output:</p>
 <figure class="figure-image">
-  <img src="/img/git-example/gitExample-gitCommitCommand.png" alt="Git Commit Command Output">
+  <img src="img/example-git/gitExample-gitCommitCommand.png" alt="Git Commit Command Output">
   <figcaption>Git Commit Command Output</figcaption>
 </figure>
 
 <p>But we still have changes on files that were not added. This message was shown in <code>git status</code></p>
 <figure class="figure-image">
-  <img src="/img/git-example/gitExample-gitStatusHasUntracked.png" alt="Untracked Files in Git Status">
+  <img src="img/example-git/gitExample-gitStatusHasUntracked.png" alt="Untracked Files in Git Status">
   <figcaption>Untracked Files in Git Status</figcaption>
 </figure>
 
@@ -224,7 +225,7 @@ git add mdocs/pyvenv.cfg
 </code></pre>
 <p>See <code>git status</code> output</p>
 <figure class="figure-image">
-  <img src="/img/git-example/gitExample-gitStatusFinal.png" alt="New Git Status">
+  <img src="img/example-git/gitExample-gitStatusFinal.png" alt="New Git Status">
   <figcaption>New Git Status</figcaption>
 </figure>
 
@@ -233,7 +234,7 @@ git add mdocs/pyvenv.cfg
 </code></pre>
 <p>See Output</p>
 <figure class="figure-image">
-  <img src="/img/git-example/gitExample-gitStatusFinal.png" alt="Final Commit Example">
+  <img src="img/example-git/gitExample-gitStatusFinal.png" alt="Final Commit Example">
   <figcaption>Final Commit Example</figcaption>
 </figure>
 
@@ -247,7 +248,7 @@ git add mdocs/pyvenv.cfg
 </code></pre>
 <p>Output:</p>
 <figure class="figure-image">
-  <img src="/img/git-example/gitExample-gitRemote-createNewRepoAlias.png" alt="Git Remote Repository Aliases">
+  <img src="img/example-git/gitExample-gitRemote-createNewRepoAlias.png" alt="Git Remote Repository Aliases">
   <figcaption>Git Remote Repository Aliases</figcaption>
 </figure>
 
@@ -259,7 +260,7 @@ git remote --verbose
 </code></pre>
 <p>Output:</p>
 <figure class="figure-image">
-  <img src="/img/git-example/gitExample-gitRemote-deleteOldRepoAlias.png" alt="After Deleting the old `origin` repository url alias">
+  <img src="img/example-git/gitExample-gitRemote-deleteOldRepoAlias.png" alt="After Deleting the old `origin` repository url alias">
   <figcaption>After Deleting the old `origin` repository url alias</figcaption>
 </figure>
 
@@ -273,13 +274,13 @@ git remote --verbose
 </code></pre>
 <p>See output for checking the <code>git remote</code> alias name with the <code>--verbose</code> flag, then running the <code>git push</code> command, sending commits in the local branch <code>main</code> to the repository linked in the alias <code>scimain</code>.</p>
 <figure class="figure-image">
-  <img src="/img/git-example/gitExample-gitPush-localScimainToRepoScidev.png" alt="Local Command Output After git push">
+  <img src="img/example-git/gitExample-gitPush-localScimainToRepoScidev.png" alt="Local Command Output After git push">
   <figcaption>Local Command Output After git push</figcaption>
 </figure>
 
 <p>And the GitHub webpage for <code>scidev/main</code> has been updated via the local machine <code>push</code></p>
 <figure class="figure-image">
-  <img src="/img/git-example/gitExample-gitWebsiteUpdated.png" alt="Github Webpage Updated">
+  <img src="img/example-git/gitExample-gitWebsiteUpdated.png" alt="Github Webpage Updated">
   <figcaption>Github Webpage Updated</figcaption>
 </figure>
 
@@ -301,7 +302,7 @@ git remote --verbose
       dhcp-168-105-223-225:scidev eshim$ git remote --verbose
       scimain https://github.com/eshimab/scidev (fetch)
       scimain https://github.com/eshimab/scidev (push)</code> </li>
-<li>For this example, the <code>&lt;local-remote-alias&gt;</code> is <code>scimain</code> and points to <code>https://github.io/eshimab/scidev</code></li>
+<li>For the above example, the <code>&lt;local-remote-alias&gt;</code> is <code>scimain</code> and points to <code>https://github.io/eshimab/scidev</code></li>
 <li>
 <p>For this example, the <code>&lt;local-branch-name&gt;</code> is <code>main</code> and is recorded in the Github repo as <code>scidev/main</code> See that we are on branch <code>main</code> using <code>git status</code>
       ```bash
@@ -327,10 +328,11 @@ git remote --verbose
   eb213eb..4d8a21e  main -&gt; main
    dhcp-168-105-223-225:scidev eshim$
    ```</p>
-<h3 id="more-standard-git-setups">More standard git setups<a class="headerlink" href="#more-standard-git-setups" title="Permanent link">&para;</a></h3>
-<h4 id="adding-git-hooks">Adding git hooks<a class="headerlink" href="#adding-git-hooks" title="Permanent link">&para;</a></h4>
+<hr />
 </li>
 </ol>
+<h3 id="more-standard-git-setups">More standard git setups<a class="headerlink" href="#more-standard-git-setups" title="Permanent link">&para;</a></h3>
+<h4 id="adding-git-hooks">Adding git hooks<a class="headerlink" href="#adding-git-hooks" title="Permanent link">&para;</a></h4>
 <pre><code class="language-bash">cd ~/scidev
 git add .git/hooks/pre-commit
 git add .git/hooks/post-commit

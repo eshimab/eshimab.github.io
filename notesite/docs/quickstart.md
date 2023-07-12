@@ -47,7 +47,6 @@ Section TLDR:
 5. Right Monitor "STREAM"
     1. VIDEO 1 - Stream Camera (Shows Sort Chamber for Sorting and Coarse Alignment)
         1. If this Camera is dark, make sure to activate the yellow ILLUM Button located on the Front Right side of the Instrument Chassis 
-        
 
 ## Turn On Lasers using the PSU on the Instrument Chassis
 
@@ -73,6 +72,8 @@ Section TLDR:
     2. Connect to Cytometer
     3. Start Sensirion Software
         1. Begin Logging
+
+---
 
 # Fluidics
 
@@ -195,6 +196,8 @@ Section TLDR:
 
 ## Iterate Coarse Alignment
 
+---
+
 # Full Alignment
 
 ## Set Sortware Workspace
@@ -209,11 +212,15 @@ Section TLDR:
 
 ## Iterate Full Alignment
 
+---
+
 # Sorting Setup
 
 ## Set Workspace
 
 ## Run 3.1um Bead Sample
+
+---
 
 # Find Sort Stability Point
 
@@ -229,6 +236,8 @@ Section TLDR:
 
 1. Sortware
 2. Sort Stream Camera
+
+---
 
 # Set Drop Delay
 

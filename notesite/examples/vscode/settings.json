@@ -1,3 +1,7 @@
+//
+//
+//
+//
 {
     // "matlab.linterConfig": "",
     "matlab.mlintpath": "/Applications/MATLAB_R2022b.app/bin/maci64/",
@@ -27,6 +31,8 @@
     //     "**/.git/subtree-cache/**": true,
     //     "**/node_modules/**": true
     },
+    //
+    "markdown.suggest.showImages": true,
     //
     // Disable light bulb
     "editor.lightbulb.enabled": false,

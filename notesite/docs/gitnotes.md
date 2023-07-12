@@ -9,6 +9,7 @@
 ## Clone Remote Git Repository to Localhost Branch
 
 ```bash
+cd ~/lifenotes
 
 ```
 
@@ -19,11 +20,11 @@
   - Branches
     - `main`
 
-![GitHub Website Before Commit](/img/git-example/gitExample-precommit-githubScidevDirectory.png)
+![GitHub Website Before Commit](img/example-git/gitExample-precommit-githubScidevDirectory.png)
 
 
 #### Local Git Branch `main`
-![GitHub Local Directory Before Commit](/img/git-example/gitExample-precommit-localScidevDirectory.png)
+![GitHub Local Directory Before Commit](img/example-git/gitExample-precommit-localScidevDirectory.png)
 
 See that the `assets` dir is located in the local `scidev`
 ```bash
@@ -59,14 +60,14 @@ git status
 ```
 See Output:
 
-![Git Status After Adding assets/files and envsdir/mdocs/bin](/img/git-example/gitExample-gitAddAndStatus.png)
+![Git Status After Adding assets/files and envsdir/mdocs/bin](img/example-git/gitExample-gitAddAndStatus.png)
 
 **Example Repeat**: add `scidev/notesite/img/*` (start in `~/scidev`)
 ```bash
 cd ~/scidev
 git add notesite/img
 ```
-![Git Status After Adding notesite/img/*](/img/git-example/gitExample-gitAddAndStatusSecond.png)
+![Git Status After Adding notesite/img/*](img/example-git/gitExample-gitAddAndStatusSecond.png)
 
 ##### Git Commit vs Push
 
@@ -92,11 +93,11 @@ Commit the directory changes and add a Commit Message using the `-m` flag
 git commit -m "Added directories scidev/bin scidev/assets/files scidev/notesite/img"
 ```
 See Output:
-![Git Commit Command Output](/img/git-example/gitExample-gitCommitCommand.png)
+![Git Commit Command Output](img/example-git/gitExample-gitCommitCommand.png)
 
 But we still have changes on files that were not added. This message was shown in `git status`
 
-![Untracked Files in Git Status](/img/git-example/gitExample-gitStatusHasUntracked.png)
+![Untracked Files in Git Status](img/example-git/gitExample-gitStatusHasUntracked.png)
 
 So we need to add these files with `git add`
 ```bash
@@ -108,7 +109,7 @@ git add mdocs/pyvenv.cfg
 ```
 See `git status` output
 
-![New Git Status](/img/git-example/gitExample-gitStatusFinal.png)
+![New Git Status](img/example-git/gitExample-gitStatusFinal.png)
 
 Now do another commit to `github.io/eshimab/scidev/main`
 ```bash
@@ -116,7 +117,7 @@ git commit -m "Updated notesite, added envsdir/mdoc/pyenvs.cfg, updated .gitigno
 ```
 See Output
 
-![Final Commit Example](/img/git-example/gitExample-gitStatusFinal.png)
+![Final Commit Example](img/example-git/gitExample-gitStatusFinal.png)
 
 ### Managing GitHub Repository Url Aliases with `git remote`
 
@@ -131,7 +132,8 @@ List the available Repository URL Aliases using `git remote` without any additio
 git remote --verbose
 ```
 Output:
-![Git Remote Repository Aliases](/img/git-example/gitExample-gitRemote-createNewRepoAlias.png)
+
+![Git Remote Repository Aliases](img/example-git/gitExample-gitRemote-createNewRepoAlias.png)
 
 Now we can remove the old alias `origin` because it points to the same GitHub Repository URL as the new created alias `scimain`
    - Deleting the origin alias will not affect your connection to the remote repository as long as you have another valid remote alias configured.
@@ -141,8 +143,10 @@ git remote remove origin
 ## Check for changes
 git remote --verbose
 ```
+
 Output:
-![After Deleting the old `origin` repository url alias](/img/git-example/gitExample-gitRemote-deleteOldRepoAlias.png)
+ 
+![After Deleting the old `origin` repository url alias](img/example-git/gitExample-gitRemote-deleteOldRepoAlias.png)
 
 ### Pushing Files with `git push`
 
@@ -156,11 +160,11 @@ git push scimain main
 ```
 See output for checking the `git remote` alias name with the `--verbose` flag, then running the `git push` command, sending commits in the local branch `main` to the repository linked in the alias `scimain`.
 
-![Local Command Output After git push](/img/git-example/gitExample-gitPush-localScimainToRepoScidev.png)
+![Local Command Output After git push](img/example-git/gitExample-gitPush-localScimainToRepoScidev.png)
 
 And the GitHub webpage for `scidev/main` has been updated via the local machine `push`
 
-![Github Webpage Updated](/img/git-example/gitExample-gitWebsiteUpdated.png)
+![Github Webpage Updated](img/example-git/gitExample-gitWebsiteUpdated.png)
 
 ## Summarizing Git Add/Commit/Push to Repository
 
@@ -184,7 +188,7 @@ And the GitHub webpage for `scidev/main` has been updated via the local machine 
       scimain https://github.com/eshimab/scidev (fetch)
       scimain https://github.com/eshimab/scidev (push)
       ``` 
-   2. For this example, the `<local-remote-alias>` is `scimain` and points to `https://github.io/eshimab/scidev`
+   2. For the above example, the `<local-remote-alias>` is `scimain` and points to `https://github.io/eshimab/scidev`
    3. For this example, the `<local-branch-name>` is `main` and is recorded in the Github repo as `scidev/main` See that we are on branch `main` using `git status`
       ```bash
       dhcp-168-105-223-225:scidev eshim$ git status
@@ -212,8 +216,12 @@ And the GitHub webpage for `scidev/main` has been updated via the local machine 
       eb213eb..4d8a21e  main -> main
    dhcp-168-105-223-225:scidev eshim$
    ```
+---
+
 ### More standard git setups
+
 #### Adding git hooks
+
 ```bash
 cd ~/scidev
 git add .git/hooks/pre-commit

@@ -86,6 +86,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#creating-a-cronjob-for-a-shell-script" class="nav-link">Creating a Cronjob for a Shell Script</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -103,7 +107,48 @@ ls -al
 <p>Yes, the long form of the -a option in the ls command is --all. Both -a and --all have the same functionality of showing all files, including hidden ones.</p>
 <p>Need to add <code>code</code></p>
 <pre><code class="language-bash">nano ~/.bash_profile
-</code></pre></div>
+</code></pre>
+<h2 id="creating-a-cronjob-for-a-shell-script">Creating a Cronjob for a Shell Script<a class="headerlink" href="#creating-a-cronjob-for-a-shell-script" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Write <code>shell</code> script <code>~/scidev/heic2png.sh</code> for converting <code>~/Downloads/$filename.HEIC</code> to <code>~/screenshots/$filename.png</code>.
+    <code>bash
+      #!/bin/bash
+      # Specify the input directory containing HEIC files
+      input_directory="/Users/eshim/Downloads"
+      # Create an output directory for the converted PNG files
+      output_directory="/Users/eshim/screenshots"
+      # Convert HEIC files to PNG
+      for file in "$input_directory"/*.HEIC; do
+          filename=$(basename "$file")
+          output_file="$output_directory/${filename%.*}.png"
+          sips -s format png "$file" --out "$output_file"
+      done
+      echo "Conversion complete!"</code></li>
+<li>Make <code>~/scidev/heic2png.s</code> executable with command: <code>chmod +x ~/scidev/heic2png.sh</code></li>
+<li>Open the crontab in terminal with <code>crontab -e</code>  using the <code>-e</code> flag to denote we are editing the Crontab</li>
+<li>
+<p>Use <code>vim</code> to edit the crontab. You Start in Command Mode (see the <code>-- INSERT --</code>) at bottom of window</p>
+<p><figure class="figure-image">
+  <img src="img/example-cron/crontabExample-vimEditorCommandMode.png" alt="Terminal-Based VIM Editor - Command Mode - Insert text">
+<br />
+<figcaption>Terminal-Based VIM Editor - Command Mode - Insert text</figcaption></p>
+</li>
+</ol>
+<p></figure>
+5. Press <code>i</code> to enable text editing. Add the following line to the <code>crontab</code>
+    <code>bash
+      * * * * * /bin/bash ~/scidev/heic2png.sh</code> 
+    1. This tells to cronjob to run every minute
+6. Exit the Text Insertion Mode by pressing <code>esc</code>
+7. Exit the vim by typing <code>:wq</code> To <code>write</code> to file and <code>quit</code> editor</p>
+<pre><code>&lt;figure class="figure-image"&gt;
+</code></pre>
+<p><img src="img/example-cron/crontabExample-vimEditorWriteQuit.png" alt="Terminal-Based VIM Editor - Command Mode - Write/Quit">
+<br />
+<figcaption>Terminal-Based VIM Editor - Command Mode - Write/Quit</figcaption></p>
+<p></figure>
+8. </p>
+<p>Cronjob Starting Process:</p></div>
             </div>
         </div>
 
