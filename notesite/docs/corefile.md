@@ -96,7 +96,7 @@ cd ${dircore}
 
 ### Tips: python3 venv
 
-1. Notice that the variable is wrapped in "" because the command input should be a string
+1. Notice that the variable `${dirmdoc}` is wrapped in `””` because the command `source` takes a string as input. Thus, `"${dirmdoc}"` returns the variable output as a string. In this case `"${dirmdoc}/bin/acticate"` appends the string stored in `${dirmdoc}` to `"/bin/activate"`
 2. CB: By using the -m (there is no long-form version) flag followed by the module name (venv), you are instructing the Python interpreter to execute the venv module's script functionality. This allows you to create a virtual environment using the python3 -m venv command, without explicitly running a separate Python script or invoking a specific Python file.
 
 ## Configure python3 `venv` with `pip`
