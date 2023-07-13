@@ -41,7 +41,7 @@ brew --version
     # Homebrew/homebrew-core (git revision e1774d6544; last commit 2023-07-06)
 ```
 
-If `which brew` does **not** retun /opt/local/bin/breq, or `brew --version` is below 4.0, then Update Homebrew
+If `which brew` does **not** retun /opt/local/bin/brew, or `brew --version` is below 4.0, then Update Homebrew
 
 # Installing/Updating CLI Utils with Homebrew
 

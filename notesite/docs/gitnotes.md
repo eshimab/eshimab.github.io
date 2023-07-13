@@ -4,13 +4,18 @@
 
 # Git
 
+## Git in a Bottle
+
+1. Create a GitHub Free Account
+2. Install Homebrew 
+3. 
+
 ## Working with active git repositories
 
 ## Clone Remote Git Repository to Localhost Branch
 
 ```bash
 cd ~/lifenotes
-
 ```
 
 ### Comitting a new local directory to the GitHub Repository
