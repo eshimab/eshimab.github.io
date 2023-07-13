@@ -1,3 +1,38 @@
+# A Semi-Integrated Development Environment
+
+## Programs to install
+
+1. On Laptop (referred to as ` localhost ` or local machine )
+    1. Visual Studio Code
+        - Primary Text Editor
+    2. Homebrew Package Manager
+        - For installing CLI (“Command Line Interface” ie Terminal on macOS) tools
+    3. Git CLI
+    4. Other
+2. On iPhone if desired
+    1. GitHub App
+        - Mildly Useful 
+        - Free
+    2. Working Copy App
+        - Interface with GitHub and edit text
+        - Con: Requires one-time $25 to ` Push ` files, syncing them with the GitHub Repository (which is like, half the reason to use the app. Kinda lame but whatever).
+    2. iA Writer
+        - An even more ridiculously priced app for editing text. It’s now $50 for the iPhone version, with separate pricing for the MacOS Version.
+
+## Local Machine Setup
+
+### Install Visual Studio Code (VS Code, VSC, or just VS)
+1. Install VSC from website
+2. Install Must-have Extensions:
+    - Markdown All-in-One
+3. Configure `settings.json` 
+    1. Editor Tab Sizes
+4. Next
+
+### Install Homebrew
+
+1. 
+
 This is the workflow for documentation using MkDocs and website hosting using GitHub Pages.
 
 
