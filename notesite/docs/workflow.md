@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 # A Semi-Integrated Development Environment
 
 ## Programs to install
@@ -22,9 +30,9 @@
     2. iA Writer
         - An even more ridiculously priced app for editing text. It’s now $50 for the iPhone version, with separate pricing for the MacOS Version.
 
-## Local Machine Setup
+# Local Machine Setup
 
-### Install Visual Studio Code (VS Code, VSC, or just VS)
+## Install Visual Studio Code (VS Code, VSC, or just VS)
 1. Install VSC from website
 2. Install Must-have Extensions:
     - Markdown All-in-One
@@ -32,7 +40,7 @@
     1. Editor Tab Sizes
 4. Next
 
-### Install Homebrew CLI
+## Install Homebrew CLI
 
 1. Open Terminal
 2. Check local Homebrew Installation
@@ -61,18 +69,21 @@
         ```
     3. Verify the `brew` command works using `which brew`
 
-### Install Git CLI
+
+## Install Git CLI
 
 1. Use Homebrew to install the git CLI
     ```bash
     brew install git
     ```
 
-### Install XCode CLI
+## Install XCode CLI
 
 1. The first time you run the `git` command, you may be prompted to install the Apple XCode Command Line Tools. Do so.
 
-## Setup Local Git Directory
+# Setup Local Git 
+
+## Create Local Directory
 
 We will mirror the installation on my MacBook
 1. In Terminal, move to your Home directory, using the ` cd ` (Change Directory) command. Your Home Directory is located at `/Users/username` where `username` is the login on your laptop. For example, my `username` is `eshim` and my Home Directory is `/Users/eshim`. In Terminal on MacOS, the tilde `~` is used in filepaths as a shorthand for the user’s Home Directory. So on my machine, `/Users/eshim/Downloads` and `~/Downloads` are the same thing.
@@ -108,7 +119,7 @@ We will mirror the installation on my MacBook
 # Homebrew Details
 
 ```bash
-# Check Homebrew Version ia > 4.0
+# Check Homebrew Version is > 4.0
 brew --version
 # Output
     # lifenotes eshim$ Homebrew 4.0.27

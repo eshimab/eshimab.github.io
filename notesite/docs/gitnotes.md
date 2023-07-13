@@ -243,53 +243,49 @@ git add .git/hooks/post-commit
 To use your local "scidev" folder to update your GitHub repository named "scidev" while creating a .gitignore file and a pre-commit Git hook to limit staging to files below 1MB, follow these steps:
 
 - [ ]  Create the .gitignore file:
-   - [ ] Open a text editor and create a file named ".gitignore" in the root directory of your "scidev" folder.
-   - [ ] Add the necessary patterns to ignore files in the .gitignore file. For example, you can add `*.pdf` to ignore all PDF files.
-    ```bash
-    # Ignore directories withim scidev:
-    # The leading / means that these are subdirectories within scidev where the .gitignore file is found
-    # The trailing / means that we are targetting a directory and all it's contents
-    /assets/packages/
-    /envsdir/mdocs/bin/
-    /envsdir/mdocs/lib/
-    # 
-    # Ignore Filetypes
-    *.pdf
-    *.mat
-    ```
+    - [ ] Open a text editor and create a file named ".gitignore" in the root directory of your "scidev" folder.
+    - [ ] Add the necessary patterns to ignore files in the .gitignore file. For example, you can add `*.pdf` to ignore all PDF files.
+        ```bash
+        # Ignore directories withim scidev:
+        # The leading / means that these are subdirectories within scidev where the .gitignore file is found
+        # The trailing / means that we are targetting a directory and all it's contents
+        /assets/packages/
+        /envsdir/mdocs/bin/
+        /envsdir/mdocs/lib/
+        # 
+        # Ignore Filetypes
+        *.pdf
+        *.mat
+        ```
 - [ ] Create the pre-commit Git hook:
-   - [ ] Open a text editor and create a file named "pre-commit" (without an extension) in the ".git/hooks" directory of your "scidev" repository.
-    ```bash
-    touch /Users/eshim/scidev/.git/hooks/pre-commit
-    ```
-   - [ ] Copy and paste the following script into the "pre-commit" file:
-     ```bash
-     #!/bin/bash
-     
-     MAX_FILE_SIZE=1048576  # 1MB in bytes
-     
-     # Get the list of staged files
-     files=$(git diff --cached --name-only)
-     
-     # Loop through the staged files
-     for file in $files; do
-       # Get the file size in bytes
-       file_size=$(wc -c < "$file")
-       
-       # Compare file size with the maximum size
-       if [ "$file_size" -gt "$MAX_FILE_SIZE" ]; then
-         # Remove the file from the staging area
-         git reset HEAD "$file"
-         echo "File $file exceeds the maximum file size limit. It has been excluded from the commit."
-       fi
-     done
-     #
-     exit 0
-     ```
-   - [ ] Save the file and make it executable by running the following command in the terminal:
-      ```bash
-      chmod +x /Users/eshim/scidev/.git/hooks/pre-commit
-      ```
+    - [ ] Open a text editor and create a file named "pre-commit" (without an extension) in the ".git/hooks" directory of your "scidev" repository.
+        ```bash
+        touch /Users/eshim/scidev/.git/hooks/pre-commit
+        ```
+    - [ ] Copy and paste the following script into the "pre-commit" file:
+        ```bash
+        #!/bin/bash
+        MAX_FILE_SIZE=1048576  # 1MB in bytes
+        # Get the list of staged files
+        files=$(git diff --cached --name-only)
+        # Loop through the staged files
+        for file in $files; do
+          # Get the file size in bytes
+          file_size=$(wc -c < "$file")
+          # Compare file size with the maximum size
+          if [ "$file_size" -gt "$MAX_FILE_SIZE" ]; then
+            # Remove the file from the staging area
+            git reset HEAD "$file"
+            echo "File $file exceeds the maximum file size limit. It has been excluded from the commit."
+          fi
+        done
+        #
+        exit 0
+        ```
+    - [ ] Save the file and make it executable by running the following command in the terminal:
+        ```bash
+        chmod +x /Users/eshim/scidev/.git/hooks/pre-commit
+        ```
 - [ ] Initialize Git and connect to your GitHub repository:
    - [ ] Open a terminal or command prompt and navigate to your "scidev" folder.
        ```bash
