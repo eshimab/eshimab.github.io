@@ -252,7 +252,7 @@ git commit -m "$commit_message"
 git push scimain main
 ```
 
-## New Branch
+## Creating a new Branch
 
 Checkout/Create a new branch `indocs` using `git checkout` with the `-b` flag. The new branch `indocs` is based on the `main` branch in the remote repository `scimain`.
 
