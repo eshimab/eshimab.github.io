@@ -7,7 +7,7 @@
 
 ## Programs to install
 
-1. On Laptop (referred to as ` localhost ` or local machine )
+1. On Laptop (referred to as `localhost`  or local machine )
     1. Visual Studio Code
         - Primary Text Editor
     2. Homebrew Package Manager CLI (“Command Line Interface” ie Terminal on macOS)
@@ -59,14 +59,13 @@
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         ```
 5. Check for installation by using the `which brew` command again. 
-    1. If it returns nothing, add the path to the new ` brew ` installation to your Terminal `$PATH` variable.
+    1. If it returns nothing, add the path to the new `brew` installation to your Terminal `$PATH` variable.
     2. Use the shell command `export ` to set the variable `PATH` to (`=`) the previous `PATH` variable (called using the `$` symbol) with the new path directory `/opt/local/bin`, separated by the `:` symbol
         ```bash
         export PATH=$PATH:/opt/local/bin
         ```
         - Most tutorials add directories to `PATH` using `export`. You can do the same operation by setting the `PATH` variable directly with `PATH="$PATH:/opt/local/bin"`
     3. Verify the `brew` command works using `which brew`
-
 
 ## Install Git CLI
 

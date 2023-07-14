@@ -14,7 +14,7 @@ nav:
     - infaqs: infaqs.md
     - gitnotes: gitnotes.md 
     - notes:
-      - osnotes: notemds/osnotes.md
+      - bash: notemds/bashnotes.md
       - vsnotes: notemds/vsnotes.md
 #
 markdown_extensions:

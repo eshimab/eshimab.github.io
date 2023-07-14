@@ -4,13 +4,32 @@
 
 
 
-# Resuming Work on Local Machine
+# Working on Local Machine
 
-## Pull from git
+## Update files from remote GitHub repository 
 
-```bash
-git pull scimain main
-```
+1. Assuming you use the GitHub remote alias `scimain` and are working on the branch `main`:
+    ```bash
+    git pull scimain main
+    ```
+
+## Start local MkDocs Server
+
+1. Open a new Terminal window
+2. Navigate to `~/scidev`, start the python3 `venv`
+    ```bash
+    cd ~/scidev
+    source envsdir/mdocs/bin/activate
+    ``` 
+3. In the `venv` go to MkDocs root directory `~/scidev/notesite` and start the local MkDocs server 
+    ```bash
+    cd ~/scidev/notesite
+    mkdocs serve
+    ``` 
+4. MkDocs will build and store the website HTML in `~/scidev/notesite/site`. 
+    - View the site on your web browser by going to `http://127.0.0.1:8000/`
+5. Leave the Terminal window open so MkDocs can keep the local site updated as you edit the local files. 
+    - Sometimes MkDocs will encounter errors and stop creating the site. Simply return to that Terminal window and restart the server with `mkdocs serve`
 
 ---
 
@@ -18,7 +37,7 @@ git pull scimain main
 
 ## Build HTML Site with MkDocs in the python3 `venv`
 
-After updating the markdown documents in `scidev/notesite/docs`
+After updating the markdown documents in `scidev/notesite/docs`, use a new Terminal window to build and export the HTML site with MkDocs on the `venv`.
 
 ```bash
 # Move to the python3 virtual env bin directory to activate the venv
