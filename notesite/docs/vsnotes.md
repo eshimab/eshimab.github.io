@@ -46,6 +46,7 @@
 ```
 
 ## Converting Atom cofee script to VS Code JavaScript
+
 ```coffee
 # ------------------ CURSOR TO NEXT CHUNK ----------------------
 atom.commands.add 'atom-text-editor',
@@ -115,7 +116,6 @@ atom.commands.add 'atom-text-editor',
         break
       # Move to start of line
       atom.workspace.getActiveTextEditor()?.getLastCursor().moveToBeginningOfLine()
-
 ```
 
 

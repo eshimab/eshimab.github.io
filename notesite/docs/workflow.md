@@ -85,8 +85,9 @@
 
 ## Create Local Directory
 
-We will mirror the installation on my MacBook
-1. In Terminal, move to your Home directory, using the ` cd ` (Change Directory) command. Your Home Directory is located at `/Users/username` where `username` is the login on your laptop. For example, my `username` is `eshim` and my Home Directory is `/Users/eshim`. In Terminal on MacOS, the tilde `~` is used in filepaths as a shorthand for the user’s Home Directory. So on my machine, `/Users/eshim/Downloads` and `~/Downloads` are the same thing.
+We will mirror the installation on my MacBook.
+
+1. In Terminal, move to your Home directory, using the `cd` (Change Directory) command. Your Home Directory is located at `/Users/username` where `username` is the login on your laptop. For example, my `username` is `eshim` and my Home Directory is `/Users/eshim`. In Terminal on MacOS, the tilde `~` is used in filepaths as a shorthand for the user’s Home Directory. So on my machine, `/Users/eshim/Downloads` and `~/Downloads` are the same thing.
     ```bash
     cd ~
     ``` 
@@ -196,7 +197,7 @@ rsync --archive --progress --recursive --verbose  ~/Library/Application\ Support
 
 ```bash
 # Set Commit Message Variable
-commit_message="From localhost/indocs. Updates to quickstart.md and infaqs.md"
+commit_message="localhost: syncing to mobile"
 # Add / Commit / Push got Git
 cd ~/scidev # Move to root dir of the local Git branch
 git status
