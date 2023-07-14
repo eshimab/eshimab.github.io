@@ -112,8 +112,45 @@ We will mirror the installation on my MacBook
     cd ~/scidev
     git checkout -b main scimain/main
     ```
-  
 
+# Setup MkDocs in a python3 virtual environment 
+
+## Create a python3 virtual environment (`venv`) to run Mkdocs
+
+1. Create the `python3` `venv` in Terminal
+    ```bash
+    # Create the python3 venv
+    python3 -m venv ~/scidev/envsdir/mdocs
+    ```
+2.  Go to the primary directory `~/scidev`
+    ```bash
+    cd ~/scidev
+    ```
+2. Activate the `venv` with `source` command and go to `~/scidev`
+    ```bash 
+    source ~/scidev/envsdir/mdocs/bin/activate
+    ``` 
+    - When the `venv` is active, the prompt (text to the left of where you enter commands) will change, showing your active virtual env `mdocs` in parentheses:
+        ```bash
+        (mdocs) hostname:scidev username$ 
+        ``` 
+
+## Configure python3 `venv`
+
+1. Working in the `venv` `mdocs`, go to the primary directory `~/scidev`
+    ```bash
+    cd ~/scidev
+    ```
+6. The Python package manager is called `pip`. First, update pip:
+    ```bash
+    python3 -m pip install --upgrade pip
+    ``` 
+3. install the local Mkdocs package that was downloaded from the Mkdocs website:
+    ```bash 
+    python3 -m pip install "/Users/username/scidev/assets/packages/mkdocs-1.4.3.tar.gz"
+    ```
+4. 
+    
 ---
 
 # Homebrew Details
