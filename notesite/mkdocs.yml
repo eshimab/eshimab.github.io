@@ -8,13 +8,14 @@
 site_name: Super Fun Digressions # site_name and site_url are the only required fields
 site_url: https://example.com # https://example.com is a placeholder value
 nav:
-    - about: about.md 
-    - index: index.md
+    - workflow: workflow.md
+    - setup: setup.md
     - influx: quickstart.md
     - infaqs: infaqs.md
     - gitnotes: gitnotes.md 
-    - workflow: workflow.md
-    - vsnotes: vsnotes.md
+    - notes:
+      - osnotes: notemds/osnotes.md
+      - vsnotes: notemds/vsnotes.md
 #
 markdown_extensions:
   - toc:

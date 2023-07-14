@@ -1,34 +1,6 @@
 
 
 
-### Starting directory structure.
-
-```bash
-# Define the core directory
-dircore="/Users/eshim/scidev"
-direnvs="${dircore}/envsdir"
-dirmdoc="${direnvs}/mdocs"
-dirasst="${dircore}/assets"
-dirpckg="${dirasst}/packges"
-filecore="corefile.md"
-# Make Dirs
-mkdir -p "$direnvs"
-mkdir -p "$dirmdoc"
-mkdir -p "$dirasst"
-mkdir -p "$dirpckg"
-```
-
-Tips:
-1. When doing the BASH variable assignment, the `=` symbol should not have spaces on either side.
-2. (CB) In this code, the directories `direnvs` and `dirmdoc` are created using the `mkdir` command with the `-p` option. The `-p` option ensures that parent directories are created if they don't already exist. The variable values are correctly concatenated using the `${variable}` syntax.
-3. Pick up the command line tool `tree` to visualize the directory structure: 
-		```bash
-			# Get the program homebrew
-			/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-			# Use homebrew to install tree
-			brew install tree
-		```
- 		
 
 ### Create a python3 virtual environment (`venv`) to run Mkdocs
 
@@ -94,14 +66,3 @@ nav:
     - Home: index.md
     - About: about.md
 ```
-
-
-### Creating a shell script for displaying file trees
-
-1. Open a terminal window.
-2. Open your shell's configuration file using a text editor. For example:
-		```bash
-		nano ~/.bashrc
-		```
-3. Ok
-4. Ok

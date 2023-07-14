@@ -1,122 +1,19 @@
 
 
 
-## Create directory structure.
 
+
+# MkDocs Details
+
+## Create and host local HTML Site using MkDocs in the python3 `venv`
+
+1. Open a new Terminal window because MkDocs will be actively monitoring for updates and refreshing the local website
+2. Start the local server
 ```bash
-# Define the core directory
-dircore="/Users/eshim/scidev"
-direnvs="${dircore}/envsdir"
-dirmdoc="${direnvs}/mdocs"
-dirasst="${dircore}/assets"
-dirpckg="${dirasst}/packges"
-filecore="corefile.md"
-# Make Dirs
-mkdir -p "$direnvs"
-mkdir -p "$dirmdoc"
-mkdir -p "$dirasst"
-mkdir -p "$dirpckg"
-```
-
-Tips:
-1. When doing the BASH variable assignment, the `=` symbol should not have spaces on either side.
-2. (CB) In this code, the directories `direnvs` and `dirmdoc` are created using the `mkdir` command with the `-p` option. The `-p` option ensures that parent directories are created if they don't already exist. The variable values are correctly concatenated using the `${variable}` syntax.
-3. Pick up the command line tool `tree` to visualize the directory structure: 		
-
----
-
-# Use Homebrew to intstall the CLI Tool `tree`
-
-## Verify Homebrew Installation
-```bash
-# Check for Homebrew
-which brew
-# Output:
-#   /usr/local/bin/brew
-# 
-# Check Homebrew Version ia > 4.0
-brew --version
-# Output
-    # lifenotes eshim$ Homebrew 4.0.27
-    # Homebrew/homebrew-core (git revision e1774d6544; last commit 2023-07-06)
-```
-
-If `which brew` does **not** retun /opt/local/bin/brew, or `brew --version` is below 4.0, then Update Homebrew
-
-# Installing/Updating CLI Utils with Homebrew
-
-## Install the Homebrew tool via the website
-
-### For Apple Macs with ARM Processors
-
-You may need to remove the old version of Homebrew, which was originally stored in /usr/local/
-
-```bash
-# Uninstall Previous Homebrew using uninstall.sh from website
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
-
-```
-
-## Install Homebrew
-
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-### Homebrew Installation Errors
-
-If tou have errors of the form: `Warning: /opt/homebrew/bin is not in your PATH.`
-1. Add `/opt/homebrew/bin` to your $PATH.
-
-```bash
-PATH="/opt/homebrew/bin:$PATH"
-```
-
-## Install `tree` with Homebrew
-
-```bash
-# Use homebrew to install tree
-brew install tree
-```
-
---- 		
-
-# Create a python3 virtual environment (`venv`) to run Mkdocs
-
-## Create the `python3` `venv` and start it with `source`
-
-```bash
-# Create the python3 venv
-python3 -m venv "${dirmdoc}"
-# Activate the venv
-source "${dirmdoc}/bin/activate"
-# Go there
-cd ${dircore}
-```
-
-### Tips: python3 venv
-
-1. Notice that the variable `${dirmdoc}` is wrapped in `””` because the command `source` takes a string as input. Thus, `"${dirmdoc}"` returns the variable output as a string. In this case `"${dirmdoc}/bin/acticate"` appends the string stored in `${dirmdoc}` to `"/bin/activate"`
-2. CB: By using the -m (there is no long-form version) flag followed by the module name (venv), you are instructing the Python interpreter to execute the venv module's script functionality. This allows you to create a virtual environment using the python3 -m venv command, without explicitly running a separate Python script or invoking a specific Python file.
-
-## Configure python3 `venv` with `pip`
-
-Now we are working in the python3 environment where lines should be preceded by `(mdocs) hostname:scidev username$`
-```python
-# Upgrade pip so that it doesn't complain
-python3 -m pip install --upgrade pip
-
-# install the local Mkdocs package, version 1.4.3
-python3 -m pip install "/Users/eshim/scidev/assets/packages/mkdocs-1.4.3.tar.gz"
-```
-
-Then create the MkDocs project directory in the python3 venv
-```python
-mkdocs new "/Users/eshim/scidev/notesite"
-cd /Users/eshim/scidev/notesite
 mkdocs serve
 ```
-And you get output:
+
+Example Output:
 ```
 INFO     -  Building documentation...
 INFO     -  Cleaning site directory
@@ -124,7 +21,9 @@ INFO     -  Documentation built in 0.06 seconds
 INFO     -  [10:50:41] Watching paths for changes: 'docs', 'mkdocs.yml'
 INFO     -  [10:50:41] Serving on http://127.0.0.1:8000/
 ```
-It will serve on [Your local Macine](http://127.0.0.1:8000/)
+
+The website will be avilable at: `http://127.0.0.1:8000/`  which you can view in a web browser.
+
 Now leave this Terminal instance running and let it update the site in the background. I will call this the Mkdocs Server Terminal or similarly.
 
 **Open a new terminal window**
@@ -151,11 +50,6 @@ nav:
     - Home: index.md
     - About: about.md
 ```
-Install the mkdocs plugin `img2fig` to allow for dynamic creation and referencing of Figures
-From within the python `venv` run `pip` to install the plugin
-```python
-pip install mkdocs-img2fig-plugin
-```
 
 And update the `mkdocs.yml` to use that plug-in:
 ```yaml
@@ -168,22 +62,10 @@ nav:
     - Github Setup: shellnotes.md 
 
 plugins:
-  - img2fig:
-      caption_prefix: "Figure"
-      caption_title: "Figures"
-      svg_output: false
+  - img2fig
 ```
 
 Now when you run `mkdocs serve` it will properly use the `img2fig` plugin:
 
 ![mkdocs serve with img2fig plugin enabled](notesite/img/mkDocsExample-enablingPackage.png)
 
-### Creating a shell script for displaying file trees
-
-1. Open a terminal window.
-2. Open your shell's configuration file using a text editor. For example:
-		```bash
-		nano ~/.bashrc
-		```
-3. Ok
-4. Ok

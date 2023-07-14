@@ -34,10 +34,10 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href="../about/" class="nav-link">about</a>
+                                <a href="../workflow/" class="nav-link">workflow</a>
                             </li>
                             <li class="navitem">
-                                <a href=".." class="nav-link">index</a>
+                                <a href="../setup/" class="nav-link">setup</a>
                             </li>
                             <li class="navitem active">
                                 <a href="./" class="nav-link">influx</a>
@@ -48,11 +48,18 @@
                             <li class="navitem">
                                 <a href="../gitnotes/" class="nav-link">gitnotes</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../workflow/" class="nav-link">workflow</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../vsnotes/" class="nav-link">vsnotes</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">notes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../notemds/osnotes/" class="dropdown-item">osnotes</a>
+</li>
+                                    
+<li>
+    <a href="../notemds/vsnotes/" class="dropdown-item">vsnotes</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -63,7 +70,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href=".." class="nav-link">
+                                <a rel="prev" href="../setup/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>

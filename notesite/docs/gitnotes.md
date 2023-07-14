@@ -21,17 +21,25 @@ cd ~/lifenotes
 ## Git Command Syntax
 
 1. Argument: `commit`
-    1. Flag: `-m` or `--message`
-        ```bash
-        git commit --message "This is the commit message"
-        git commit --m "This is the commit message"
-        ```
-        1. You can add a second, longer `commit` message by using the `--message` (or `-m`) twice
-
-1. To add a longer message to your commits, you can use the git commit command with the `-m` flag followed by the commit message in quotes, and then add the `-m` flag again with another message in quotes.
-```bash
-git commit -m "Summary message" -m "This is a longer description of the commit. It provides more detailed information about the changes and the purpose of the commit."
-```
+    1. Flag: `-m` or `--message` requires an input of a string (in double quotes) with the commit message
+        1. Examples:
+            ```bash
+            git commit --message "This is the commit message"
+            git commit --m "This is the commit message"
+            ```
+        2. You can add a second, longer `commit` message by using the `--message` (or `-m`) twice
+            ```bash
+            git commit -m "Summary message" -m "This is a longer description of the commit."
+            ```
+2. Argument: `checkout`
+    1. Flag: `-b` or `--create-branch=` creates a new branch on the local machine and switches to that branch
+        1. Input: a plain text name for the new branch e.g. `twig`
+            ```bash
+            git checkout -b twig
+            git checkout --create-branch=twig
+            ``` 
+3. Argument: `add`
+   1. Flag: `-r` or `--recursive`. Git adds directories recursively by default. This flag is rarely needed.
 
 ### Comitting a new local directory to the GitHub Repository
 
@@ -138,7 +146,6 @@ git commit -m "Updated notesite, added envsdir/mdoc/pyenvs.cfg, updated .gitigno
 See Output
 
 ![Final Commit Example](img/example-git/gitExample-gitStatusFinal.png)
-
 
 
 ### Managing GitHub Repository Url Aliases with `git remote`
@@ -260,7 +267,14 @@ git add .git/hooks/pre-commit
 git add .git/hooks/post-commit
 ```
 
----
+## Creat or `checkout` a new Branch
+
+Checkout/Create a new branch `indocs` using `git checkout` with the `-b` flag. The new branch `indocs` is based on the `main` branch in the remote repository `scimain`.
+
+```bash
+git checkout -b indocs scimain/main
+```
+
 ---
 
 ### Adding and updating files and directories to an established git repo

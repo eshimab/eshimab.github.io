@@ -34,10 +34,10 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href="../about/" class="nav-link">about</a>
+                                <a href="../workflow/" class="nav-link">workflow</a>
                             </li>
                             <li class="navitem">
-                                <a href=".." class="nav-link">index</a>
+                                <a href="../setup/" class="nav-link">setup</a>
                             </li>
                             <li class="navitem">
                                 <a href="../quickstart/" class="nav-link">influx</a>
@@ -48,11 +48,18 @@
                             <li class="navitem active">
                                 <a href="./" class="nav-link">gitnotes</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../workflow/" class="nav-link">workflow</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../vsnotes/" class="nav-link">vsnotes</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">notes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../notemds/osnotes/" class="dropdown-item">osnotes</a>
+</li>
+                                    
+<li>
+    <a href="../notemds/vsnotes/" class="dropdown-item">vsnotes</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -68,7 +75,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../workflow/" class="nav-link">
+                                <a rel="next" href="../notemds/osnotes/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -112,7 +119,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#-" class="nav-link">---</a>
+            <li class="nav-item" data-level="2"><a href="#creat-or-checkout-a-new-branch" class="nav-link">Creat or checkout a new Branch</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -141,24 +148,32 @@
 </code></pre>
 <h2 id="git-command-syntax">Git Command Syntax<a class="headerlink" href="#git-command-syntax" title="Permanent link">&para;</a></h2>
 <ol>
-<li>
-<p>Argument: <code>commit</code></p>
-<ol>
-<li>Flag: <code>-m</code> or <code>--message</code>
+<li>Argument: <code>commit</code><ol>
+<li>Flag: <code>-m</code> or <code>--message</code> requires an input of a string (in double quotes) with the commit message<ol>
+<li>Examples:
     <code>bash
     git commit --message "This is the commit message"
-    git commit --m "This is the commit message"</code><ol>
-<li>You can add a second, longer <code>commit</code> message by using the <code>--message</code> (or <code>-m</code>) twice</li>
+    git commit --m "This is the commit message"</code></li>
+<li>You can add a second, longer <code>commit</code> message by using the <code>--message</code> (or <code>-m</code>) twice
+    <code>bash
+    git commit -m "Summary message" -m "This is a longer description of the commit."</code></li>
 </ol>
 </li>
 </ol>
 </li>
-<li>
-<p>To add a longer message to your commits, you can use the git commit command with the <code>-m</code> flag followed by the commit message in quotes, and then add the <code>-m</code> flag again with another message in quotes.</p>
+<li>Argument: <code>checkout</code><ol>
+<li>Flag: <code>-b</code> or <code>--create-branch=</code> creates a new branch on the local machine and switches to that branch<ol>
+<li>Input: a plain text name for the new branch e.g. <code>twig</code>
+    <code>bash
+    git checkout -b twig
+    git checkout --create-branch=twig</code> </li>
+</ol>
 </li>
 </ol>
-<pre><code class="language-bash">git commit -m &quot;Summary message&quot; -m &quot;This is a longer description of the commit. It provides more detailed information about the changes and the purpose of the commit.&quot;
-</code></pre>
+</li>
+<li>Argument: <code>add</code></li>
+<li>Flag: <code>-r</code> or <code>--recursive</code>. Git adds directories recursively by default. This flag is rarely needed.</li>
+</ol>
 <h3 id="comitting-a-new-local-directory-to-the-github-repository">Comitting a new local directory to the GitHub Repository<a class="headerlink" href="#comitting-a-new-local-directory-to-the-github-repository" title="Permanent link">&para;</a></h3>
 <h4 id="git-repo-info">Git Repo Info<a class="headerlink" href="#git-repo-info" title="Permanent link">&para;</a></h4>
 <ul>
@@ -382,7 +397,11 @@ dhcp-168-105-223-225:scidev eshim$ git remote --verbose
 git add .git/hooks/pre-commit
 git add .git/hooks/post-commit
 </code></pre>
-<h2 id="-">---<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
+<h2 id="creat-or-checkout-a-new-branch">Creat or <code>checkout</code> a new Branch<a class="headerlink" href="#creat-or-checkout-a-new-branch" title="Permanent link">&para;</a></h2>
+<p>Checkout/Create a new branch <code>indocs</code> using <code>git checkout</code> with the <code>-b</code> flag. The new branch <code>indocs</code> is based on the <code>main</code> branch in the remote repository <code>scimain</code>.</p>
+<pre><code class="language-bash">git checkout -b indocs scimain/main
+</code></pre>
+<hr />
 <h3 id="adding-and-updating-files-and-directories-to-an-established-git-repo">Adding and updating files and directories to an established git repo<a class="headerlink" href="#adding-and-updating-files-and-directories-to-an-established-git-repo" title="Permanent link">&para;</a></h3>
 <h3 id="initializing-a-git-repo-using-a-local-directory-with-a-generic-empty-repo-already-on-github">Initializing a git repo using a local directory (with a generic, empty repo already on GitHub)<a class="headerlink" href="#initializing-a-git-repo-using-a-local-directory-with-a-generic-empty-repo-already-on-github" title="Permanent link">&para;</a></h3>
 <p>To use your local "scidev" folder to update your GitHub repository named "scidev" while creating a .gitignore file and a pre-commit Git hook to limit staging to files below 1MB, follow these steps:</p>

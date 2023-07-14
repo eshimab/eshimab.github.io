@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://example.com/about/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>about - Super Fun Digressions</title>
+        <title>About - Super Fun Digressions</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -33,11 +33,11 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">about</a>
+                            <li class="navitem">
+                                <a href="../workflow/" class="nav-link">workflow</a>
                             </li>
                             <li class="navitem">
-                                <a href=".." class="nav-link">index</a>
+                                <a href="../setup/" class="nav-link">setup</a>
                             </li>
                             <li class="navitem">
                                 <a href="../quickstart/" class="nav-link">influx</a>
@@ -48,11 +48,18 @@
                             <li class="navitem">
                                 <a href="../gitnotes/" class="nav-link">gitnotes</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../workflow/" class="nav-link">workflow</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../vsnotes/" class="nav-link">vsnotes</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">notes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../notemds/osnotes/" class="dropdown-item">osnotes</a>
+</li>
+                                    
+<li>
+    <a href="../notemds/vsnotes/" class="dropdown-item">vsnotes</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -62,16 +69,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href=".." class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -90,36 +87,11 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            
-            
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h3 id="starting-directory-structure">Starting directory structure.<a class="headerlink" href="#starting-directory-structure" title="Permanent link">&para;</a></h3>
-<pre><code class="language-bash"># Define the core directory
-dircore=&quot;/Users/eshim/scidev&quot;
-direnvs=&quot;${dircore}/envsdir&quot;
-dirmdoc=&quot;${direnvs}/mdocs&quot;
-dirasst=&quot;${dircore}/assets&quot;
-dirpckg=&quot;${dirasst}/packges&quot;
-filecore=&quot;corefile.md&quot;
-# Make Dirs
-mkdir -p &quot;$direnvs&quot;
-mkdir -p &quot;$dirmdoc&quot;
-mkdir -p &quot;$dirasst&quot;
-mkdir -p &quot;$dirpckg&quot;
-</code></pre>
-<p>Tips:
-1. When doing the BASH variable assignment, the <code>=</code> symbol should not have spaces on either side.
-2. (CB) In this code, the directories <code>direnvs</code> and <code>dirmdoc</code> are created using the <code>mkdir</code> command with the <code>-p</code> option. The <code>-p</code> option ensures that parent directories are created if they don't already exist. The variable values are correctly concatenated using the <code>${variable}</code> syntax.
-3. Pick up the command line tool <code>tree</code> to visualize the directory structure: 
-        <code>bash
-            # Get the program homebrew
-            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-            # Use homebrew to install tree
-            brew install tree</code></p>
 <h3 id="create-a-python3-virtual-environment-venv-to-run-mkdocs">Create a python3 virtual environment (<code>venv</code>) to run Mkdocs<a class="headerlink" href="#create-a-python3-virtual-environment-venv-to-run-mkdocs" title="Permanent link">&para;</a></h3>
 <pre><code class="language-bash"># Create the python3 venv
 python3 -m venv &quot;${dirmdoc}&quot;
@@ -169,16 +141,7 @@ site_url: https://example.com # https://example.com is a placeholder value
 nav: 
     - Home: index.md
     - About: about.md
-</code></pre>
-<h3 id="creating-a-shell-script-for-displaying-file-trees">Creating a shell script for displaying file trees<a class="headerlink" href="#creating-a-shell-script-for-displaying-file-trees" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Open a terminal window.</li>
-<li>Open your shell's configuration file using a text editor. For example:
-        <code>bash
-        nano ~/.bashrc</code></li>
-<li>Ok</li>
-<li>Ok</li>
-</ol></div>
+</code></pre></div>
             </div>
         </div>
 

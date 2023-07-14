@@ -18,7 +18,47 @@ Need to add `code`
 nano ~/.bash_profile
 ```
 
-## Creating a Cronjob for a Shell Script
+
+## Working with BASH variables
+
+### Bash Variable Example: Creating directories by defining variables:
+
+```bash
+# Define the core directory
+dircore="/Users/eshim/scidev"
+direnvs="${dircore}/envsdir"
+dirmdoc="${direnvs}/mdocs"
+dirasst="${dircore}/assets"
+dirpckg="${dirasst}/packges"
+filecore="corefile.md"
+# Make Dirs
+mkdir -p "$direnvs"
+mkdir -p "$dirmdoc"
+mkdir -p "$dirasst"
+mkdir -p "$dirpckg"
+```
+
+Tips:
+1. When doing the BASH variable assignment, the `=` symbol should not have spaces on either side.
+2. (CB) In this code, the directories `direnvs` and `dirmdoc` are created using the `mkdir` command with the `-p` option. The `-p` option ensures that parent directories are created if they don't already exist. The variable values are correctly concatenated using the `${variable}` syntax.
+
+### Bash Variable Example: Creating python3 `venv`
+
+```bash
+# Create the python3 venv
+python3 -m venv "${dirmdoc}"
+# Activate the venv
+source "${dirmdoc}/bin/activate"
+# Go there
+cd ${dircore}
+```
+
+1. Notice that the variable `${dirmdoc}` is wrapped in `””` because the command `source` takes a string as input. Thus, `"${dirmdoc}"` returns the variable output as a string. In this case `"${dirmdoc}/bin/acticate"` appends the string stored in `${dirmdoc}` to `"/bin/activate"`
+2. CB: By using the -m (there is no long-form version) flag followed by the module name (venv), you are instructing the Python interpreter to execute the venv module's script functionality. This allows you to create a virtual environment using the python3 -m venv command, without explicitly running a separate Python script or invoking a specific Python file.
+
+---
+
+# Creating a Cronjob for a Shell Script
 
 1. Write `shell` script `~/scidev/heic2png.sh` for converting `~/Downloads/$filename.HEIC` to `~/screenshots/$filename.png`.
     ```bash

@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://example.com/</loc>
-         <lastmod>2023-07-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://example.com/about/</loc>
          <lastmod>2023-07-14</lastmod>
          <changefreq>daily</changefreq>
@@ -26,22 +21,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/osnotes/</loc>
-         <lastmod>2023-07-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://example.com/quickstart/</loc>
          <lastmod>2023-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/vsnotes/</loc>
+         <loc>https://example.com/setup/</loc>
          <lastmod>2023-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/workflow/</loc>
+         <lastmod>2023-07-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/notemds/osnotes/</loc>
+         <lastmod>2023-07-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/notemds/vsnotes/</loc>
          <lastmod>2023-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>

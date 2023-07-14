@@ -33,11 +33,11 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href="../about/" class="nav-link">about</a>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">workflow</a>
                             </li>
                             <li class="navitem">
-                                <a href=".." class="nav-link">index</a>
+                                <a href="../setup/" class="nav-link">setup</a>
                             </li>
                             <li class="navitem">
                                 <a href="../quickstart/" class="nav-link">influx</a>
@@ -48,11 +48,18 @@
                             <li class="navitem">
                                 <a href="../gitnotes/" class="nav-link">gitnotes</a>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">workflow</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../vsnotes/" class="nav-link">vsnotes</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">notes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../notemds/osnotes/" class="dropdown-item">osnotes</a>
+</li>
+                                    
+<li>
+    <a href="../notemds/vsnotes/" class="dropdown-item">vsnotes</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -63,12 +70,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../gitnotes/" class="nav-link">
+                                <a rel="prev" class="nav-link disabled">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../vsnotes/" class="nav-link">
+                                <a rel="next" href="../setup/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -90,62 +97,6 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#a-semi-integrated-development-environment" class="nav-link">A Semi-Integrated Development Environment</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#programs-to-install" class="nav-link">Programs to install</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#local-machine-setup" class="nav-link">Local Machine Setup</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#install-visual-studio-code-vs-code-vsc-or-just-vs" class="nav-link">Install Visual Studio Code (VS Code, VSC, or just VS)</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#install-homebrew-cli" class="nav-link">Install Homebrew CLI</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#install-git-cli" class="nav-link">Install Git CLI</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#install-xcode-cli" class="nav-link">Install XCode CLI</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#setup-local-git" class="nav-link">Setup Local Git</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#create-local-directory" class="nav-link">Create Local Directory</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#setup-git-and-checkout-branch-main-from-github-remote-repository" class="nav-link">Setup Git and Checkout Branch main from GitHub Remote Repository</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#setup-mkdocs-in-a-python3-virtual-environment" class="nav-link">Setup MkDocs in a python3 virtual environment</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#create-a-python3-virtual-environment-venv-to-run-mkdocs" class="nav-link">Create a python3 virtual environment (venv) to run Mkdocs</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#configure-python3-venv" class="nav-link">Configure python3 venv</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-            
             <li class="nav-item" data-level="1"><a href="#resuming-work-on-local-machine" class="nav-link">Resuming Work on Local Machine</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#pull-from-git" class="nav-link">Pull from git</a>
@@ -155,9 +106,9 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#updating-files" class="nav-link">Updating Files</a>
+            <li class="nav-item" data-level="1"><a href="#updating-local-and-github-files" class="nav-link">Updating local and GitHub files</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#build-site-with-mkdocs" class="nav-link">Build site with MkDocs</a>
+            <li class="nav-item" data-level="2"><a href="#build-html-site-with-mkdocs-in-the-python3-venv" class="nav-link">Build HTML Site with MkDocs in the python3 venv</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -169,10 +120,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#creating-a-new-branch" class="nav-link">Creating a new Branch</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -180,165 +127,13 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="a-semi-integrated-development-environment">A Semi-Integrated Development Environment<a class="headerlink" href="#a-semi-integrated-development-environment" title="Permanent link">&para;</a></h1>
-<h2 id="programs-to-install">Programs to install<a class="headerlink" href="#programs-to-install" title="Permanent link">&para;</a></h2>
-<ol>
-<li>On Laptop (referred to as <code>localhost</code> or local machine )<ol>
-<li>Visual Studio Code<ul>
-<li>Primary Text Editor</li>
-</ul>
-</li>
-<li>Homebrew Package Manager CLI (“Command Line Interface” ie Terminal on macOS)<ul>
-<li>For installing other CLI tools</li>
-</ul>
-</li>
-<li>Git CLI</li>
-<li>Apple XCode CLI </li>
-<li>MkDocs for creating the documentation HTML<ol>
-<li>Install MkDocs</li>
-<li>Create Python3 Virtual Machine (virtual environment or <code>venv</code>) for MkDocs</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>On iPhone if desired<ol>
-<li>GitHub App<ul>
-<li>Mildly Useful </li>
-<li>Free</li>
-</ul>
-</li>
-<li>Working Copy App<ul>
-<li>Interface with GitHub and edit text</li>
-<li>Con: Requires one-time $25 to <code>push</code> files, syncing them with the GitHub Repository (which is like, half the reason to use the app. Kinda lame but whatever).</li>
-</ul>
-</li>
-<li>iA Writer<ul>
-<li>An even more ridiculously priced app for editing text. It’s now $50 for the iPhone version, with separate pricing for the MacOS Version.</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<h1 id="local-machine-setup">Local Machine Setup<a class="headerlink" href="#local-machine-setup" title="Permanent link">&para;</a></h1>
-<h2 id="install-visual-studio-code-vs-code-vsc-or-just-vs">Install Visual Studio Code (VS Code, VSC, or just VS)<a class="headerlink" href="#install-visual-studio-code-vs-code-vsc-or-just-vs" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Install VSC from website</li>
-<li>Install Must-have Extensions:<ul>
-<li>Markdown All-in-One</li>
-</ul>
-</li>
-<li>Configure <code>settings.json</code> <ol>
-<li>Editor Tab Sizes</li>
-</ol>
-</li>
-<li>Next</li>
-</ol>
-<h2 id="install-homebrew-cli">Install Homebrew CLI<a class="headerlink" href="#install-homebrew-cli" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Open Terminal</li>
-<li>Check local Homebrew Installation
-    <code>bash
-    which brew</code></li>
-<li>If output of <code>which brew</code> shows:
-    <code>bash
-    /usr/local/bin/brew</code> <ol>
-<li>Uninstall the old “Intel Based” Homebrew version which is located in <code>/usr/local/bin/brew</code> </li>
-<li>Enter the following command into Terminal to uninstall the old Homebrew version
-    <code>bash
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"</code></li>
-</ol>
-</li>
-<li>If output of <code>which brew</code> is empty or does not show <code>/opt/local/bin/brew</code> <ol>
-<li>Install Homebrew using the Terminal Command:
-    <code>bash
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></li>
-</ol>
-</li>
-<li>Check for installation by using the <code>which brew</code> command again. <ol>
-<li>If it returns nothing, add the path to the new <code>brew</code> installation to your Terminal <code>$PATH</code> variable.</li>
-<li>Use the shell command <code>export</code> to set the variable <code>PATH</code> to (<code>=</code>) the previous <code>PATH</code> variable (called using the <code>$</code> symbol) with the new path directory <code>/opt/local/bin</code>, separated by the <code>:</code> symbol
-    <code>bash
-    export PATH=$PATH:/opt/local/bin</code></li>
-<li>Verify the <code>brew</code> command works using <code>which brew</code></li>
-</ol>
-</li>
-</ol>
-<h2 id="install-git-cli">Install Git CLI<a class="headerlink" href="#install-git-cli" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Use Homebrew to install the git CLI
-    <code>bash
-    brew install git</code></li>
-</ol>
-<h2 id="install-xcode-cli">Install XCode CLI<a class="headerlink" href="#install-xcode-cli" title="Permanent link">&para;</a></h2>
-<ol>
-<li>The first time you run the <code>git</code> command, you may be prompted to install the Apple XCode Command Line Tools. Do so.</li>
-</ol>
-<h1 id="setup-local-git">Setup Local Git<a class="headerlink" href="#setup-local-git" title="Permanent link">&para;</a></h1>
-<h2 id="create-local-directory">Create Local Directory<a class="headerlink" href="#create-local-directory" title="Permanent link">&para;</a></h2>
-<p>We will mirror the installation on my MacBook.</p>
-<ol>
-<li>In Terminal, move to your Home directory, using the <code>cd</code> (Change Directory) command. Your Home Directory is located at <code>/Users/username</code> where <code>username</code> is the login on your laptop. For example, my <code>username</code> is <code>eshim</code> and my Home Directory is <code>/Users/eshim</code>. In Terminal on MacOS, the tilde <code>~</code> is used in filepaths as a shorthand for the user’s Home Directory. So on my machine, <code>/Users/eshim/Downloads</code> and <code>~/Downloads</code> are the same thing.
-    <code>bash
-    cd ~</code> </li>
-<li>Create the directory <code>scidev</code> in your Home Directory using the <code>mkdir</code> (Make Directory) command. We will use <code>scidev</code> to house the local Git Branch. After making <code>scidev</code>, <code>cd</code> into that directory 
-    <code>bash
-    mkdir ~/scidev
-    cd ~/scidev</code></li>
-<li>You can check what directory your in by using the <code>pwd</code> (Present Working Directory) command
-    <code>bash
-    pwd</code></li>
-</ol>
-<h2 id="setup-git-and-checkout-branch-main-from-github-remote-repository">Setup Git and Checkout Branch <code>main</code> from GitHub Remote Repository<a class="headerlink" href="#setup-git-and-checkout-branch-main-from-github-remote-repository" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Using Terminal in the <code>scidev</code> directory, create a Git Remote Repository URL Alias. This is a nick-name for a Git Repository URL, in this case at GitHub. We will use the alias <code>scimain</code>.</li>
-<li>Use the command <code>git</code> with the argument <code>remote</code>, to <code>add</code> a new Remote Repository URL Alias called <code>scimain</code> which links to the GitHub Repository with the URL ‌<code>https://github.com/eshimab/scidev</code> 
-    <code>bash
-    git remote add scimain https://github.com/eshimab/scidev</code></li>
-<li>Still working in <code>~/scidev</code> directory in Terminal, create the local copy of the GitHub Repository Branch <code>main</code>. We do this by using the command <code>git</code> with argument <code>checkout</code>, we specify we want a branch with the <code>-b</code> flag. We will name the branch <code>main</code> to match the Remote Repository which has the primary branch <code>main</code>. We could create a new branch here by using a new name instead of <code>main</code>. We specify the GitHub Repository using the alias <code>scimain</code> and denote the desired Branch of <code>scimain</code> with the <code>/main</code> notation.
-    <code>bash
-    cd ~/scidev
-    git checkout -b main scimain/main</code></li>
-</ol>
-<h1 id="setup-mkdocs-in-a-python3-virtual-environment">Setup MkDocs in a python3 virtual environment<a class="headerlink" href="#setup-mkdocs-in-a-python3-virtual-environment" title="Permanent link">&para;</a></h1>
-<h2 id="create-a-python3-virtual-environment-venv-to-run-mkdocs">Create a python3 virtual environment (<code>venv</code>) to run Mkdocs<a class="headerlink" href="#create-a-python3-virtual-environment-venv-to-run-mkdocs" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Using Terminal, go to the primary directory <code>~/scidev</code>
-    <code>bash
-    cd ~/scidev</code></li>
-<li>Create the <code>python3</code> <code>venv</code> (the full filepath will be <code>/Users/username/scidev/envsdir/mdocs</code>)
-    <code>bash
-    # Create the python3 venv
-    python3 -m venv envsdir/mdocs</code></li>
-<li>Activate the <code>venv</code> with <code>source</code> command 
-    <code>bash 
-    source ~/scidev/envsdir/mdocs/bin/activate</code> <ul>
-<li>When the <code>venv</code> is active, the prompt (text to the left of where you enter commands) will change, showing your active virtual env <code>mdocs</code> in parentheses. Example:
-    <code>bash
-    (mdocs) hostname:scidev username$</code> </li>
-<li>To exit the <code>venv</code>, use the command <code>deactivate</code></li>
-</ul>
-</li>
-</ol>
-<h2 id="configure-python3-venv">Configure python3 <code>venv</code><a class="headerlink" href="#configure-python3-venv" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Working in the <code>venv</code> <code>mdocs</code>, go to the primary directory <code>scidev</code> (if not already there, remember you can check with command <code>pwd</code>)</li>
-<li>The Python package manager is called <code>pip</code>. First, update pip:
-    <code>bash
-    python3 -m pip install --upgrade pip</code> </li>
-<li>install the local Mkdocs package that was downloaded from the Mkdocs website:
-    <code>bash 
-    python3 -m pip install "/Users/username/scidev/assets/packages/mkdocs-1.4.3.tar.gz"</code></li>
-<li></li>
-</ol>
-<hr />
 <h1 id="resuming-work-on-local-machine">Resuming Work on Local Machine<a class="headerlink" href="#resuming-work-on-local-machine" title="Permanent link">&para;</a></h1>
 <h2 id="pull-from-git">Pull from git<a class="headerlink" href="#pull-from-git" title="Permanent link">&para;</a></h2>
 <pre><code class="language-bash">git pull scimain main
 </code></pre>
 <hr />
-<h1 id="updating-files">Updating Files<a class="headerlink" href="#updating-files" title="Permanent link">&para;</a></h1>
-<h2 id="build-site-with-mkdocs">Build site with MkDocs<a class="headerlink" href="#build-site-with-mkdocs" title="Permanent link">&para;</a></h2>
-<h3 id="activate-the-python3-venv-to-run-mkdocs">Activate the python3 venv to run mkdocs<a class="headerlink" href="#activate-the-python3-venv-to-run-mkdocs" title="Permanent link">&para;</a></h3>
+<h1 id="updating-local-and-github-files">Updating local and GitHub files<a class="headerlink" href="#updating-local-and-github-files" title="Permanent link">&para;</a></h1>
+<h2 id="build-html-site-with-mkdocs-in-the-python3-venv">Build HTML Site with MkDocs in the python3 <code>venv</code><a class="headerlink" href="#build-html-site-with-mkdocs-in-the-python3-venv" title="Permanent link">&para;</a></h2>
 <p>After updating the markdown documents in <code>scidev/notesite/docs</code></p>
 <pre><code class="language-bash"># Move to the python3 virtual env bin directory to activate the venv
 cd ~/scidev
@@ -365,7 +160,7 @@ rsync --archive --progress --recursive --verbose  ~/Library/Application\ Support
 </code></pre>
 <h2 id="use-git-to-addcommit-to-local-branch-and-push-to-remote-branch">Use Git to Add/Commit To Local Branch and Push to Remote Branch<a class="headerlink" href="#use-git-to-addcommit-to-local-branch-and-push-to-remote-branch" title="Permanent link">&para;</a></h2>
 <pre><code class="language-bash"># Set Commit Message Variable
-commit_message=&quot;localhost: Added MkDocs tarfile to repo. Updated .gitignore to track the tarfile. Update workflow.md, simplify gitnotes.md&quot;
+commit_message=&quot;localhost: Updates to notesite/docs/ dir structure. Cleaning gitnotes.md. Removed index.md. Phase out about.md and corefile.md. workflow.md is homepage and only for active work. Setup is now in setup.md&quot;
 # Add / Commit / Push got Git
 cd ~/scidev # Move to root dir of the local Git branch
 git status
@@ -382,10 +177,6 @@ git status
 git commit -m &quot;$commit_message&quot;
 # Push Changes from the Local Branch `main` and merge them with the Remote Repository Alias `scimain`
 git push scimain main
-</code></pre>
-<h2 id="creating-a-new-branch">Creating a new Branch<a class="headerlink" href="#creating-a-new-branch" title="Permanent link">&para;</a></h2>
-<p>Checkout/Create a new branch <code>indocs</code> using <code>git checkout</code> with the <code>-b</code> flag. The new branch <code>indocs</code> is based on the <code>main</code> branch in the remote repository <code>scimain</code>.</p>
-<pre><code class="language-bash">git checkout -b indocs scimain/main
 </code></pre></div>
             </div>
         </div>
