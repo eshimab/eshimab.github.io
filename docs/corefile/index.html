@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://example.com/corefile/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Corefile - Super Fun Digressions</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Super Fun Digressions</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../about/" class="nav-link">about</a>
+                            </li>
+                            <li class="navitem">
+                                <a href=".." class="nav-link">index</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../quickstart/" class="nav-link">influx</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../infaqs/" class="nav-link">infaqs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../gitnotes/" class="nav-link">gitnotes</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../workflow/" class="nav-link">workflow</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../vsnotes/" class="nav-link">vsnotes</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#create-directory-structure" class="nav-link">Create directory structure.</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#use-homebrew-to-intstall-the-cli-tool-tree" class="nav-link">Use Homebrew to intstall the CLI Tool tree</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#verify-homebrew-installation" class="nav-link">Verify Homebrew Installation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#installingupdating-cli-utils-with-homebrew" class="nav-link">Installing/Updating CLI Utils with Homebrew</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#install-the-homebrew-tool-via-the-website" class="nav-link">Install the Homebrew tool via the website</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#install-homebrew" class="nav-link">Install Homebrew</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#install-tree-with-homebrew" class="nav-link">Install tree with Homebrew</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#create-a-python3-virtual-environment-venv-to-run-mkdocs" class="nav-link">Create a python3 virtual environment (venv) to run Mkdocs</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#create-the-python3-venv-and-start-it-with-source" class="nav-link">Create the python3 venv and start it with source</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#configure-python3-venv-with-pip" class="nav-link">Configure python3 venv with pip</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="create-directory-structure">Create directory structure.<a class="headerlink" href="#create-directory-structure" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash"># Define the core directory
+dircore=&quot;/Users/eshim/scidev&quot;
+direnvs=&quot;${dircore}/envsdir&quot;
+dirmdoc=&quot;${direnvs}/mdocs&quot;
+dirasst=&quot;${dircore}/assets&quot;
+dirpckg=&quot;${dirasst}/packges&quot;
+filecore=&quot;corefile.md&quot;
+# Make Dirs
+mkdir -p &quot;$direnvs&quot;
+mkdir -p &quot;$dirmdoc&quot;
+mkdir -p &quot;$dirasst&quot;
+mkdir -p &quot;$dirpckg&quot;
+</code></pre>
+<p>Tips:
+1. When doing the BASH variable assignment, the <code>=</code> symbol should not have spaces on either side.
+2. (CB) In this code, the directories <code>direnvs</code> and <code>dirmdoc</code> are created using the <code>mkdir</code> command with the <code>-p</code> option. The <code>-p</code> option ensures that parent directories are created if they don't already exist. The variable values are correctly concatenated using the <code>${variable}</code> syntax.
+3. Pick up the command line tool <code>tree</code> to visualize the directory structure:       </p>
+<hr />
+<h1 id="use-homebrew-to-intstall-the-cli-tool-tree">Use Homebrew to intstall the CLI Tool <code>tree</code><a class="headerlink" href="#use-homebrew-to-intstall-the-cli-tool-tree" title="Permanent link">&para;</a></h1>
+<h2 id="verify-homebrew-installation">Verify Homebrew Installation<a class="headerlink" href="#verify-homebrew-installation" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash"># Check for Homebrew
+which brew
+# Output:
+#   /usr/local/bin/brew
+# 
+# Check Homebrew Version ia &gt; 4.0
+brew --version
+# Output
+    # lifenotes eshim$ Homebrew 4.0.27
+    # Homebrew/homebrew-core (git revision e1774d6544; last commit 2023-07-06)
+</code></pre>
+<p>If <code>which brew</code> does <strong>not</strong> retun /opt/local/bin/brew, or <code>brew --version</code> is below 4.0, then Update Homebrew</p>
+<h1 id="installingupdating-cli-utils-with-homebrew">Installing/Updating CLI Utils with Homebrew<a class="headerlink" href="#installingupdating-cli-utils-with-homebrew" title="Permanent link">&para;</a></h1>
+<h2 id="install-the-homebrew-tool-via-the-website">Install the Homebrew tool via the website<a class="headerlink" href="#install-the-homebrew-tool-via-the-website" title="Permanent link">&para;</a></h2>
+<h3 id="for-apple-macs-with-arm-processors">For Apple Macs with ARM Processors<a class="headerlink" href="#for-apple-macs-with-arm-processors" title="Permanent link">&para;</a></h3>
+<p>You may need to remove the old version of Homebrew, which was originally stored in /usr/local/</p>
+<pre><code class="language-bash"># Uninstall Previous Homebrew using uninstall.sh from website
+/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)&quot;
+
+</code></pre>
+<h2 id="install-homebrew">Install Homebrew<a class="headerlink" href="#install-homebrew" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
+</code></pre>
+<h3 id="homebrew-installation-errors">Homebrew Installation Errors<a class="headerlink" href="#homebrew-installation-errors" title="Permanent link">&para;</a></h3>
+<p>If tou have errors of the form: <code>Warning: /opt/homebrew/bin is not in your PATH.</code>
+1. Add <code>/opt/homebrew/bin</code> to your $PATH.</p>
+<pre><code class="language-bash">PATH=&quot;/opt/homebrew/bin:$PATH&quot;
+</code></pre>
+<h2 id="install-tree-with-homebrew">Install <code>tree</code> with Homebrew<a class="headerlink" href="#install-tree-with-homebrew" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash"># Use homebrew to install tree
+brew install tree
+</code></pre>
+<hr />
+<h1 id="create-a-python3-virtual-environment-venv-to-run-mkdocs">Create a python3 virtual environment (<code>venv</code>) to run Mkdocs<a class="headerlink" href="#create-a-python3-virtual-environment-venv-to-run-mkdocs" title="Permanent link">&para;</a></h1>
+<h2 id="create-the-python3-venv-and-start-it-with-source">Create the <code>python3</code> <code>venv</code> and start it with <code>source</code><a class="headerlink" href="#create-the-python3-venv-and-start-it-with-source" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash"># Create the python3 venv
+python3 -m venv &quot;${dirmdoc}&quot;
+# Activate the venv
+source &quot;${dirmdoc}/bin/activate&quot;
+# Go there
+cd ${dircore}
+</code></pre>
+<h3 id="tips-python3-venv">Tips: python3 venv<a class="headerlink" href="#tips-python3-venv" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Notice that the variable <code>${dirmdoc}</code> is wrapped in <code>””</code> because the command <code>source</code> takes a string as input. Thus, <code>"${dirmdoc}"</code> returns the variable output as a string. In this case <code>"${dirmdoc}/bin/acticate"</code> appends the string stored in <code>${dirmdoc}</code> to <code>"/bin/activate"</code></li>
+<li>CB: By using the -m (there is no long-form version) flag followed by the module name (venv), you are instructing the Python interpreter to execute the venv module's script functionality. This allows you to create a virtual environment using the python3 -m venv command, without explicitly running a separate Python script or invoking a specific Python file.</li>
+</ol>
+<h2 id="configure-python3-venv-with-pip">Configure python3 <code>venv</code> with <code>pip</code><a class="headerlink" href="#configure-python3-venv-with-pip" title="Permanent link">&para;</a></h2>
+<p>Now we are working in the python3 environment where lines should be preceded by <code>(mdocs) hostname:scidev username$</code></p>
+<pre><code class="language-python"># Upgrade pip so that it doesn't complain
+python3 -m pip install --upgrade pip
+
+# install the local Mkdocs package, version 1.4.3
+python3 -m pip install &quot;/Users/eshim/scidev/assets/packages/mkdocs-1.4.3.tar.gz&quot;
+</code></pre>
+<p>Then create the MkDocs project directory in the python3 venv</p>
+<pre><code class="language-python">mkdocs new &quot;/Users/eshim/scidev/notesite&quot;
+cd /Users/eshim/scidev/notesite
+mkdocs serve
+</code></pre>
+<p>And you get output:</p>
+<pre><code>INFO     -  Building documentation...
+INFO     -  Cleaning site directory
+INFO     -  Documentation built in 0.06 seconds
+INFO     -  [10:50:41] Watching paths for changes: 'docs', 'mkdocs.yml'
+INFO     -  [10:50:41] Serving on http://127.0.0.1:8000/
+</code></pre>
+<p>It will serve on <a href="http://127.0.0.1:8000/">Your local Macine</a>
+Now leave this Terminal instance running and let it update the site in the background. I will call this the Mkdocs Server Terminal or similarly.</p>
+<p><strong>Open a new terminal window</strong></p>
+<p>Get an example page from Mkdocs and send it to the Mkdocs website directory <code>notesite</code></p>
+<pre><code class="language-bash">curl 'https://jaspervdj.be/lorem-markdownum/markdown.txt' &gt; /Users/eshim/scidev/notesite/docs/about.md
+</code></pre>
+<p>In the Mkdocs Server Terminal you will see an update as it adds the new webpage:</p>
+<pre><code>INFO     -  [11:36:50] Detected file changes
+INFO     -  Building documentation...
+INFO     -  Documentation built in 0.07 seconds
+INFO     -  [11:36:50] Reloading browsers
+INFO     -  [11:36:50] Browser connected: http://127.0.0.1:8000/
+</code></pre>
+<p>Edit the <code>mkdocs.yml</code> file in <code>~/scidev/notesite</code></p>
+<pre><code class="language-yaml">site_name: Super Fun Digressions # site_name and site_url are the only required fields
+site_url: https://example.com # https://example.com is a placeholder value
+nav: 
+    - Home: index.md
+    - About: about.md
+</code></pre>
+<p>Install the mkdocs plugin <code>img2fig</code> to allow for dynamic creation and referencing of Figures
+From within the python <code>venv</code> run <code>pip</code> to install the plugin</p>
+<pre><code class="language-python">pip install mkdocs-img2fig-plugin
+</code></pre>
+<p>And update the <code>mkdocs.yml</code> to use that plug-in:</p>
+<pre><code class="language-yaml">site_name: Super Fun Digressions # site_name and site_url are the only required fields
+site_url: https://example.com # https://example.com is a placeholder value
+nav: 
+    - Home: index.md
+    - About: about.md
+    - vscode: vsnotes.md
+    - Github Setup: shellnotes.md 
+
+plugins:
+  - img2fig:
+      caption_prefix: &quot;Figure&quot;
+      caption_title: &quot;Figures&quot;
+      svg_output: false
+</code></pre>
+<p>Now when you run <code>mkdocs serve</code> it will properly use the <code>img2fig</code> plugin:</p>
+<figure class="figure-image">
+  <img src="notesite/img/mkDocsExample-enablingPackage.png" alt="mkdocs serve with img2fig plugin enabled">
+  <figcaption>mkdocs serve with img2fig plugin enabled</figcaption>
+</figure>
+
+<h3 id="creating-a-shell-script-for-displaying-file-trees">Creating a shell script for displaying file trees<a class="headerlink" href="#creating-a-shell-script-for-displaying-file-trees" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open a terminal window.</li>
+<li>Open your shell's configuration file using a text editor. For example:
+        <code>bash
+        nano ~/.bashrc</code></li>
+<li>Ok</li>
+<li>Ok</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

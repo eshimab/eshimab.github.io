@@ -2,42 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://example.com/</loc>
-         <lastmod>2023-07-12</lastmod>
+         <lastmod>2023-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/about/</loc>
-         <lastmod>2023-07-12</lastmod>
+         <lastmod>2023-07-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/corefile/</loc>
+         <lastmod>2023-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/gitnotes/</loc>
-         <lastmod>2023-07-12</lastmod>
+         <lastmod>2023-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/infaqs/</loc>
-         <lastmod>2023-07-12</lastmod>
+         <lastmod>2023-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/osnotes/</loc>
-         <lastmod>2023-07-12</lastmod>
+         <lastmod>2023-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/quickstart/</loc>
-         <lastmod>2023-07-12</lastmod>
+         <lastmod>2023-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/vsnotes/</loc>
-         <lastmod>2023-07-12</lastmod>
+         <lastmod>2023-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/workflow/</loc>
-         <lastmod>2023-07-12</lastmod>
+         <lastmod>2023-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

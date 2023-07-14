@@ -92,6 +92,10 @@
             
             <li class="nav-item" data-level="1"><a href="#git" class="nav-link">Git</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#git-in-a-bottle" class="nav-link">Git in a Bottle</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#working-with-active-git-repositories" class="nav-link">Working with active git repositories</a>
               <ul class="nav flex-column">
               </ul>
@@ -116,10 +120,15 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h1>
+<h2 id="git-in-a-bottle">Git in a Bottle<a class="headerlink" href="#git-in-a-bottle" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Create a GitHub Free Account</li>
+<li>Install Homebrew </li>
+<li></li>
+</ol>
 <h2 id="working-with-active-git-repositories">Working with active git repositories<a class="headerlink" href="#working-with-active-git-repositories" title="Permanent link">&para;</a></h2>
 <h2 id="clone-remote-git-repository-to-localhost-branch">Clone Remote Git Repository to Localhost Branch<a class="headerlink" href="#clone-remote-git-repository-to-localhost-branch" title="Permanent link">&para;</a></h2>
 <pre><code class="language-bash">cd ~/lifenotes
-
 </code></pre>
 <h3 id="comitting-a-new-local-directory-to-the-github-repository">Comitting a new local directory to the GitHub Repository<a class="headerlink" href="#comitting-a-new-local-directory-to-the-github-repository" title="Permanent link">&para;</a></h3>
 <h4 id="git-repo-info">Git Repo Info<a class="headerlink" href="#git-repo-info" title="Permanent link">&para;</a></h4>
@@ -342,7 +351,7 @@ git add .git/hooks/post-commit
 <h3 id="initializing-a-git-repo-using-a-local-directory-with-a-generic-empty-repo-already-on-github">Initializing a git repo using a local directory (with a generic, empty repo already on GitHub)<a class="headerlink" href="#initializing-a-git-repo-using-a-local-directory-with-a-generic-empty-repo-already-on-github" title="Permanent link">&para;</a></h3>
 <p>To use your local "scidev" folder to update your GitHub repository named "scidev" while creating a .gitignore file and a pre-commit Git hook to limit staging to files below 1MB, follow these steps:</p>
 <ul>
-<li>[ ]  Create the .gitignore file:</li>
+<li>[ ]  Create the .gitignore file:<ul>
 <li>[ ] Open a text editor and create a file named ".gitignore" in the root directory of your "scidev" folder.</li>
 <li>[ ] Add the necessary patterns to ignore files in the .gitignore file. For example, you can add <code>*.pdf</code> to ignore all PDF files.
     <code>bash
@@ -356,44 +365,48 @@ git add .git/hooks/post-commit
     # Ignore Filetypes
     *.pdf
     *.mat</code></li>
-<li>[ ] Create the pre-commit Git hook:</li>
+</ul>
+</li>
+<li>[ ] Create the pre-commit Git hook:<ul>
 <li>[ ] Open a text editor and create a file named "pre-commit" (without an extension) in the ".git/hooks" directory of your "scidev" repository.
     <code>bash
     touch /Users/eshim/scidev/.git/hooks/pre-commit</code></li>
-<li>
-<p>[ ] Copy and paste the following script into the "pre-commit" file:
-     ```bash
-     #!/bin/bash</p>
-<p>MAX_FILE_SIZE=1048576  # 1MB in bytes</p>
-<p># Get the list of staged files
- files=$(git diff --cached --name-only)</p>
-<p># Loop through the staged files
- for file in $files; do
-   # Get the file size in bytes
-   file_size=$(wc -c &lt; "$file")</p>
-<p># Compare file size with the maximum size
-   if [ "$file_size" -gt "$MAX_FILE_SIZE" ]; then
-     # Remove the file from the staging area
-     git reset HEAD "$file"
-     echo "File $file exceeds the maximum file size limit. It has been excluded from the commit."
-   fi
- done
- #
- exit 0
- <code>- [ ] Save the file and make it executable by running the following command in the terminal:</code>bash
-  chmod +x /Users/eshim/scidev/.git/hooks/pre-commit
-  <code>- [ ] Initialize Git and connect to your GitHub repository:
-   - [ ] Open a terminal or command prompt and navigate to your "scidev" folder.</code>bash
-   cd /Users/eshim/scidev
-   <code>- [ ] Run the following commands:</code>bash
- git init
- git remote add origin https://github.com/eshimab/scidev
- <code>``
-   - [ ] Replace</code><repository-url><code>with the URL of your GitHub repository.
-- [ ] Add and commit files:
-   - [ ] Add the files you want to include in the commit using</code>git add<code>.
-   - [ ] Commit the changes using</code>git commit -m "Initial commit"`.</p>
+<li>[ ] Copy and paste the following script into the "pre-commit" file:
+    <code>bash
+    #!/bin/bash
+    MAX_FILE_SIZE=1048576  # 1MB in bytes
+    # Get the list of staged files
+    files=$(git diff --cached --name-only)
+    # Loop through the staged files
+    for file in $files; do
+      # Get the file size in bytes
+      file_size=$(wc -c &lt; "$file")
+      # Compare file size with the maximum size
+      if [ "$file_size" -gt "$MAX_FILE_SIZE" ]; then
+        # Remove the file from the staging area
+        git reset HEAD "$file"
+        echo "File $file exceeds the maximum file size limit. It has been excluded from the commit."
+      fi
+    done
+    #
+    exit 0</code></li>
+<li>[ ] Save the file and make it executable by running the following command in the terminal:
+    <code>bash
+    chmod +x /Users/eshim/scidev/.git/hooks/pre-commit</code></li>
+</ul>
 </li>
+<li>[ ] Initialize Git and connect to your GitHub repository:</li>
+<li>[ ] Open a terminal or command prompt and navigate to your "scidev" folder.
+       <code>bash
+       cd /Users/eshim/scidev</code> </li>
+<li>[ ] Run the following commands:
+     <code>bash
+     git init
+     git remote add origin https://github.com/eshimab/scidev</code></li>
+<li>[ ] Replace <code>&lt;repository-url&gt;</code> with the URL of your GitHub repository.</li>
+<li>[ ] Add and commit files:</li>
+<li>[ ] Add the files you want to include in the commit using <code>git add</code>.</li>
+<li>[ ] Commit the changes using <code>git commit -m "Initial commit"</code>.</li>
 </ul>
 <p><code>bash
    git add notesite/**

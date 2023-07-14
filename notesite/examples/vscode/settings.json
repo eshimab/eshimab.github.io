@@ -11,6 +11,8 @@
     "workbench.editor.tabSizing": "shrink",
     "workbench.settings.openDefaultKeybindings": true,
     //
+    // Soft Wrap Max Chars
+    "editor.wordWrapColumn": 80,
     // ------------------ Hidden Files and Directories
     // Showing hidden folders and files in the file tree
     //   The files.showHiddenFiles setting is set to true, 
@@ -348,5 +350,6 @@
     "workbench.editorAssociations": {
         "*.pdf": "pdf.preview"
     },
-    "explorer.confirmDragAndDrop": false // END workbench.editorAssociations
+    "explorer.confirmDragAndDrop": false,
+    "markdown.extension.print.theme": "dark" // END workbench.editorAssociations
 } // END FILE
