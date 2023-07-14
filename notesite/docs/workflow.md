@@ -50,7 +50,7 @@ rsync --archive --progress --recursive --verbose  ~/Library/Application\ Support
 Set commnit message, go to `scidev`, `add` files for the local `commit`, check `status`:
 ```bash
 # Set Commit Message Variable
-commit_message="localhost: Updates to notesite/docs/ dir structure. Cleaning gitnotes.md. Removed index.md. Phase out about.md and corefile.md. workflow.md is homepage and only for active work. Setup is now in setup.md"
+commit_message="localhost: Commit before pull sync"
 # Add / Commit / Push got Git
 cd ~/scidev # Move to root dir of the local Git branch
 # Add Changes ie Stage Commits on local machine
@@ -71,7 +71,7 @@ git commit -m "$commit_message"
 git remote --verbose # View the Remote Repository URL Aliases
 ```
 
-If `commit` goes through, attempt push commits on local branch `main` to GitHub remote repo `scimain`
+If `commit` goes through, attempt to `push` local `commit` on branch `main` to GitHub remote repo `scimain`
 ```bash
 # Push Changes from the Local Branch `main` and merge them with the Remote Repository Alias `scimain`
 git push scimain main

@@ -27,6 +27,8 @@
     2. iA Writer
         - An even more ridiculously priced app for editing text. It’s now $50 for the iPhone version, with separate pricing for the MacOS Version.
 
+---
+
 # Local Machine Setup
 
 ## Install Visual Studio Code (VS Code, VSC, or just VS)
@@ -87,6 +89,8 @@
     brew install tree
     ```
 
+---
+
 # Setup Local Git 
 
 ## Create Local Directory
@@ -119,6 +123,8 @@ We will mirror the installation on my MacBook.
     cd ~/scidev
     git checkout -b main scimain/main
     ```
+
+---
 
 # Setup MkDocs in a python3 virtual environment 
 
