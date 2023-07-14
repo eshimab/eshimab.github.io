@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://example.com/notemds/osnotes/">
+        <link rel="canonical" href="https://example.com/notemds/bashnotes/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>osnotes - Super Fun Digressions</title>
+        <title>bash - Super Fun Digressions</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -53,7 +53,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">osnotes</a>
+    <a href="./" class="dropdown-item active">bash</a>
 </li>
                                     
 <li>
@@ -112,6 +112,24 @@
             
             <li class="nav-item" data-level="1"><a href="#creating-a-cronjob-for-a-shell-script" class="nav-link">Creating a Cronjob for a Shell Script</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#piping-output-of-tree-command-to-text-file" class="nav-link">Piping output of tree command to text file.</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#shell-commands" class="nav-link">Shell Commands</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#shell-command-structure" class="nav-link">Shell command structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#useful-shell-commands" class="nav-link">Useful shell commands</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -199,9 +217,85 @@ cd ${dircore}
 <p><img src="img/example-cron/crontabExample-vimEditorWriteQuit.png" alt="Terminal-Based VIM Editor - Command Mode - Write/Quit">
 <br />
 <figcaption>Terminal-Based VIM Editor - Command Mode - Write/Quit</figcaption></p>
-<p></figure>
-8. </p>
-<p>Cronjob Starting Process:</p></div>
+</figure>
+<hr />
+<h1 id="piping-output-of-tree-command-to-text-file">Piping output of <code>tree</code> command to text file.<a class="headerlink" href="#piping-output-of-tree-command-to-text-file" title="Permanent link">&para;</a></h1>
+<p>Working with the code:</p>
+<pre><code class="language-bash"># Find the line numbers of the section header and the existing fenced code block
+header_line=$(grep -n '## Tree Output' output.md | cut -d ':' -f1)
+start_line=$((header_line + 1))
+end_line=$(grep -n '```' output.md | grep -A 1 &quot;^${start_line}:&quot; | tail -n 1 | cut -d ':' -f1)
+
+# Remove the old fenced code block
+sed -i &quot;${start_line},${end_line}d&quot; output.md
+
+# Insert the new fenced code block
+sed -i &quot;${start_line}i\`\`\`text&quot; output.md
+tree &gt;&gt; output.md
+sed -i &quot;${start_line}a\`\`\`&quot; output.md
+</code></pre>
+<p>A breakdown of the code:</p>
+<ol>
+<li>The first line uses <code>grep</code> to find the line number of the section header "## Tree Output" in the <code>output.md</code> file and extracts the line number using <code>cut</code>. It stores the line number in the variable <code>header_line</code>.</li>
+<li>The second line calculates the <code>start_line</code> by incrementing the <code>header_line</code> by 1, indicating the line immediately after the section header.</li>
+<li>The third line uses <code>grep</code> to find the line number of the closing triple backticks ("<code>``") after the</code>start_line<code>, along with the following line using</code>grep -A 1<code>and</code>tail<code>. It extracts the line number using</code>cut<code>and stores it in the variable</code>end_line`.</li>
+<li>The fourth line uses <code>sed</code> to remove the old fenced code block by specifying the line range from <code>start_line</code> to <code>end_line</code> and deleting those lines in the <code>output.md</code> file.</li>
+<li>The fifth line uses <code>sed</code> to insert the opening triple backticks before the <code>start_line</code> to create a new fenced code block of "<code>``text" in the</code>output.md` file.</li>
+<li>The sixth line uses the <code>tree</code> command to generate the directory tree structure and appends the output to the <code>output.md</code> file.</li>
+<li>The seventh line uses <code>sed</code> to insert the closing triple backticks after the <code>start_line</code> to complete the fenced code block in the <code>output.md</code> file.</li>
+</ol>
+<p>These lines together remove the old fenced code block, insert the new fenced code block with the updated directory tree structure, and modify the <code>output.md</code> file accordingly.</p>
+<h1 id="shell-commands">Shell Commands<a class="headerlink" href="#shell-commands" title="Permanent link">&para;</a></h1>
+<h2 id="shell-command-structure">Shell command structure<a class="headerlink" href="#shell-command-structure" title="Permanent link">&para;</a></h2>
+<h3 id="flags-vs-arguments">Flags vs Arguments<a class="headerlink" href="#flags-vs-arguments" title="Permanent link">&para;</a></h3>
+<p>In the context of command-line interfaces, such as <code>rsync</code>, the terms "flags" and "arguments" have specific meanings:
+- Flags: Flags are options that modify the behavior of a command. They are typically denoted by a hyphen or double hyphen followed by a letter or a word. Flags are used to enable or disable specific features, set certain configurations, or provide additional information. Examples of flags include <code>-v</code>, <code>-a</code>, <code>-r</code>, etc.
+- Arguments: Arguments, on the other hand, are the values or inputs provided to a command to perform its operation. They can be filenames, directory paths, options, or any other data required by the command to carry out its functionality. Arguments are typically positional and come after the command and any flags. In the case of rsync, the source and destination directories are common arguments.</p>
+<h2 id="useful-shell-commands">Useful shell commands<a class="headerlink" href="#useful-shell-commands" title="Permanent link">&para;</a></h2>
+<h3 id="grep"><code>grep</code><a class="headerlink" href="#grep" title="Permanent link">&para;</a></h3>
+<p>The name "grep" stands for "Global Regular Expression Print." The <code>grep</code> command is a powerful tool used in Unix-like operating systems to search for patterns or specific text within files or streams.</p>
+<p>Here's a breakdown of its functionality:
+- <strong>Global Search</strong>: The primary purpose of <code>grep</code> is to search for text patterns globally, meaning it scans the entire input for matches.
+- <strong>Regular Expressions</strong>: <code>grep</code> supports regular expressions, which are patterns used to describe and match specific text patterns. Regular expressions provide flexible and powerful search capabilities, allowing you to search for complex patterns, not just literal strings.
+- <strong>Print Matching Lines</strong>: By default, <code>grep</code> prints the lines that match the search pattern. It can display the entire line or just the matching portion of the line, depending on the options used.
+- <strong>File Search</strong>: <code>grep</code> can search within one or multiple files. You can specify the files explicitly or use wildcard patterns to search in a set of files that match a certain pattern.
+- <strong>Command Pipelines</strong>: <code>grep</code> is often used in conjunction with other commands by utilizing input/output redirection or piping. This allows you to chain together multiple commands to perform complex operations.
+- <strong>Options and Customization</strong>: <code>grep</code> offers various options to customize the search behavior. For example, you can control case sensitivity, search recursively in directories, display line numbers, invert the match, and more.</p>
+<p>Here's a basic example of using <code>grep</code> to search for a pattern in a file:</p>
+<pre><code class="language-bash">grep &quot;pattern&quot; filename
+</code></pre>
+<p>In this example, <code>pattern</code> is the text pattern you want to search for, and <code>filename</code> is the name of the file you want to search within. <code>grep</code> will display all the lines in <code>filename</code> that contain the specified pattern.</p>
+<p><code>grep</code> is a versatile and widely-used command-line tool that helps in extracting specific information, filtering text, and performing various text-processing tasks efficiently.</p>
+<h3 id="rsync"><code>rsync</code><a class="headerlink" href="#rsync" title="Permanent link">&para;</a></h3>
+<p>The <code>rsync</code> ("<strong>remote synchronization</strong>") command is a widely-used utility for file synchronization and data transfer in Unix-like operating systems. <code>rsync</code> is designed to efficiently synchronize files between different locations. Here's a brief summary of what <code>rsync</code> does:</p>
+<ul>
+<li><strong>File Synchronization</strong>: <code>rsync</code> is used to synchronize files and directories between a source and destination, ensuring that the target matches the source by copying or updating only the differences.</li>
+<li><strong>Efficient Transfer</strong>: It uses a delta-transfer algorithm that compares the files' contents and transfers only the changed portions, minimizing network bandwidth usage and reducing transfer time.</li>
+<li><strong>Remote and Local Transfers</strong>: <code>rsync</code> can synchronize files between local directories or between local and remote systems using secure shell (SSH) or remote shell (RSH) protocols.</li>
+<li><strong>Preserving Metadata</strong>: It can preserve various file attributes such as permissions, timestamps, ownership, and symbolic links during synchronization.</li>
+<li><strong>Recursive and Incremental</strong>: <code>rsync</code> can synchronize directories and their subdirectories recursively, ensuring that all files and subdirectories are accurately replicated.</li>
+<li><strong>Resumable Transfers</strong>: If a transfer is interrupted, <code>rsync</code> can resume from where it left off, avoiding retransmission of already synchronized files.</li>
+</ul>
+<p>In summary, <code>rsync</code> is a powerful command-line tool used for efficient file synchronization and data transfer. It minimizes data transfer by copying only the changed parts of files, supports remote and local transfers, preserves metadata, and provides resumable transfers, making it a popular choice for various backup and synchronization scenarios.</p>
+<h4 id="rsync-common-flags"><code>rsync</code> - Common Flags<a class="headerlink" href="#rsync-common-flags" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>-v</code> or <code>--verbose</code>: The <code>-v</code> or <code>--verbose</code> flag enables verbose output during rsync operations, providing detailed information about the transferred files and progress of the synchronization.</li>
+<li><code>-a</code> or <code>--archive</code>: The <code>-a</code> or <code>--archive</code> flag is a combination of several flags including <code>-rlptgoD</code>. It is used for archiving and preserving file permissions, timestamps, symbolic links, and more during the rsync process.</li>
+<li><code>-r</code> or <code>--recursive</code>: The <code>-r</code> or <code>--recursive</code> flag indicates recursive mode and enables the synchronization of directories and their subdirectories, ensuring a complete transfer of files within the directory hierarchy.</li>
+<li><code>--delete-after</code>: The <code>--delete-after</code> flag tells rsync to perform deletions on the destination after the files are transferred. This means any files that exist in the destination but not in the source will be deleted after the synchronization.</li>
+<li><code>--progress</code>: The <code>--progress</code> flag displays real-time progress information during the rsync operation, providing updates on the number of files transferred, data transferred, and estimated completion time.</li>
+</ul>
+<h3 id="sed"><code>sed</code><a class="headerlink" href="#sed" title="Permanent link">&para;</a></h3>
+<p>The <code>sed</code> command, short for "<strong>stream editor</strong>," is a powerful text processing tool used in Unix-like operating systems. It performs operations on text streams, such as file contents or output from other commands. Here's a brief summary of what <code>sed</code> does:</p>
+<ul>
+<li><strong>Text Manipulation</strong>: <code>sed</code> is primarily used for text manipulation tasks, such as search and replace, deletion, insertion, and transformation of text.</li>
+<li><strong>Regex Support</strong>: It supports regular expressions, allowing complex pattern matching and substitution in text.</li>
+<li><strong>In-place Editing</strong>: <code>sed</code> can modify files directly by using the <code>-i</code> option or by redirecting output to a new file.</li>
+<li><strong>Stream-based</strong>: <code>sed</code> processes text input line by line, making it suitable for working with large files or streams of data.</li>
+<li><strong>Line Selection</strong>: It can select specific lines based on line numbers or patterns.</li>
+<li><strong>Scripting Language</strong>: <code>sed</code> has its own scripting language with commands, addresses, and modifiers to define the operations to be performed on the input.</li>
+</ul>
+<p>In summary, <code>sed</code> is a versatile command-line tool used for text manipulation and transformation. It can modify text streams based on patterns, perform complex operations using regular expressions, and efficiently process large files or streams of data.</p></div>
             </div>
         </div>
 

@@ -89,8 +89,7 @@ Section TLDR:
         1. For sensitive sorting, or if using UV Lasers
 3. Shown on the Pinhole Camera
     1. The 5 Pinholes go to the fluorescence detector paths for each laser.
-    2. The Pinhole Camera Image is vertically inverted on the Monitor. The top pinhole on the Monitor (for the 488nm Laser) is actually the bottom pinhole on the instrument.
-    3. From Top to Bottom as shown on the *Monitor* image:
+    2. From Top to Bottom the Pinholes are:
         1. Top: 488nm
         2. Empty
         3. Middle: 457nm

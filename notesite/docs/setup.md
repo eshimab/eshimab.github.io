@@ -5,6 +5,8 @@
 
 # A Semi-Integrated Development Environment
 
+---
+
 ## Programs to install
 
 1. On Laptop (referred to as `localhost`  or local machine )
@@ -109,7 +111,7 @@ We will mirror the installation on my MacBook.
     ```bash
     pwd
     ```
-  
+
 ## Setup Git and Checkout Branch `main` from GitHub Remote Repository
 
 1. Using Terminal in the `scidev` directory, create a Git Remote Repository URL Alias. This is a nick-name for a Git Repository URL, in this case at GitHub. We will use the alias `scimain`.
@@ -160,7 +162,7 @@ We will mirror the installation on my MacBook.
     python3 -m pip install "assets/packages/mkdocs-1.4.3.tar.gz"
     ```
 4. Use `pip` to install the MkDocs plugin `img2fig` to allow for dynamic creation and referencing of figures.
-    ```python
+    ```bash
     pip install mkdocs-img2fig-plugin
     ```
 5. 

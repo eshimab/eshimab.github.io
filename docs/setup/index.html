@@ -53,7 +53,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../notemds/osnotes/" class="dropdown-item">osnotes</a>
+    <a href="../notemds/bashnotes/" class="dropdown-item">bash</a>
 </li>
                                     
 <li>
@@ -162,9 +162,10 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="a-semi-integrated-development-environment">A Semi-Integrated Development Environment<a class="headerlink" href="#a-semi-integrated-development-environment" title="Permanent link">&para;</a></h1>
+<hr />
 <h2 id="programs-to-install">Programs to install<a class="headerlink" href="#programs-to-install" title="Permanent link">&para;</a></h2>
 <ol>
-<li>On Laptop (referred to as <code>localhost</code> or local machine )<ol>
+<li>On Laptop (referred to as <code>localhost</code>  or local machine )<ol>
 <li>Visual Studio Code<ul>
 <li>Primary Text Editor</li>
 </ul>
@@ -200,6 +201,7 @@
 </ol>
 </li>
 </ol>
+<hr />
 <h1 id="local-machine-setup">Local Machine Setup<a class="headerlink" href="#local-machine-setup" title="Permanent link">&para;</a></h1>
 <h2 id="install-visual-studio-code-vs-code-vsc-or-just-vs">Install Visual Studio Code (VS Code, VSC, or just VS)<a class="headerlink" href="#install-visual-studio-code-vs-code-vsc-or-just-vs" title="Permanent link">&para;</a></h2>
 <ol>
@@ -264,6 +266,7 @@
     # Use homebrew to install tree
     brew install tree</code></li>
 </ol>
+<hr />
 <h1 id="setup-local-git">Setup Local Git<a class="headerlink" href="#setup-local-git" title="Permanent link">&para;</a></h1>
 <h2 id="create-local-directory">Create Local Directory<a class="headerlink" href="#create-local-directory" title="Permanent link">&para;</a></h2>
 <p>We will mirror the installation on my MacBook.</p>
@@ -290,6 +293,7 @@
     cd ~/scidev
     git checkout -b main scimain/main</code></li>
 </ol>
+<hr />
 <h1 id="setup-mkdocs-in-a-python3-virtual-environment">Setup MkDocs in a python3 virtual environment<a class="headerlink" href="#setup-mkdocs-in-a-python3-virtual-environment" title="Permanent link">&para;</a></h1>
 <h2 id="create-a-python3-virtual-environment-venv-to-run-mkdocs">Create a python3 virtual environment (<code>venv</code>) to run Mkdocs<a class="headerlink" href="#create-a-python3-virtual-environment-venv-to-run-mkdocs" title="Permanent link">&para;</a></h2>
 <ol>
@@ -320,7 +324,7 @@
     <code>bash 
     python3 -m pip install "assets/packages/mkdocs-1.4.3.tar.gz"</code></li>
 <li>Use <code>pip</code> to install the MkDocs plugin <code>img2fig</code> to allow for dynamic creation and referencing of figures.
-    <code>python
+    <code>bash
     pip install mkdocs-img2fig-plugin</code></li>
 <li></li>
 </ol>
