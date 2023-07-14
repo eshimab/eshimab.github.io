@@ -1,9 +1,24 @@
 #
 #
-# Ignore directories withim scidev:
-# The leading / means that these are subdirectories within scidev where the .gitignore file is found
+#
+#
+# Ignore directories within project-dir
+#     - Filepaths are relative to the project-dir where the Git branch is hosted
+#         on the local machine
+#     - In this case, the project-dir is ~/scidev, so we enter /assets/packages
+#         to refer to the directory ~/scidev/assets/packages
+# The leading / means that these are subdirectories within project-dir where the .gitignore file is found
 # The trailing / means that we are targetting a directory and all it's contents
-/assets/packages/
+#
+# Exceptions to Ignore Rules
+# Starting the line with ! means "Do not ignore this file" those lines must 
+#   come AFTER the line which defines the ignore rule
+# Ignore all files in assets/packages/*
+/assets/packages/*
+# EXCEPT for this specific filename:
+!/assets/packages/mkdocs-1.4.3.tar.gz
+#
+# Ignore library directory in the mdovs venv
 /envsdir/mdocs/lib/
 # Directories in .git/
 /.git/branches/

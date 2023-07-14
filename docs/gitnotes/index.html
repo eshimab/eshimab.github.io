@@ -104,6 +104,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#git-command-syntax" class="nav-link">Git Command Syntax</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#summarizing-git-addcommitpush-to-repository" class="nav-link">Summarizing Git Add/Commit/Push to Repository</a>
               <ul class="nav flex-column">
               </ul>
@@ -112,6 +116,11 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#git-errors" class="nav-link">Git Errors</a>
+              <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
@@ -129,6 +138,26 @@
 <h2 id="working-with-active-git-repositories">Working with active git repositories<a class="headerlink" href="#working-with-active-git-repositories" title="Permanent link">&para;</a></h2>
 <h2 id="clone-remote-git-repository-to-localhost-branch">Clone Remote Git Repository to Localhost Branch<a class="headerlink" href="#clone-remote-git-repository-to-localhost-branch" title="Permanent link">&para;</a></h2>
 <pre><code class="language-bash">cd ~/lifenotes
+</code></pre>
+<h2 id="git-command-syntax">Git Command Syntax<a class="headerlink" href="#git-command-syntax" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Argument: <code>commit</code></p>
+<ol>
+<li>Flag: <code>-m</code> or <code>--message</code>
+    <code>bash
+    git commit --message "This is the commit message"
+    git commit --m "This is the commit message"</code><ol>
+<li>You can add a second, longer <code>commit</code> message by using the <code>--message</code> (or <code>-m</code>) twice</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>To add a longer message to your commits, you can use the git commit command with the <code>-m</code> flag followed by the commit message in quotes, and then add the <code>-m</code> flag again with another message in quotes.</p>
+</li>
+</ol>
+<pre><code class="language-bash">git commit -m &quot;Summary message&quot; -m &quot;This is a longer description of the commit. It provides more detailed information about the changes and the purpose of the commit.&quot;
 </code></pre>
 <h3 id="comitting-a-new-local-directory-to-the-github-repository">Comitting a new local directory to the GitHub Repository<a class="headerlink" href="#comitting-a-new-local-directory-to-the-github-repository" title="Permanent link">&para;</a></h3>
 <h4 id="git-repo-info">Git Repo Info<a class="headerlink" href="#git-repo-info" title="Permanent link">&para;</a></h4>
@@ -252,10 +281,8 @@ git add mdocs/pyvenv.cfg
 <pre><code class="language-bash">git remote add scimain https://github.com/eshimab/scidev
 </code></pre>
 <p>List the available Repository URL Aliases using <code>git remote</code> without any additional arguments
-   - Use the <code>--verbose</code> or <code>-v</code> flag to show additional info </p>
-<pre><code class="language-bash">git remote --verbose
-</code></pre>
-<p>Output:</p>
+- Use the <code>--verbose</code> or <code>-v</code> flag to show additional info </p>
+<p>Screenshot Example:</p>
 <figure class="figure-image">
   <img src="img/example-git/gitExample-gitRemote-createNewRepoAlias.png" alt="Git Remote Repository Aliases">
   <figcaption>Git Remote Repository Aliases</figcaption>
@@ -267,12 +294,21 @@ git add mdocs/pyvenv.cfg
 ## Check for changes
 git remote --verbose
 </code></pre>
-<p>Output:</p>
+<p>Outputs:</p>
+<pre><code class="language-bash">scimain https://github.com/eshimab/eshimab.github.io (fetch)
+scimain https://github.com/eshimab/eshimab.github.io (push)
+</code></pre>
+<p>Screenshot Example</p>
 <figure class="figure-image">
   <img src="img/example-git/gitExample-gitRemote-deleteOldRepoAlias.png" alt="After Deleting the old `origin` repository url alias">
   <figcaption>After Deleting the old `origin` repository url alias</figcaption>
 </figure>
 
+<pre><code>```bash
+dhcp-168-105-223-225:scidev eshim$ git remote --verbose
+
+```
+</code></pre>
 <h3 id="pushing-files-with-git-push">Pushing Files with <code>git push</code><a class="headerlink" href="#pushing-files-with-git-push" title="Permanent link">&para;</a></h3>
 <h5 id="git-push-the-local-git-commit-to-the-github-repobranch-scidevmain"><code>git push</code> the local <code>git commit</code> to the GitHub repo/branch <code>scidev/main</code><a class="headerlink" href="#git-push-the-local-git-commit-to-the-github-repobranch-scidevmain" title="Permanent link">&para;</a></h5>
 <ul>
@@ -411,7 +447,88 @@ git add .git/hooks/post-commit
 <p><code>bash
    git add notesite/**
    git commit -m "Initial Commit for directory notesite/**"</code> </p>
-<p>With these steps, your local "scidev" folder will be updated with the .gitignore file and the pre-commit Git hook. The pre-commit hook will exclude files above 1MB from being staged in your commits. Remember to customize the MAX_FILE_SIZE variable in the pre-commit script if you want a different maximum file size limit.</p></div>
+<p>With these steps, your local "scidev" folder will be updated with the .gitignore file and the pre-commit Git hook. The pre-commit hook will exclude files above 1MB from being staged in your commits. Remember to customize the MAX_FILE_SIZE variable in the pre-commit script if you want a different maximum file size limit.</p>
+<hr />
+<h1 id="git-errors">Git Errors<a class="headerlink" href="#git-errors" title="Permanent link">&para;</a></h1>
+<h3 id="push-error">Push Error?<a class="headerlink" href="#push-error" title="Permanent link">&para;</a></h3>
+<p>You will get a <code>git push</code> error if the Local Branch is behind the Remote GitHub Repository
+Commit Works</p>
+<pre><code class="language-bash">dhcp-168-105-223-225:scidev eshim$ git commit -m &quot;$commit_message&quot;
+[main 8ddabfd] Updates to quickstart.md
+ 5 files changed, 512 insertions(+), 74 deletions(-)
+ create mode 100644 notesite/examples/vscode/settings.json
+ create mode 100644 scratch.md
+</code></pre>
+<p>I try to use <code>git push</code> to push commits from my local branch <code>main</code> to the Github Repository <code>scimain/main</code></p>
+<h4 id="push-command-error">Push Command Error<a class="headerlink" href="#push-command-error" title="Permanent link">&para;</a></h4>
+<p>I use Command <code>git push scimain main</code>
+I get an error because <code>scimain</code> is ahead of my local <code>main</code></p>
+<pre><code class="language-bash">dhcp-168-105-223-225:scidev eshim$ git push scimain main
+To https://github.com/eshimab/eshimab.github.io
+ ! [rejected]        main -&gt; main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/eshimab/eshimab.github.io'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+dhcp-168-105-223-225:scidev eshim$ 
+</code></pre>
+<h4 id="pull-command-error">Pull Command Error<a class="headerlink" href="#pull-command-error" title="Permanent link">&para;</a></h4>
+<p>I try to use <code>git pull scimain main</code> To Update my Local Branch <code>main</code>
+Returns Error:</p>
+<pre><code class="language-bash">E325: ATTENTION
+Found a swap file by the name &quot;~/scidev/.git/.MERGE_MSG.swp&quot;
+          owned by: eshim   dated: Mon Jul 10 16:42:19 2023
+         file name: ~eshim/scidev/.git/MERGE_MSG
+          modified: YES
+         user name: eshim   host name: dhcp-168-105-223-225.wireless.manoa.haw
+        process ID: 23271
+While opening file &quot;/Users/eshim/scidev/.git/MERGE_MSG&quot;
+             dated: Tue Jul 11 15:11:08 2023
+      NEWER than swap file!
+
+(1) Another program may be editing the same file.  If this is the case,
+    be careful not to end up with two different instances of the same
+    file when making changes.  Quit, or continue with caution.
+(2) An edit session for this file crashed.
+    If this is the case, use &quot;:recover&quot; or &quot;vim -r /Users/eshim/scidev/.git/MERGE_MSG&quot;
+    to recover the changes (see &quot;:help recovery&quot;).
+    If you did this already, delete the swap file &quot;/Users/eshim/scidev/.git/.MERGE_MSG.swp&quot;
+    to avoid this message.
+
+Swap file &quot;~/scidev/.git/.MERGE_MSG.swp&quot; already exists!
+[O]pen Read-Only, (E)dit anyway, (R)ecover, (D)elete it, (Q)uit, (A)bort: 
+</code></pre>
+<h4 id="solution-delete-old-vim-temporary-files-merge_msgswo-and-merge_msgswp">Solution Delete Old Vim Temporary Files <code>.MERGE_MSG.swo</code> and <code>.MERGE_MSG.swp</code><a class="headerlink" href="#solution-delete-old-vim-temporary-files-merge_msgswo-and-merge_msgswp" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The file scidev/.git/.MERGE_MSG.swo appears to be a swap file created by the Vim text editor. Vim uses swap files with the .swo extension to store temporary changes made during editing sessions.<ul>
+<li>When you see this file in your Git repository, it usually indicates that you had a Vim session open and either closed it abruptly or encountered an issue while editing the .MERGE_MSG file. The swap file is created to allow recovery of unsaved changes in case of unexpected interruptions.</li>
+<li>Since this is a temporary file specific to Vim, it is safe to delete it. You can use the following command to remove the swap file:
+<code>bash
+rm ~/scidev/.git/.MERGE_MSG.swo
+rm ~/scidev/.git/.MERGE_MSG.swp</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="attempt-pull-again-error">Attempt Pull Again: Error<a class="headerlink" href="#attempt-pull-again-error" title="Permanent link">&para;</a></h4>
+<p>I try the <code>git pull scimain main</code> Command and Get Error:</p>
+<pre><code class="language-bash">dhcp-168-105-223-225:scidev eshim$ git pull scimain main
+error: You have not concluded your merge (MERGE_HEAD exists).
+hint: Please, commit your changes before merging.
+fatal: Exiting because of unfinished merge.
+</code></pre>
+<p>I use the code from Section <strong>Add/Commit/Push Files to Git Repository</strong> to Commit Changes to my Local Branch.</p>
+<h4 id="attempt-push-success">Attempt Push: Success<a class="headerlink" href="#attempt-push-success" title="Permanent link">&para;</a></h4>
+<p>Push Succeeded!</p>
+<pre><code class="language-bash">git push scimain main
+</code></pre>
+<h4 id="attempt-pull">Attempt Pull:<a class="headerlink" href="#attempt-pull" title="Permanent link">&para;</a></h4>
+<p>Pull Attempt Succeeds! Local Branch <code>main</code> matches Remote Branch <code>scidev/main</code></p>
+<pre><code class="language-bash">dhcp-168-105-223-225:scidev eshim$ git pull scimain main
+From https://github.com/eshimab/eshimab.github.io
+ * branch            main       -&gt; FETCH_HEAD
+Already up to date.
+</code></pre></div>
             </div>
         </div>
 

@@ -146,16 +146,6 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#homebrew-details" class="nav-link">Homebrew Details</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#verify-branch-and-remote-repository-alias" class="nav-link">Verify Branch and remote repository alias</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
             <li class="nav-item" data-level="1"><a href="#resuming-work-on-local-machine" class="nav-link">Resuming Work on Local Machine</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#pull-from-git" class="nav-link">Pull from git</a>
@@ -179,11 +169,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#new-branch" class="nav-link">New Branch</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#renaming-and-syncing-a-file" class="nav-link">Renaming and Syncing a File</a>
+            <li class="nav-item" data-level="2"><a href="#creating-a-new-branch" class="nav-link">Creating a new Branch</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -316,27 +302,26 @@
 <h1 id="setup-mkdocs-in-a-python3-virtual-environment">Setup MkDocs in a python3 virtual environment<a class="headerlink" href="#setup-mkdocs-in-a-python3-virtual-environment" title="Permanent link">&para;</a></h1>
 <h2 id="create-a-python3-virtual-environment-venv-to-run-mkdocs">Create a python3 virtual environment (<code>venv</code>) to run Mkdocs<a class="headerlink" href="#create-a-python3-virtual-environment-venv-to-run-mkdocs" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Create the <code>python3</code> <code>venv</code> in Terminal
-    <code>bash
-    # Create the python3 venv
-    python3 -m venv ~/scidev/envsdir/mdocs</code></li>
-<li>Go to the primary directory <code>~/scidev</code>
+<li>Using Terminal, go to the primary directory <code>~/scidev</code>
     <code>bash
     cd ~/scidev</code></li>
-<li>Activate the <code>venv</code> with <code>source</code> command and go to <code>~/scidev</code>
+<li>Create the <code>python3</code> <code>venv</code> (the full filepath will be <code>/Users/username/scidev/envsdir/mdocs</code>)
+    <code>bash
+    # Create the python3 venv
+    python3 -m venv envsdir/mdocs</code></li>
+<li>Activate the <code>venv</code> with <code>source</code> command 
     <code>bash 
     source ~/scidev/envsdir/mdocs/bin/activate</code> <ul>
-<li>When the <code>venv</code> is active, the prompt (text to the left of where you enter commands) will change, showing your active virtual env <code>mdocs</code> in parentheses:
+<li>When the <code>venv</code> is active, the prompt (text to the left of where you enter commands) will change, showing your active virtual env <code>mdocs</code> in parentheses. Example:
     <code>bash
     (mdocs) hostname:scidev username$</code> </li>
+<li>To exit the <code>venv</code>, use the command <code>deactivate</code></li>
 </ul>
 </li>
 </ol>
 <h2 id="configure-python3-venv">Configure python3 <code>venv</code><a class="headerlink" href="#configure-python3-venv" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Working in the <code>venv</code> <code>mdocs</code>, go to the primary directory <code>~/scidev</code>
-    <code>bash
-    cd ~/scidev</code></li>
+<li>Working in the <code>venv</code> <code>mdocs</code>, go to the primary directory <code>scidev</code> (if not already there, remember you can check with command <code>pwd</code>)</li>
 <li>The Python package manager is called <code>pip</code>. First, update pip:
     <code>bash
     python3 -m pip install --upgrade pip</code> </li>
@@ -346,26 +331,6 @@
 <li></li>
 </ol>
 <hr />
-<h1 id="homebrew-details">Homebrew Details<a class="headerlink" href="#homebrew-details" title="Permanent link">&para;</a></h1>
-<pre><code class="language-bash"># Check Homebrew Version is &gt; 4.0
-brew --version
-# Output
-    # lifenotes eshim$ Homebrew 4.0.27
-    # Homebrew/homebrew-core (git revision e1774d6544; last commit 2023-07-06)
-</code></pre>
-<p>If <code>which brew</code> does <strong>not</strong> retun /opt/local/bin/brew, or <code>brew --version</code> is below 4.0, then Update Homebrew</p>
-<p>This is the workflow for documentation using MkDocs and website hosting using GitHub Pages.</p>
-<h1 id="verify-branch-and-remote-repository-alias">Verify Branch and remote repository alias<a class="headerlink" href="#verify-branch-and-remote-repository-alias" title="Permanent link">&para;</a></h1>
-<p>Check your branch and remote repository aliases</p>
-<pre><code class="language-bash">cd ~/scidev
-git status
-git remote --verbose
-</code></pre>
-<p>You should see the alias <code>scimain</code>:</p>
-<pre><code class="language-bash">dhcp-168-105-223-225:scidev eshim$ git remote --verbose
-scimain https://github.com/eshimab/eshimab.github.io (fetch)
-scimain https://github.com/eshimab/eshimab.github.io (push)
-</code></pre>
 <h1 id="resuming-work-on-local-machine">Resuming Work on Local Machine<a class="headerlink" href="#resuming-work-on-local-machine" title="Permanent link">&para;</a></h1>
 <h2 id="pull-from-git">Pull from git<a class="headerlink" href="#pull-from-git" title="Permanent link">&para;</a></h2>
 <pre><code class="language-bash">git pull scimain main
@@ -400,7 +365,7 @@ rsync --archive --progress --recursive --verbose  ~/Library/Application\ Support
 </code></pre>
 <h2 id="use-git-to-addcommit-to-local-branch-and-push-to-remote-branch">Use Git to Add/Commit To Local Branch and Push to Remote Branch<a class="headerlink" href="#use-git-to-addcommit-to-local-branch-and-push-to-remote-branch" title="Permanent link">&para;</a></h2>
 <pre><code class="language-bash"># Set Commit Message Variable
-commit_message=&quot;localhost: Updating MkDocs Build&quot;
+commit_message=&quot;localhost: Added MkDocs tarfile to repo. Updated .gitignore to track the tarfile. Update workflow.md, simplify gitnotes.md&quot;
 # Add / Commit / Push got Git
 cd ~/scidev # Move to root dir of the local Git branch
 git status
@@ -411,121 +376,16 @@ git add docs # this is the HTML site generated by mkdocs
 git add notesite # Because we updated the md files here
 git add *.sh # Add Shell Scripts in scidev/
 git add *.md # Add Markdown Docs in scidev/
+git add .gitignore # Sync the .gitignore file
 git status
 # Create a Commit on local machine branch
 git commit -m &quot;$commit_message&quot;
 # Push Changes from the Local Branch `main` and merge them with the Remote Repository Alias `scimain`
 git push scimain main
 </code></pre>
-<h2 id="new-branch">New Branch<a class="headerlink" href="#new-branch" title="Permanent link">&para;</a></h2>
+<h2 id="creating-a-new-branch">Creating a new Branch<a class="headerlink" href="#creating-a-new-branch" title="Permanent link">&para;</a></h2>
 <p>Checkout/Create a new branch <code>indocs</code> using <code>git checkout</code> with the <code>-b</code> flag. The new branch <code>indocs</code> is based on the <code>main</code> branch in the remote repository <code>scimain</code>.</p>
 <pre><code class="language-bash">git checkout -b indocs scimain/main
-</code></pre>
-<hr />
-<h3 id="push-error">Push Error?<a class="headerlink" href="#push-error" title="Permanent link">&para;</a></h3>
-<p>You will get a <code>git push</code> error if the Local Branch is behind the Remote GitHub Repository
-Commit Works</p>
-<pre><code class="language-bash">dhcp-168-105-223-225:scidev eshim$ git commit -m &quot;$commit_message&quot;
-[main 8ddabfd] Updates to quickstart.md
- 5 files changed, 512 insertions(+), 74 deletions(-)
- create mode 100644 notesite/examples/vscode/settings.json
- create mode 100644 scratch.md
-</code></pre>
-<p>I try to use <code>git push</code> to push commits from my local branch <code>main</code> to the Github Repository <code>scimain/main</code></p>
-<h4 id="push-command-error">Push Command Error<a class="headerlink" href="#push-command-error" title="Permanent link">&para;</a></h4>
-<p>I use Command <code>git push scimain main</code>
-I get an error because <code>scimain</code> is ahead of my local <code>main</code></p>
-<pre><code class="language-bash">dhcp-168-105-223-225:scidev eshim$ git push scimain main
-To https://github.com/eshimab/eshimab.github.io
- ! [rejected]        main -&gt; main (non-fast-forward)
-error: failed to push some refs to 'https://github.com/eshimab/eshimab.github.io'
-hint: Updates were rejected because the tip of your current branch is behind
-hint: its remote counterpart. Integrate the remote changes (e.g.
-hint: 'git pull ...') before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-dhcp-168-105-223-225:scidev eshim$ 
-</code></pre>
-<h4 id="pull-command-error">Pull Command Error<a class="headerlink" href="#pull-command-error" title="Permanent link">&para;</a></h4>
-<p>I try to use <code>git pull scimain main</code> To Update my Local Branch <code>main</code>
-Returns Error:</p>
-<pre><code class="language-bash">E325: ATTENTION
-Found a swap file by the name &quot;~/scidev/.git/.MERGE_MSG.swp&quot;
-          owned by: eshim   dated: Mon Jul 10 16:42:19 2023
-         file name: ~eshim/scidev/.git/MERGE_MSG
-          modified: YES
-         user name: eshim   host name: dhcp-168-105-223-225.wireless.manoa.haw
-        process ID: 23271
-While opening file &quot;/Users/eshim/scidev/.git/MERGE_MSG&quot;
-             dated: Tue Jul 11 15:11:08 2023
-      NEWER than swap file!
-
-(1) Another program may be editing the same file.  If this is the case,
-    be careful not to end up with two different instances of the same
-    file when making changes.  Quit, or continue with caution.
-(2) An edit session for this file crashed.
-    If this is the case, use &quot;:recover&quot; or &quot;vim -r /Users/eshim/scidev/.git/MERGE_MSG&quot;
-    to recover the changes (see &quot;:help recovery&quot;).
-    If you did this already, delete the swap file &quot;/Users/eshim/scidev/.git/.MERGE_MSG.swp&quot;
-    to avoid this message.
-
-Swap file &quot;~/scidev/.git/.MERGE_MSG.swp&quot; already exists!
-[O]pen Read-Only, (E)dit anyway, (R)ecover, (D)elete it, (Q)uit, (A)bort: 
-</code></pre>
-<h4 id="solution-delete-old-vim-temporary-files-merge_msgswo-and-merge_msgswp">Solution Delete Old Vim Temporary Files <code>.MERGE_MSG.swo</code> and <code>.MERGE_MSG.swp</code><a class="headerlink" href="#solution-delete-old-vim-temporary-files-merge_msgswo-and-merge_msgswp" title="Permanent link">&para;</a></h4>
-<ul>
-<li>The file scidev/.git/.MERGE_MSG.swo appears to be a swap file created by the Vim text editor. Vim uses swap files with the .swo extension to store temporary changes made during editing sessions.<ul>
-<li>When you see this file in your Git repository, it usually indicates that you had a Vim session open and either closed it abruptly or encountered an issue while editing the .MERGE_MSG file. The swap file is created to allow recovery of unsaved changes in case of unexpected interruptions.</li>
-<li>Since this is a temporary file specific to Vim, it is safe to delete it. You can use the following command to remove the swap file:
-<code>bash
-rm ~/scidev/.git/.MERGE_MSG.swo
-rm ~/scidev/.git/.MERGE_MSG.swp</code></li>
-</ul>
-</li>
-</ul>
-<h4 id="attempt-pull-again-error">Attempt Pull Again: Error<a class="headerlink" href="#attempt-pull-again-error" title="Permanent link">&para;</a></h4>
-<p>I try the <code>git pull scimain main</code> Command and Get Error:</p>
-<pre><code class="language-bash">dhcp-168-105-223-225:scidev eshim$ git pull scimain main
-error: You have not concluded your merge (MERGE_HEAD exists).
-hint: Please, commit your changes before merging.
-fatal: Exiting because of unfinished merge.
-</code></pre>
-<p>I use the code from Section <strong>Add/Commit/Push Files to Git Repository</strong> to Commit Changes to my Local Branch.</p>
-<h4 id="attempt-push-success">Attempt Push: Success<a class="headerlink" href="#attempt-push-success" title="Permanent link">&para;</a></h4>
-<p>Push Succeeded!</p>
-<pre><code class="language-bash">git push scimain main
-</code></pre>
-<h4 id="attempt-pull">Attempt Pull:<a class="headerlink" href="#attempt-pull" title="Permanent link">&para;</a></h4>
-<p>Pull Attempt Succeeds! Local Branch <code>main</code> matches Remote Branch <code>scidev/main</code></p>
-<pre><code class="language-bash">dhcp-168-105-223-225:scidev eshim$ git pull scimain main
-From https://github.com/eshimab/eshimab.github.io
- * branch            main       -&gt; FETCH_HEAD
-Already up to date.
-</code></pre>
-<hr />
-<h2 id="renaming-and-syncing-a-file">Renaming and Syncing a File<a class="headerlink" href="#renaming-and-syncing-a-file" title="Permanent link">&para;</a></h2>
-<p>If we want to change the name of the file <code>~/scidev/notesite/docs/influx.md</code> to <code>~/scidev/notesite/docs/influx.md</code></p>
-<pre><code class="language-bash"># Perform Action
-# bash command here?
-# Set Commit Message
-commit_message=&quot;Updates to workflow.md&quot;
-# Compile MkDocs Site with python venv
-cd ~/scidev
-source envsdir/mdocs/bin/activate # activate the python3 venv using command `source`
-cd ~/scidev/notesite # move to the mkdocs root directory
-mkdocs build # build the site with MkDocs
-rsync --archive --progress --recursive --verbose --delete-after ~/scidev/notesite/site/* ~/scidev/docs # Syhc
-rm -vR ~/scidev/notesite/site # Delete Original Compiled Site
-deactivate # Exit venc
-# Commit to Local GitHub Branch (should be main)
-cd ~/scidev         # Move to root dir of the local Git branch
-git add notesite    # MkDocs Working Directory with .md Files: scidev/notesite
-git add docs        # HTML site generated by mkdocs: scidev/notesite/docs
-git add mkupdate.sh # Start-up shell script for short-cuts: scidev/mkupdate.sh
-git status
-git commit -m &quot;$commit_message&quot; # Send Commit to Local GitHub Branch (should be main)
-# Push Local GitHub Branch `main` to Remote GitHub Repository using Remote Repository URL alias `scimain`
-git push scimain main
-# Remember to initiate a Pull Request on your other devices before editting files!
 </code></pre></div>
             </div>
         </div>

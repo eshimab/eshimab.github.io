@@ -18,6 +18,21 @@
 cd ~/lifenotes
 ```
 
+## Git Command Syntax
+
+1. Argument: `commit`
+    1. Flag: `-m` or `--message`
+        ```bash
+        git commit --message "This is the commit message"
+        git commit --m "This is the commit message"
+        ```
+        1. You can add a second, longer `commit` message by using the `--message` (or `-m`) twice
+
+1. To add a longer message to your commits, you can use the git commit command with the `-m` flag followed by the commit message in quotes, and then add the `-m` flag again with another message in quotes.
+```bash
+git commit -m "Summary message" -m "This is a longer description of the commit. It provides more detailed information about the changes and the purpose of the commit."
+```
+
 ### Comitting a new local directory to the GitHub Repository
 
 #### Git Repo Info
@@ -124,6 +139,8 @@ See Output
 
 ![Final Commit Example](img/example-git/gitExample-gitStatusFinal.png)
 
+
+
 ### Managing GitHub Repository Url Aliases with `git remote`
 
 We can check that the repository url is correct by using the `git remote` command with the `get-url` flag for the GitHub repository that we refer to with the local alias `origin`. You can think of `origin` as a short-hand for the repository url. The `origin` alis is created using the `git remote` command with the `add` option to define a local repository URL alias we will call `scimain` from the GitHub Repository 
@@ -132,11 +149,9 @@ git remote add scimain https://github.com/eshimab/scidev
 ```
 
 List the available Repository URL Aliases using `git remote` without any additional arguments
-   - Use the `--verbose` or `-v` flag to show additional info 
-```bash
-git remote --verbose
-```
-Output:
+- Use the `--verbose` or `-v` flag to show additional info 
+
+Screenshot Example:
 
 ![Git Remote Repository Aliases](img/example-git/gitExample-gitRemote-createNewRepoAlias.png)
 
@@ -149,9 +164,21 @@ git remote remove origin
 git remote --verbose
 ```
 
-Output:
+Outputs:
+```bash
+scimain https://github.com/eshimab/eshimab.github.io (fetch)
+scimain https://github.com/eshimab/eshimab.github.io (push)
+```
+
+Screenshot Example
  
 ![After Deleting the old `origin` repository url alias](img/example-git/gitExample-gitRemote-deleteOldRepoAlias.png)
+
+
+    ```bash
+    dhcp-168-105-223-225:scidev eshim$ git remote --verbose
+    
+    ```
 
 ### Pushing Files with `git push`
 
@@ -308,3 +335,108 @@ To use your local "scidev" folder to update your GitHub repository named "scidev
 
 With these steps, your local "scidev" folder will be updated with the .gitignore file and the pre-commit Git hook. The pre-commit hook will exclude files above 1MB from being staged in your commits. Remember to customize the MAX_FILE_SIZE variable in the pre-commit script if you want a different maximum file size limit.
 
+---
+
+# Git Errors
+
+### Push Error?
+
+You will get a `git push` error if the Local Branch is behind the Remote GitHub Repository
+Commit Works
+```bash
+dhcp-168-105-223-225:scidev eshim$ git commit -m "$commit_message"
+[main 8ddabfd] Updates to quickstart.md
+ 5 files changed, 512 insertions(+), 74 deletions(-)
+ create mode 100644 notesite/examples/vscode/settings.json
+ create mode 100644 scratch.md
+```
+
+I try to use `git push` to push commits from my local branch `main` to the Github Repository `scimain/main`
+
+#### Push Command Error
+
+I use Command `git push scimain main`
+I get an error because `scimain` is ahead of my local `main`
+```bash
+dhcp-168-105-223-225:scidev eshim$ git push scimain main
+To https://github.com/eshimab/eshimab.github.io
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/eshimab/eshimab.github.io'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+dhcp-168-105-223-225:scidev eshim$ 
+```
+
+#### Pull Command Error
+
+I try to use `git pull scimain main` To Update my Local Branch `main`
+Returns Error:
+
+```bash
+E325: ATTENTION
+Found a swap file by the name "~/scidev/.git/.MERGE_MSG.swp"
+          owned by: eshim   dated: Mon Jul 10 16:42:19 2023
+         file name: ~eshim/scidev/.git/MERGE_MSG
+          modified: YES
+         user name: eshim   host name: dhcp-168-105-223-225.wireless.manoa.haw
+        process ID: 23271
+While opening file "/Users/eshim/scidev/.git/MERGE_MSG"
+             dated: Tue Jul 11 15:11:08 2023
+      NEWER than swap file!
+
+(1) Another program may be editing the same file.  If this is the case,
+    be careful not to end up with two different instances of the same
+    file when making changes.  Quit, or continue with caution.
+(2) An edit session for this file crashed.
+    If this is the case, use ":recover" or "vim -r /Users/eshim/scidev/.git/MERGE_MSG"
+    to recover the changes (see ":help recovery").
+    If you did this already, delete the swap file "/Users/eshim/scidev/.git/.MERGE_MSG.swp"
+    to avoid this message.
+
+Swap file "~/scidev/.git/.MERGE_MSG.swp" already exists!
+[O]pen Read-Only, (E)dit anyway, (R)ecover, (D)elete it, (Q)uit, (A)bort: 
+```
+
+#### Solution Delete Old Vim Temporary Files `.MERGE_MSG.swo` and `.MERGE_MSG.swp`
+
+- The file scidev/.git/.MERGE_MSG.swo appears to be a swap file created by the Vim text editor. Vim uses swap files with the .swo extension to store temporary changes made during editing sessions.
+    - When you see this file in your Git repository, it usually indicates that you had a Vim session open and either closed it abruptly or encountered an issue while editing the .MERGE_MSG file. The swap file is created to allow recovery of unsaved changes in case of unexpected interruptions.
+    - Since this is a temporary file specific to Vim, it is safe to delete it. You can use the following command to remove the swap file:
+    ```bash
+    rm ~/scidev/.git/.MERGE_MSG.swo
+    rm ~/scidev/.git/.MERGE_MSG.swp
+    ```
+
+#### Attempt Pull Again: Error
+
+I try the `git pull scimain main` Command and Get Error:
+
+```bash
+dhcp-168-105-223-225:scidev eshim$ git pull scimain main
+error: You have not concluded your merge (MERGE_HEAD exists).
+hint: Please, commit your changes before merging.
+fatal: Exiting because of unfinished merge.
+```
+
+I use the code from Section **Add/Commit/Push Files to Git Repository** to Commit Changes to my Local Branch.
+
+#### Attempt Push: Success
+
+Push Succeeded!
+
+```bash
+git push scimain main
+```
+
+#### Attempt Pull:
+
+Pull Attempt Succeeds! Local Branch `main` matches Remote Branch `scidev/main`
+
+```bash
+dhcp-168-105-223-225:scidev eshim$ git pull scimain main
+From https://github.com/eshimab/eshimab.github.io
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+```
