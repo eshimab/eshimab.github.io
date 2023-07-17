@@ -24,6 +24,7 @@ module.exports = {
           ['/counter/see-also', 'See Also']
         ]
       }
-    ]
+    ],
+    sidebarDepth: 4 
   }
 };
