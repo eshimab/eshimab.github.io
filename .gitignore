@@ -42,3 +42,5 @@
 # Ignore Filetypes
 *.pdf
 *.mat
+# Homebrew fo;e
+/Brewfile
