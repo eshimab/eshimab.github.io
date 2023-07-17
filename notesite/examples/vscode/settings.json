@@ -12,7 +12,9 @@
     "workbench.settings.openDefaultKeybindings": true,
     //
     // Soft Wrap Max Chars
-    "editor.wordWrapColumn": 80,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 100,
+    "editor.rulers": [100],
     // ------------------ Hidden Files and Directories
     // Showing hidden folders and files in the file tree
     //   The files.showHiddenFiles setting is set to true, 
@@ -351,5 +353,18 @@
         "*.pdf": "pdf.preview"
     },
     "explorer.confirmDragAndDrop": false,
-    "markdown.extension.print.theme": "dark" // END workbench.editorAssociations
+    "markdown.extension.print.theme": "dark",
+    "workbench.settings.openDefaultSettings": true,
+    "html.format.wrapLineLength": 100,
+    "[markdown]": {
+      "editor.wrappingStrategy": "advanced",
+      // Set max char for soft wrap
+      "editor.wordWrap": "wordWrapColumn",
+      "editor.wordWrapColumn": 100,
+      "editor.quickSuggestions": {
+        "comments": "off",
+        "strings": "off",
+        "other": "off"
+      }
+    } // END [markdown] specific changes
 } // END FILE

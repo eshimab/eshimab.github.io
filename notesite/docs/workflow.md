@@ -9,23 +9,23 @@
 ## Update files from remote GitHub repository 
 
 1. Assuming you use the GitHub remote alias `scimain` and are working on the branch `main`:
-    ```bash
-    git pull scimain main
-    ```
+```bash
+git pull scimain main
+```
 
 ## Start local MkDocs Server
 
 1. Open a new Terminal window
 2. Navigate to `~/scidev`, start the python3 `venv`
-    ```bash
-    cd ~/scidev
-    source envsdir/mdocs/bin/activate
-    ``` 
+```bash
+cd ~/scidev
+source envsdir/mdocs/bin/activate
+``` 
 3. In the `venv` go to MkDocs root directory `~/scidev/notesite` and start the local MkDocs server 
-    ```bash
-    cd ~/scidev/notesite
-    mkdocs serve
-    ``` 
+```bash
+cd ~/scidev/notesite
+mkdocs serve
+``` 
 4. MkDocs will build and store the website HTML in `~/scidev/notesite/site`. 
     - View the site on your web browser by going to `http://127.0.0.1:8000/`
 5. Leave the Terminal window open so MkDocs can keep the local site updated as you edit the local files. 

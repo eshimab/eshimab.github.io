@@ -45,6 +45,17 @@
 ],
 ```
 
+## Error while editting `settings.json`
+
+- You may see a single error while editting `settings.json`. 
+    - Error will look like: `Unable to load schema from 'vscode://schemas/settings/user': cannot open vscode://schemas/settings/user. Detail: Unable to resolve text model content for resource vscode://schemas/settings/user.(768) Unixbecause`
+- Fix this by using the Settings Menu `CMD + ,`
+- On the Sidebar, go to `Workbench` > `Settings Editor` 
+- Check the box for `Open Default Settings`
+- Reload VSCode using `CTRL + ALT + CMD + L`
+
+
+
 ## Converting Atom cofee script to VS Code JavaScript
 
 ```coffee

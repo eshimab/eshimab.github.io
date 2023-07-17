@@ -14,13 +14,28 @@ nav:
     - infaqs: infaqs.md
     - gitnotes: gitnotes.md 
     - notes:
-      - bash: notemds/bashnotes.md
-      - vsnotes: notemds/vsnotes.md
+        - shellnotes:
+            - shell commands:
+                - 
+            - bash: notemds/bashnotes.md
+            
+        - vsnotes: notemds/vsnotes.md
+#
+# theme: 
+    # name: material
 #
 markdown_extensions:
-  - toc:
-      permalink: True
-      toc_depth: 6
+    - admonition
+    - pymdownx.highlight
+        use_pygments: true
+    # - codehilite:
+        # use_pygments: true
+        # code_header: true
+    - toc:
+        permalink: True
+        toc_depth: 6
+    # - markdown_fenced_code_tabs:
+        # template: 'default'
 #
 plugins:
     - search
