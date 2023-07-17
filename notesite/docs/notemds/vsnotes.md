@@ -26,6 +26,38 @@
     "workbench.editor.tabSizing": "shrink",
 ```
 
+## Word Wrap (Soft wrap) Line limits
+
+### Global Word Wrap
+
+1. Set globally, but will be superceded by individual grammars
+2. Global Settings
+```json
+// Soft Wrap Max Chars
+"editor.wordWrap": "wordWrapColumn",
+"editor.wordWrapColumn": 100,
+"editor.rulers": [100],
+```
+
+### Language Specific Word Wraps
+
+#### Word Wrap: Markdown
+```json
+// ------------------------ MARKDOWN ------------------------------------
+// Markdown Language Specific Settings
+"[markdown]": {
+  "editor.wrappingStrategy": "advanced",
+  // Set max char for soft wrap
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 100,
+  "editor.quickSuggestions": {
+    "comments": "off",
+    "strings": "off",
+    "other": "off"
+  }
+}, // END [markdown] lanuage specific settings
+```
+
 ## Set Indentation Defaults
 
 ```json

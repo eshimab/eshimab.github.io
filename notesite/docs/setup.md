@@ -73,10 +73,43 @@
         2. Add the following line to `~/.bash_profile`
             - `export PATH="/opt/homebrew/bin:$PATH"`
             - We are prepending the new path `/opt/homebrew/bin` so that it is used before the `/usr/local/bin` where the old Homebrew installation is.
+        3. Write and Save the file with a `nano` 
+            - Write-Out with `CTRL + O` and then To File with `CTRL + T`
+            - Exit `nano` with `CTRL + X` if needed
+        4. You may use `zsh` as the default shell on macOS. Add the export command to the `zsh` equivalent of `~/.bash_profile`
+            1. `touch ~/.zshenv` 
+            2. `nano ~/.zshenv` 
+            3. Add line: `export PATH="/opt/homebrew/bin:$PATH"`
+            4. Save the file and exit `nano`
     3. Verify the `brew` command works using `which brew` command. 
         - The return should now be `/opt/homebrew/bin/brew`
 
-## Install Git CLI
+## Install Additional CLI using Homebrew
+
+### Install `npm`
+
+#### Installation error regarding old versions of `npm`
+
+```bash
+localdevice:~ username$ npm install vue
+npm ERR! code EACCES
+npm ERR! syscall mkdir
+npm ERR! path /Users/username/.npm/_cacache/index-v5/33/bd
+npm ERR! errno EACCES
+npm ERR! 
+npm ERR! Your cache folder contains root-owned files, due to a bug in
+npm ERR! previous versions of npm which has since been addressed.
+npm ERR! 
+npm ERR! To permanently fix this problem, please run:
+npm ERR!   sudo chown -R 501:20 "/Users/username/.npm"
+```
+
+So run that `sudo` command and enter password
+```bash
+sudo chown -R 501:20 "/Users/username/.npm"
+```
+
+### Install Git CLI
 
 1. Use Homebrew to install the git CLI
     ```bash

@@ -42,5 +42,7 @@
 # Ignore Filetypes
 *.pdf
 *.mat
-# Homebrew fo;e
+# Homebrew File
 /Brewfile
+# The node_modules directory in notecards
+/notecards/docs/node_modules/
