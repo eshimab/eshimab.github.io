@@ -8,15 +8,15 @@ export default hopeTheme({
   author: {
     name: "Mr.Hope",
     url: "https://mister-hope.com",
-  },
+  }, // end author.hopeTheme
 
-  iconAssets: "fontawesome-with-brands",
+  iconAssets: "fontawesome-with-brands", // end iconAssets
 
-  logo: "/logo.svg",
+  logo: "/logo.svg", // end logo
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "vuepress-theme-hope/vuepress-theme-hope", // end repo
 
-  docsDir: "src",
+  docsDir: "src", // end docsDor
 
   // navbar
   navbar,
@@ -31,12 +31,12 @@ export default hopeTheme({
   encrypt: {
     config: {
       "/demo/encrypt.html": ["1234"],
-    },
-  },
+    }, // end config.encypt
+  }, // end encrypt
 
   metaLocales: {
     editLink: "Edit this page on GitHub",
-  },
+  }, // end metaLocales 
 
   plugins: {
     // You should generate and use your own comment service
@@ -46,7 +46,7 @@ export default hopeTheme({
       repoId: "R_kgDOG_Pt2A",
       category: "Announcements",
       categoryId: "DIC_kwDOG_Pt2M4COD69",
-    },
+    }, // end comment.plugins
 
     // All features are enabled for demo, only preserve features you need here
     mdEnhance: {
@@ -67,8 +67,9 @@ export default hopeTheme({
       mermaid: true,
       playground: {
         presets: ["ts", "vue"],
-      },
+      }, // end playgeound
       presentation: ["highlight", "math", "search", "notes", "zoom"],
+      // begin stylize
       stylize: [
         {
           matcher: "Recommended",
@@ -81,13 +82,13 @@ export default hopeTheme({
               };
           },
         },
-      ],
+      ], // end stylize
       sub: true,
       sup: true,
       tabs: true,
       vPre: true,
       vuePlayground: true,
-    },
+    }, // end mdEnhancw
 
     // uncomment these if you want a pwa
     // pwa: {
@@ -145,5 +146,5 @@ export default hopeTheme({
     //     ],
     //   },
     // },
-  },
-});
+  }, // end plugins
+}); // end export hopeTheme
