@@ -1,5 +1,6 @@
 ---
 icon: lock
+order: 3
 category:
   - Guide
 tag:
