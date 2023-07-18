@@ -20,6 +20,9 @@ actions:
   - text: Notes
     link: ./notemds/
 
+  - text: VuePress Examples
+    link: ./vp-examples/
+
 highlights:
   - header: Easy to install
     image: /assets/image/box.svg
