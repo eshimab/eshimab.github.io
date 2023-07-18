@@ -11,7 +11,7 @@ module.exports = {
   title: 'VuePress',
   description: 'A demo documentation using VuePress',
   themeConfig: {
-    search
+    search,
     nav: [
       { text: 'Counter', link: '/counter/' }
     ],

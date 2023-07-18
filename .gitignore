@@ -44,6 +44,8 @@
 *.mat
 # Homebrew File
 /Brewfile
+# VueBook npm directory
+/vuebook/node_modules/
 # The node_modules directory in notecards
 /notecards/docs/node_modules/
 # vuepress-example dir

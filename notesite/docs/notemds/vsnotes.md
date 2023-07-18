@@ -42,6 +42,7 @@
 ### Language Specific Word Wraps
 
 #### Word Wrap: Markdown
+
 ```json
 // ------------------------ MARKDOWN ------------------------------------
 // Markdown Language Specific Settings
