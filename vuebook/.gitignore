@@ -1,4 +1,13 @@
-
+#
+#
+#
+#
+#
+#
+#
+#
+#
+# ------------------ FOR VUEBOOK
 node_modules/
 src/.vuepress/.cache/
 src/.vuepress/.temp/
