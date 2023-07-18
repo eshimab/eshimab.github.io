@@ -16,6 +16,12 @@ export default sidebar({
       prefix: "guide/",
       children: "structure",
     },
+    {
+      text: "setup",
+      icon: "book",
+      prefix: "setup/",
+      children: "structure",
+    },
     "slides",
   ],
 });
