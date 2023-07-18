@@ -46,3 +46,5 @@
 /Brewfile
 # VueBook npm directory
 /vuebook/node_modules/
+/vuebook/src/.vuepress/.cache/
+/vuebook/src/.vuepress/.temp/
