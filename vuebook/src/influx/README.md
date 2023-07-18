@@ -1,5 +1,5 @@
 ---
-title: Local Setup
+title: InFlux User's Guide
 icon: lightbulb
 ---
 

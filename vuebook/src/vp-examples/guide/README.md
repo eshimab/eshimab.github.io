@@ -1,5 +1,5 @@
 ---
-title: Guide
+title: VuePress Example - Guide
 icon: lightbulb
 ---
 

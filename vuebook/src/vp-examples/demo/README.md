@@ -1,5 +1,5 @@
 ---
-title: Features demo
+title: VuePress Example - Features Demo
 index: false
 icon: laptop-code
 category:

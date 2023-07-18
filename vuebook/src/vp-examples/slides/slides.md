@@ -1,5 +1,5 @@
 ---
-title: Slide page
+title: VuePress Example Slide page
 icon: person-chalkboard
 layout: Slide
 ---
