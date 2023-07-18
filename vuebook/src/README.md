@@ -1,21 +1,24 @@
 ---
 home: true
 icon: home
-title: Project home
+title: Vuebook
 heroImage: /logo.svg
 bgImage: https://theme-hope-assets.vuejs.press/bg/6-light.svg
 bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
 bgImageStyle:
   background-attachment: fixed
-heroText: Project name
-tagline: You can place the description of the project here.
+heroText: Scidev VueBook
+tagline: Digressions, documented.
 actions:
-  - text: How to Use 💡
-    link: ./demo/
+  - text: Setup
+    link: ./setup/
     type: primary
 
-  - text: Docs
-    link: ./guide/
+  - text: InFlux
+    link: ./influx/
+
+  - text: Notes
+    link: ./notemds/
 
 highlights:
   - header: Easy to install
